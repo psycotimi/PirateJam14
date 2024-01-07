@@ -1,5 +1,5 @@
 # PirateJam14
-Our Pirate Software entry, for their game jam 14
+Our Pirate Software game jam 14 entry
 
 Lisa
 Miika
