@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7if3cbhxnxko"]
+
+[ext_resource type="Script" path="res://assets/Level/GameArea/game_area.gd" id="1_tuegl"]
+[ext_resource type="PackedScene" uid="uid://bwggdusp5px37" path="res://assets/Level/GameSquare/game_square.tscn" id="2_xbv4u"]
+
+[node name="GameArea" type="Node2D"]
+script = ExtResource("1_tuegl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-24, -24, -24, 72, 24, 72, 24, 24, 72, 24, 72, -24)
+
+[node name="GameSquare" parent="." instance=ExtResource("2_xbv4u")]
+
+[node name="GameSquare2" parent="." instance=ExtResource("2_xbv4u")]
+position = Vector2(0, 48)
+
+[node name="GameSquare3" parent="." instance=ExtResource("2_xbv4u")]
+position = Vector2(48, 0)
