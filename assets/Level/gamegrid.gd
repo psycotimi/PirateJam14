@@ -2,6 +2,8 @@ extends TileMap
 
 var gridSize = 32
 var allTiles = {}
+var prevtile = Vector2i(0,0)
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,10 +13,12 @@ func _ready():
             allTiles[str(Vector2(x,y))] = {
                 "surface": Global.spreadTypeList[2]
             }
-            set_cell(0, Vector2(x,y), 0, Vector2(1,1),0)
+            set_cell(0, Vector2(x,y), 0, Vector2(0,0),0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     var tile = local_to_map(get_global_mouse_position())
-    set_cell(0, tile, 0, Vector2(1,1),0)
+    if tile != prevtile:
+        prevtile = tile
+        print(str(tile))
