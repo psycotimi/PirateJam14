@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctuc5ws8v3q5b"]
+
+[ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
+[ext_resource type="Texture2D" uid="uid://cie2y7pn3r5xp" path="res://assets/placeholder/jam.png" id="1_wvvll"]
+[ext_resource type="PackedScene" uid="uid://b6yelhpm3trio" path="res://assets/Level/grafiikkatile.tscn" id="2_7rwvs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhdoc"]
+texture = ExtResource("1_wvvll")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_45ekr"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_nhdoc")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_45ekr")
+rendering_quadrant_size = 32
+format = 2
+script = ExtResource("1_jp1xd")
+
+[node name="Tiling" parent="TileMap" instance=ExtResource("2_7rwvs")]

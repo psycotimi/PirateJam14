@@ -9,12 +9,12 @@ const battleScripts = preload("res://scripts/Battle.gd")
 
 
 func _ready():
-	var battle = battleScripts.new()
+    var battle = battleScripts.new()
 
-	for roll in range(10):
-		var attackerWon = battle.did_attacker_win(3, 3)
-		if attackerWon:
-			print("Attacker won!")
-		else:
-			print("Defender won!")
-		print()
+    for roll in range(10):
+        var attackerWon = battle.did_attacker_win(3, 3)
+        if attackerWon:
+            print("Attacker won!")
+        else:
+            print("Defender won!")
+        print()
