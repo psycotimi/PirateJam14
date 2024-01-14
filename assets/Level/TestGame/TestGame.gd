@@ -26,4 +26,4 @@ func _input(event):
             targetTile = $gamegrid.get_tile_under_mouse()
         else:
             selectedTile = $gamegrid.get_tile_under_mouse()    
-        print(selectedTile.surface, targetTile.surface) 
+        print(selectedTile, targetTile) 
