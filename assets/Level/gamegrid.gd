@@ -11,7 +11,9 @@ func _ready():
     for x in gridSize:
         for y in gridSize:
             allTiles[str(Vector2(x,y))] = {
-                "surface": Global.spreadTypeList[2]
+                "surface" : Global.spreadTypeList[2], # aluksi hilloton
+                "troops" : 0, # joukkojen lukumäärä tilellä, ehkä pitää siirtää alueeseen sitku semmonen on
+                "areaid": 0 # tätä voi käyttää myöhemmin
             }
             set_cell(0, Vector2(x,y), 0, Vector2(0,0),0)
 
