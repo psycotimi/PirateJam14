@@ -12,12 +12,10 @@ texture = ExtResource("1_wvvll")
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_nhdoc")
 
-[node name="gamegrid" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="gamegrid" type="TileMap"]
 tile_set = SubResource("TileSet_45ekr")
 rendering_quadrant_size = 32
 format = 2
 script = ExtResource("1_jp1xd")
 
-[node name="grafiikkatile" parent="TileMap" instance=ExtResource("2_7rwvs")]
+[node name="grafiikkatile" parent="." instance=ExtResource("2_7rwvs")]

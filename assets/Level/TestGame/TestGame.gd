@@ -6,7 +6,8 @@ extends Node2D
 
 # Import Battle.gd script to use the functions.
 const battleScripts = preload("res://scripts/Battle.gd")
-
+var selectedTile
+var targetTile
 
 func _ready():
     var battle = battleScripts.new()
@@ -20,7 +21,9 @@ func _ready():
         print()
 
 func _input(event):
-    print(event.as_text())
-    var selectedTile
-    print(selectedTile) 
-    selectedTile = $gamegrid.get_tile_under_mouse()
+    if Input.is_action_just_pressed("select_tile"):
+        if selectedTile != null:
+            targetTile = $gamegrid.get_tile_under_mouse()
+        else:
+            selectedTile = $gamegrid.get_tile_under_mouse()    
+        print(selectedTile.surface, targetTile.surface) 

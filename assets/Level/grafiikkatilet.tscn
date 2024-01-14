@@ -456,9 +456,7 @@ sources/0 = SubResource("TileSetAtlasSource_hyrn7")
 sources/2 = SubResource("TileSetAtlasSource_umsle")
 sources/3 = SubResource("TileSetAtlasSource_3ifmj")
 
-[node name="grafiikkatilet" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="grafiikkatilet" type="TileMap"]
 tile_set = SubResource("TileSet_2fsjf")
 format = 2
 script = ExtResource("5_iqfni")
