@@ -18,3 +18,9 @@ func _ready():
         else:
             print("Defender won!")
         print()
+
+func _input(event):
+    print(event.as_text())
+    var selectedTile
+    print(selectedTile) 
+    selectedTile = $gamegrid.get_tile_under_mouse()

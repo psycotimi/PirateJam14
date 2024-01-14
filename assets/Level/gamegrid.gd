@@ -32,5 +32,6 @@ func _process(delta):
         
 func get_tile_under_mouse():
     var tile = local_to_map(get_global_mouse_position())
-    return tile
+    if tile in tiles:
+        return tiles[tile]
     

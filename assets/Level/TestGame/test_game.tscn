@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbhajou5uidn1"]
+[gd_scene load_steps=4 format=3 uid="uid://dbhajou5uidn1"]
 
 [ext_resource type="Script" path="res://assets/Level/TestGame/TestGame.gd" id="1_tobbp"]
 [ext_resource type="PackedScene" uid="uid://c7if3cbhxnxko" path="res://assets/Level/GameArea/game_area.tscn" id="2_kh1c3"]
+[ext_resource type="PackedScene" uid="uid://ctuc5ws8v3q5b" path="res://assets/Level/gamegrid.tscn" id="3_mp01c"]
 
 [node name="TestGame" type="Node2D"]
 script = ExtResource("1_tobbp")
@@ -10,3 +11,5 @@ script = ExtResource("1_tobbp")
 
 [node name="GameArea2" parent="." instance=ExtResource("2_kh1c3")]
 position = Vector2(48, 49)
+
+[node name="gamegrid" parent="." instance=ExtResource("3_mp01c")]
