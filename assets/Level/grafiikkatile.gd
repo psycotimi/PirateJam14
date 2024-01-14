@@ -12,7 +12,6 @@ func _ready():
             allTiles[str(Vector2(x,y))] = {
                 "surface": Global.spreadTypeList[2]
             }
-            set_cell(0, Vector2(x,y), 1, Vector2(1,1),0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
