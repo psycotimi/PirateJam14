@@ -9,7 +9,7 @@ var neighbours = []
 func _ready():
     for x in gridSize:
         for y in gridSize:
-            allTiles[str(Vector2(x,y))] = {
+            allTiles[Vector2(x,y)] = {
                 "surface": Global.spreadTypeList[2]
             }
 
@@ -34,4 +34,8 @@ func generateNeighbours(tile):
             else:
                 neighbors.append(Vector2i(x,y))
     return neighbors
+    
+func setSread(tiles,spread):
+    set_cells_terrain_connect(0, tiles, spread, true)
+    
     

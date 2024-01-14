@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
 [ext_resource type="Texture2D" uid="uid://cie2y7pn3r5xp" path="res://assets/placeholder/jam.png" id="1_wvvll"]
-[ext_resource type="PackedScene" uid="uid://b6yelhpm3trio" path="res://assets/Level/grafiikkatile.tscn" id="2_7rwvs"]
+[ext_resource type="PackedScene" uid="uid://b6yelhpm3trio" path="res://assets/Level/grafiikkatilet.tscn" id="2_7rwvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhdoc"]
 texture = ExtResource("1_wvvll")
