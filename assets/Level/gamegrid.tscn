@@ -13,6 +13,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_nhdoc")
 
 [node name="gamegrid" type="TileMap"]
+position = Vector2(627, 307)
 tile_set = SubResource("TileSet_45ekr")
 rendering_quadrant_size = 32
 format = 2

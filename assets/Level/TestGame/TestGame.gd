@@ -27,3 +27,6 @@ func _input(event):
 		else:
 			selectedTile = $gamegrid.get_tile_under_mouse()    
 		print(selectedTile, targetTile) 
+		
+	if event is InputEventMouseButton:
+		print("Mouse click at: ", event.position)

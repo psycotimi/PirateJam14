@@ -1,6 +1,6 @@
 extends TileMap
 
-var gridSize = 32
+var gridSize = 16
 var tiles = {}
 var prevtile = Vector2i(0,0)
 var troopLabel = Label.new()
@@ -39,7 +39,9 @@ func _process(delta):
 		
 func get_tile_under_mouse():
 	var tile = local_to_map(get_global_mouse_position())
+	print("käydäänkö tässä?")
 	if tile in tiles:
+		print("entä tässä?")
 		print(tile)
 		return tiles[tile]
 	
