@@ -1,9 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://8kmereq7bodm"]
+[gd_scene load_steps=7 format=3 uid="uid://camknjko1nbpy"]
 
 [ext_resource type="Script" path="res://optionsMenu.gd" id="1_gtcw6"]
+[ext_resource type="Texture2D" uid="uid://y2tmbn106gb8" path="res://assets/placeholder/mutet.png" id="2_hi06k"]
 
 [sub_resource type="Theme" id="Theme_poclh"]
 default_font_size = 100
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7ihh"]
+atlas = ExtResource("2_hi06k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4vxu"]
+atlas = ExtResource("2_hi06k")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvl0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7ihh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4vxu")
+}],
+"loop": true,
+"name": &"mute",
+"speed": 5.0
+}]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -46,6 +69,12 @@ text = "Mute"
 layout_mode = 2
 text = "Back"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1153, 443)
+sprite_frames = SubResource("SpriteFrames_dvl0o")
+animation = &"mute"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="MarginContainer/VBoxContainer/Back" method="_on_pressed"]

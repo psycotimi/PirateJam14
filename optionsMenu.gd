@@ -7,5 +7,13 @@ func _on_back_pressed():
 
 
 func _on_mute_pressed():
-    var bus_idx = AudioServer.get_bus_index("Master")
-    AudioServer.set_bus_mute(bus_idx, true) # or false
+    if $AnimatedSprite2D.get_frame() == 0:
+        
+        var bus_idx = AudioServer.get_bus_index("Master")
+        AudioServer.set_bus_mute(bus_idx, true) 
+        $AnimatedSprite2D.set_frame(1)
+    
+    else:
+        $AnimatedSprite2D.set_frame(0)
+        var bus_idx = AudioServer.get_bus_index("Master")
+        AudioServer.set_bus_mute(bus_idx, false)
