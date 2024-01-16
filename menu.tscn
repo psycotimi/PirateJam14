@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://thkmxy1yuflt"]
+[gd_scene load_steps=3 format=3 uid="uid://w1gca3h2gva0"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_ne4na"]
+
+[sub_resource type="Theme" id="Theme_8da6w"]
+default_font_size = 100
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -24,15 +27,16 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 780.0
 offset_top = 285.0
-offset_right = 850.0
-offset_bottom = 386.0
-scale = Vector2(5, 5)
+offset_right = 889.0
+offset_bottom = 432.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme = SubResource("Theme_8da6w")
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 0
 text = "Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
