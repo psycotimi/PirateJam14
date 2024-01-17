@@ -4,12 +4,14 @@ var gridSize = Global.gridsize
 var tiles = {}
 var prevtile = Vector2i(0,0)
 var troopLabel = Label.new()
+var offsetX = 23
+var offsetY = 12
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    for x in range(23, gridSize+23):
-        for y in range(12, gridSize+12):
+    for x in range(offsetX, gridSize+offsetX):
+        for y in range(offsetY, gridSize+offsetY):
             troopLabel.position = Vector2(x,y)
 
             # näistä pitää poistaa gridin ulkopuoliset ruudut
@@ -39,8 +41,8 @@ func _ready():
 func _process(delta):
     var tile = local_to_map(get_global_mouse_position())
     
-    for x in range(23, gridSize+23):
-        for y in range(12, gridSize+12):
+    for x in range(offsetX, gridSize+offsetX):
+        for y in range(offsetY, gridSize+offsetY):
            erase_cell(1, Vector2(x,y))
             
     if tiles.has(str(tile)):
