@@ -9,9 +9,12 @@
 script = ExtResource("1_tobbp")
 
 [node name="GameArea" parent="." instance=ExtResource("2_kh1c3")]
+top_level = true
+position = Vector2(727, 500)
 
 [node name="GameArea2" parent="." instance=ExtResource("2_kh1c3")]
-position = Vector2(48, 49)
+top_level = true
+position = Vector2(727, 397)
 
 [node name="gamegrid" parent="." instance=ExtResource("3_mp01c")]
 

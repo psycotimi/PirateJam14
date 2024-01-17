@@ -20,7 +20,6 @@ sources/0 = SubResource("TileSetAtlasSource_nhdoc")
 sources/1 = SubResource("TileSetAtlasSource_8kf44")
 
 [node name="gamegrid" type="TileMap"]
-position = Vector2(726, 395)
 tile_set = SubResource("TileSet_45ekr")
 rendering_quadrant_size = 32
 format = 2
@@ -28,9 +27,10 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("1_jp1xd")
 
 [node name="grafiikkatile" parent="." instance=ExtResource("2_7rwvs")]
+position = Vector2(5, 0)
 
 [node name="TaustaKesken" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(256, 163)
+position = Vector2(992, 546)
 scale = Vector2(1.09894, 1.12515)
 texture = ExtResource("5_gxe0f")
