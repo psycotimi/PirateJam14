@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctuc5ws8v3q5b"]
+[gd_scene load_steps=7 format=3 uid="uid://ctuc5ws8v3q5b"]
 
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
 [ext_resource type="Texture2D" uid="uid://cie2y7pn3r5xp" path="res://assets/placeholder/jam.png" id="1_wvvll"]
 [ext_resource type="PackedScene" uid="uid://b6yelhpm3trio" path="res://assets/Level/grafiikkatilet.tscn" id="2_7rwvs"]
+[ext_resource type="Texture2D" uid="uid://blc6xuskdvvbf" path="res://assets/placeholder/tausta kesken.jpg" id="4_0eiu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhdoc"]
 texture = ExtResource("1_wvvll")
@@ -13,10 +14,16 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_nhdoc")
 
 [node name="gamegrid" type="TileMap"]
-position = Vector2(627, 307)
+position = Vector2(816, 400)
 tile_set = SubResource("TileSet_45ekr")
 rendering_quadrant_size = 32
 format = 2
 script = ExtResource("1_jp1xd")
 
 [node name="grafiikkatile" parent="." instance=ExtResource("2_7rwvs")]
+
+[node name="TaustaKesken" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(258, 161)
+scale = Vector2(1.15328, 1.19354)
+texture = ExtResource("4_0eiu8")
