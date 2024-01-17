@@ -1,6 +1,6 @@
 extends TileMap
 
-var gridSize = 16
+var gridSize = Global.gridsize
 var tiles = {}
 var prevtile = Vector2i(0,0)
 var troopLabel = Label.new()
@@ -11,6 +11,8 @@ func _ready():
     for x in gridSize:
         for y in gridSize:
             troopLabel.position = Vector2(x,y)
+
+            # näistä pitää poistaa gridin ulkopuoliset ruudut
             var legalMoves = [
                 Vector2(x+1,y),
                 Vector2(x-1,y),
@@ -24,7 +26,7 @@ func _ready():
                 Vector2(2*x+1,2*y+1)
                 ]
             tiles[Vector2(x,y)] = {
-                "surface" : Global.spreadTypeList[2], # aluksi hilloton
+                "spread" : Global.spreadTypeList[2], # aluksi hilloton
                 "troops" : 0, # joukkojen lukumäärä tilellä, ehkä pitää siirtää alueeseen sitku semmonen on
                 "areaid" : 0, # tätä voi käyttää myöhemmin
                 "grafiikkatilet" : grafiikkatilet,
@@ -41,5 +43,9 @@ func _process(delta):
         for y in gridSize*20:
            erase_cell(1, Vector2(x,y))
             
-    if tiles.has(str(tile)):
+    if tiles.has(tile):
         set_cell(1, tile, 1, Vector2i(0,0), 0)
+
+func update_grafiikkatilet():
+  for tile in tiles:
+    $grafiikkatilet.setSpread(tile.grafiikkatilet,tile.spread)
