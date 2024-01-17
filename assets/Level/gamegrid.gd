@@ -46,9 +46,11 @@ func _process(delta):
            erase_cell(1, Vector2(x,y))
             
     if tiles.has(str(tile)):
-        print(tile)
+        print(tile,tiles[str(tile)].spread)
+        tiles[str(tile)].spread = Global.spreadTypeList[0] # muuttaa hiiren alla olevan tilen hilloa
         set_cell(1, tile, 1, Vector2i(0,0), 0)
+        #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
 
 func update_grafiikkatilet():
   for tile in tiles:
-    $grafiikkatilet.setSpread(tile.grafiikkatilet,tile.spread)
+    $grafiikkatilet.setSpread(tiles[str(tile)].grafiikkatilet,tiles[str(tile)].spread)

@@ -26,7 +26,7 @@ format = 2
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("1_jp1xd")
 
-[node name="grafiikkatile" parent="." instance=ExtResource("2_7rwvs")]
+[node name="grafiikkatilet" parent="." instance=ExtResource("2_7rwvs")]
 position = Vector2(5, 0)
 
 [node name="TaustaKesken" type="Sprite2D" parent="."]
