@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://thkmxy1yuflt"]
+[gd_scene load_steps=4 format=3 uid="uid://thkmxy1yuflt"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_ne4na"]
+[ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_42k54"]
 
 [sub_resource type="Theme" id="Theme_8da6w"]
 default_font_size = 100
@@ -36,16 +37,19 @@ theme = SubResource("Theme_8da6w")
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_42k54")
 theme_override_font_sizes/font_size = 0
 text = "Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_42k54")
 text = "Options
 "
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_42k54")
 text = "Quit
 "
 
