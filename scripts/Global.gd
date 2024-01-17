@@ -9,3 +9,5 @@ const spreadTypeList: Array = ["pb", "jam", "none"]
 const troopCountMax: int = 3
 # Determines the dice to be used, most likely will be d6.
 const dieMax: int = 6
+# pelialueen koko
+const gridsize: int = 16
