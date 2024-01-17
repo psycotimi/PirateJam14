@@ -25,13 +25,8 @@ func _ready():
                 Vector2(2*x+1,2*y),
                 Vector2(2*x+1,2*y+1)
                 ]
-<<<<<<< HEAD
             tiles[str(Vector2(x,y))] = {
-                "surface" : Global.spreadTypeList[1], # aluksi hilloton
-=======
-            tiles[Vector2(x,y)] = {
                 "spread" : Global.spreadTypeList[2], # aluksi hilloton
->>>>>>> 757304514dd2393aad0a91c26db393372f428029
                 "troops" : 0, # joukkojen lukumäärä tilellä, ehkä pitää siirtää alueeseen sitku semmonen on
                 "areaid" : 0, # tätä voi käyttää myöhemmin
                 "grafiikkatilet" : grafiikkatilet,
@@ -48,12 +43,8 @@ func _process(delta):
         for y in range(12, gridSize+12):
            erase_cell(1, Vector2(x,y))
             
-<<<<<<< HEAD
     if tiles.has(str(tile)):
         print(tile)
-=======
-    if tiles.has(tile):
->>>>>>> 757304514dd2393aad0a91c26db393372f428029
         set_cell(1, tile, 1, Vector2i(0,0), 0)
 
 func update_grafiikkatilet():
