@@ -20,13 +20,10 @@ func _ready():
             print("Defender won!")
         print()
 
-func _input(event):
-    if Input.is_action_just_pressed("select_tile"):
-        if selectedTile != null:
-            targetTile = $gamegrid.get_tile_under_mouse()
-        else:
-            selectedTile = $gamegrid.get_tile_under_mouse()    
-        print(selectedTile, targetTile) 
-        
-#    if event is InputEventMouseButton:
-#        print("Mouse click at: ", event.position)
+#func _input(event):
+   # if Input.is_action_just_pressed("select_tile"):
+     #   if selectedTile != null:
+       #     targetTile = $gamegrid.get_tile_under_mouse()
+       # else:
+        #    selectedTile = $gamegrid.get_tile_under_mouse()    
+       # print(selectedTile, targetTile) 

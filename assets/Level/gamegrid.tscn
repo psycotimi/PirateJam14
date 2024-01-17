@@ -12,7 +12,7 @@ texture = ExtResource("1_wvvll")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kf44"]
 texture = ExtResource("2_onncg")
-texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_45ekr"]
 tile_size = Vector2i(32, 32)
@@ -24,6 +24,7 @@ position = Vector2(726, 395)
 tile_set = SubResource("TileSet_45ekr")
 rendering_quadrant_size = 32
 format = 2
+layer_1/tile_data = PackedInt32Array()
 script = ExtResource("1_jp1xd")
 
 [node name="grafiikkatile" parent="." instance=ExtResource("2_7rwvs")]
