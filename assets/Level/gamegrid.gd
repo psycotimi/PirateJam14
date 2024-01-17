@@ -54,6 +54,7 @@ func _process(delta):
 
 func update_grafiikkatilet():
   for tile in tiles:
+    print(tiles[str(tile)].grafiikkatilet)
     $grafiikkatilet.setSpread(tiles[str(tile)].grafiikkatilet,tiles[str(tile)].spread)
     
 func _input(event):
