@@ -31,6 +31,7 @@ func _ready():
                 "legalmoves" : legalMoves
             }
             set_cell(0, Vector2(x,y), 0, Vector2(0,0),0)
+    # print(tiles) #Testi, että dictionary tulostuu oikein
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,9 +40,16 @@ func _process(delta):
         
 func get_tile_under_mouse():
     var tile = local_to_map(get_global_mouse_position())
-    print("käydäänkö tässä?")
-    if tile in tiles:
-        print("entä tässä?")
-        print(tile)
-        return tiles[tile]
+    
+    for x in gridSize:
+        for y in gridSize*20:
+           erase_cell(1, Vector2(x,y))
+            
+    if tiles.has(str(tile)):
+        set_cell(1, tile, 1, Vector2i(0,0), 0)
+    
+    
+    #if tile in tiles:
+        #print(tile)
+       # return tiles[tile]
     
