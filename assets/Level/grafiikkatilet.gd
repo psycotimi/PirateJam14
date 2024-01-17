@@ -1,21 +1,22 @@
 extends TileMap
 
-
+var offsetX = 23*2
+var offsetY = 12*2
 var gridSize = Global.gridsize*2 
 var allTiles = {}
 var neighbours = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    for x in gridSize:
-        for y in gridSize:
-            allTiles[Vector2(x,y)] = {
-                "surface": Global.spreadTypeList[2]
+    for x in range(offsetX, offsetX+gridSize):
+        for y in range(offsetY,offsetY+gridSize):
+            allTiles[str(Vector2(x,y))] = {
+                "spread": Global.spreadTypeList[2]
             }
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
     var tile = local_to_map(get_global_mouse_position())
     neighbours = generateNeighbours(tile)
 
@@ -35,7 +36,7 @@ func generateNeighbours(tile):
                 neighbors.append(Vector2i(x,y))
     return neighbors
     
-func setSread(tiles,spread):
-    set_cells_terrain_connect(0, tiles, spread, true)
+func setSpread(tiles,spread):
+    set_cells_terrain_connect(2, tiles,0, Global.spreadTypeList.find(spread,0), true)
     
     
