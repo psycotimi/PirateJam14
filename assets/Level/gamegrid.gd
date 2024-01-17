@@ -7,6 +7,9 @@ var troopLabel = Label.new()
 var offsetX = 23
 var offsetY = 12
 
+var selectedTile
+var targetTile
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,14 +46,25 @@ func _process(delta):
     
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
-           erase_cell(1, Vector2(x,y))
+           erase_cell(3, Vector2(x,y))
             
     if tiles.has(str(tile)):
-        print(tile,tiles[str(tile)].spread)
-        tiles[str(tile)].spread = Global.spreadTypeList[0] # muuttaa hiiren alla olevan tilen hilloa
-        set_cell(1, tile, 1, Vector2i(0,0), 0)
-        #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+        set_cell(3, tile, 1, Vector2i(0,0), 0)
+        
 
 func update_grafiikkatilet():
   for tile in tiles:
     $grafiikkatilet.setSpread(tiles[str(tile)].grafiikkatilet,tiles[str(tile)].spread)
+    
+func _input(event):
+    if Input.is_action_just_pressed("select_tile"):
+        update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+        if targetTile != null:
+            selectedTile = local_to_map(get_global_mouse_position())
+            targetTile = null
+        elif selectedTile != null:
+            targetTile = local_to_map(get_global_mouse_position())
+        else:
+            selectedTile = local_to_map(get_global_mouse_position())   
+        tiles[str(selectedTile)].spread = Global.spreadTypeList[0] # muuttaa hiiren alla olevan tilen hilloa 
+        print(selectedTile, targetTile) 

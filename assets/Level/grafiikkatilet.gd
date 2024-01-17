@@ -37,6 +37,6 @@ func generateNeighbours(tile):
     return neighbors
     
 func setSpread(tiles,spread):
-    set_cells_terrain_connect(0, tiles,0, Global.spreadTypeList.find(spread,0), true)
+    set_cells_terrain_connect(2, tiles,0, Global.spreadTypeList.find(spread,0), true)
     
     
