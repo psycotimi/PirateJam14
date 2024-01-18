@@ -8,21 +8,18 @@ var neighbours = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    print("grafiikkatilet ready")
     for x in range(offsetX, offsetX+gridSize):
         for y in range(offsetY,offsetY+gridSize):
             allTiles[str(Vector2(x,y))] = {
-                "spread": Global.spreadTypeList[2]
+                "spread": Global.spreadTypeList[0]
             }
+            
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-    var tile = local_to_map(get_global_mouse_position())
-    neighbours = generateNeighbours(tile)
-
-    if allTiles.has(str(tile)):
-        #set_cells_terrain_connect(0, neighbours,0,true)
-        pass
+    pass
 
 func generateNeighbours(tile):
     var neighbors = []
@@ -37,6 +34,6 @@ func generateNeighbours(tile):
     return neighbors
     
 func setSpread(tiles,spread):
-    set_cells_terrain_connect(2, tiles,0, Global.spreadTypeList.find(spread,0), true)
+    set_cells_terrain_connect(0, tiles,0, Global.spreadTypeList.find(spread,0), true)
     
     

@@ -430,7 +430,6 @@ sources/2 = SubResource("TileSetAtlasSource_umsle")
 sources/3 = SubResource("TileSetAtlasSource_3ifmj")
 
 [node name="grafiikkatilet" type="TileMap"]
-visibility_layer = 11
 tile_set = SubResource("TileSet_2fsjf")
 format = 2
 script = ExtResource("5_iqfni")
