@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cm7t2ldke1rqx"]
 
-[ext_resource type="Script" path="res://mainmenun tausta.gd" id="1_orfgi"]
+[ext_resource type="Script" path="res://mainmenun_tausta.gd" id="1_orfgi"]
 [ext_resource type="Texture2D" uid="uid://ci7d1vbor75d1" path="res://assets/placeholder/hillosotilas.png" id="2_o7q5i"]
 [ext_resource type="Script" path="res://taustaleipä.gd" id="3_yf38g"]
 
