@@ -37,19 +37,19 @@ func _ready():
                 "grafiikkatilet" : grafiikkatilet,
                 "legalmoves" : legalMoves
             }
-            set_cell(0, Vector2(x,y), -1, Vector2(-1,-1),0)
+            set_cell(0, Vector2i(x,y), 0, Vector2i(0,0),0)
     # print(tiles) #Testi, että dictionary tulostuu oikein
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
     var tile = local_to_map(get_global_mouse_position())
     
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
-           erase_cell(1, Vector2(x,y))
+           erase_cell(1, Vector2i(x,y))
             
     if tiles.has(str(tile)):
-        set_cell(1, Vector2(tile), 1, Vector2i(0,0), 0)
+        set_cell(1, Vector2i(tile), 1, Vector2i(0,0), 0)
         
 
 func update_grafiikkatilet():
@@ -62,16 +62,15 @@ func tile_under_mouse():
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
         var tile = tile_under_mouse()
-        if targetTile != null:
-            selectedTile = tile
-            targetTile = null
-        elif selectedTile != null:
-            targetTile = tile
-        else:
-            selectedTile = tile
-        tiles[tile].spread = Global.spreadTypeList[1] # muuttaa hiiren alla olevan tilen hilloa 
-        $grafiikkatilet.getSpread(tiles[tile].grafiikkatilet)
-        $grafiikkatilet.setSpread(tiles[tile].grafiikkatilet,tiles[tile].spread)
-        $grafiikkatilet.getSpread(tiles[tile].grafiikkatilet)
-        #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
-        print(selectedTile, targetTile) 
+        if tiles.has(tile):
+            if targetTile != null:
+                selectedTile = tile
+                targetTile = null
+            elif selectedTile != null:
+                targetTile = tile
+            else:
+                selectedTile = tile
+            tiles[tile].spread = Global.spreadTypeList[1] # muuttaa hiiren alla olevan tilen hilloa 
+            $grafiikkatilet.setSpread(tiles[tile].grafiikkatilet,tiles[tile].spread)
+            #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+            print("selected tile: " + str(selectedTile), " | target tile: " + str(targetTile)) 

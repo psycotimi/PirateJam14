@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctuc5ws8v3q5b"]
+[gd_scene load_steps=9 format=3 uid="uid://ctuc5ws8v3q5b"]
 
+[ext_resource type="Texture2D" uid="uid://b061d5xepxe35" path="res://assets/placeholder/nakymaton.png" id="1_h86ay"]
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
 [ext_resource type="PackedScene" uid="uid://b6yelhpm3trio" path="res://assets/Level/grafiikkatilet.tscn" id="2_7rwvs"]
 [ext_resource type="Texture2D" uid="uid://3427cvea1luu" path="res://assets/placeholder/tileSelected.png" id="2_onncg"]
 [ext_resource type="Texture2D" uid="uid://blc6xuskdvvbf" path="res://assets/placeholder/tausta kesken.jpg" id="5_gxe0f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qok67"]
+texture = ExtResource("1_h86ay")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kf44"]
 texture = ExtResource("2_onncg")
@@ -13,10 +19,10 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_45ekr"]
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_8kf44")
+sources/0 = SubResource("TileSetAtlasSource_qok67")
 
 [node name="gamegrid" type="TileMap"]
-light_mask = 3
-z_index = 10
+z_index = 3
 tile_set = SubResource("TileSet_45ekr")
 rendering_quadrant_size = 32
 format = 2
