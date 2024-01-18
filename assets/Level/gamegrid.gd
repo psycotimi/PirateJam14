@@ -70,6 +70,7 @@ func _input(_event):
         else:
             selectedTile = tile_under_mouse()
         tiles[selectedTile].spread = Global.spreadTypeList[1] # muuttaa hiiren alla olevan tilen hilloa 
+        $grafiikkatilet.getSpread(tiles[selectedTile].grafiikkatilet)
         $grafiikkatilet.setSpread(tiles[selectedTile].grafiikkatilet,tiles[selectedTile].spread)
         $grafiikkatilet.getSpread(tiles[selectedTile].grafiikkatilet)
         print(selectedTile, targetTile) 

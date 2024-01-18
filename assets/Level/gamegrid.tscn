@@ -22,7 +22,6 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("1_jp1xd")
 
 [node name="grafiikkatilet" parent="." instance=ExtResource("2_7rwvs")]
-show_behind_parent = true
 
 [node name="TaustaKesken" type="Sprite2D" parent="."]
 show_behind_parent = true

@@ -14,6 +14,7 @@ func _ready():
             allTiles[str(Vector2(x,y))] = {
                 "spread": Global.spreadTypeList[0]
             }
+            set_cell(0,Vector2i(x,y),1,Vector2i(1,1),0)
             
 
 
@@ -34,9 +35,10 @@ func generateNeighbours(tile):
     return neighbors
     
 func setSpread(tiles,spread):
+    set_cells_terrain_connect(0, tiles,0, Global.spreadTypeList.find(spread,0), true)
     for tile in tiles:
         allTiles[str(tile)].spread = spread
-    set_cells_terrain_connect(0, tiles,0, Global.spreadTypeList.find(spread,0), true)
+    
 
 func getSpread(tiles): 
     for tile in tiles:
