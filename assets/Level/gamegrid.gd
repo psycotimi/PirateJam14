@@ -61,7 +61,7 @@ func tile_under_mouse():
     
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
-        update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+        # update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
         if targetTile != null:
             selectedTile = tile_under_mouse()
             targetTile = null
@@ -70,4 +70,6 @@ func _input(_event):
         else:
             selectedTile = tile_under_mouse()
         tiles[selectedTile].spread = Global.spreadTypeList[1] # muuttaa hiiren alla olevan tilen hilloa 
+        $grafiikkatilet.setSpread(tiles[selectedTile].grafiikkatilet,tiles[selectedTile].spread)
+        $grafiikkatilet.getSpread(tiles[selectedTile].grafiikkatilet)
         print(selectedTile, targetTile) 

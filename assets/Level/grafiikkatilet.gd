@@ -34,6 +34,12 @@ func generateNeighbours(tile):
     return neighbors
     
 func setSpread(tiles,spread):
+    for tile in tiles:
+        allTiles[str(tile)].spread = spread
     set_cells_terrain_connect(0, tiles,0, Global.spreadTypeList.find(spread,0), true)
-    
+
+func getSpread(tiles): 
+    for tile in tiles:
+        if allTiles.has(str(tile)):
+            print(allTiles[str(tile)].spread)
     
