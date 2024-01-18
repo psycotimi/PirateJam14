@@ -15,6 +15,7 @@ func _ready():
                 "spread": Global.spreadTypeList[0]
             }
             set_cell(0,Vector2i(x,y),1,Vector2i(1,1),0)
+            set_cells_terrain_connect(0, [Vector2i(x,y)],0, 0, true)
             
 
 
