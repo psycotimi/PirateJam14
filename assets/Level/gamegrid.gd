@@ -49,7 +49,7 @@ func _process(_delta):
            erase_cell(1, Vector2(x,y))
             
     if tiles.has(str(tile)):
-        set_cell(1, tile, 1, Vector2i(0,0), 0)
+        set_cell(1, Vector2(tile), 1, Vector2i(0,0), 0)
         
 
 func update_grafiikkatilet():
@@ -61,16 +61,17 @@ func tile_under_mouse():
     
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
-        # update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+        var tile = tile_under_mouse()
         if targetTile != null:
-            selectedTile = tile_under_mouse()
+            selectedTile = tile
             targetTile = null
         elif selectedTile != null:
-            targetTile = tile_under_mouse()
+            targetTile = tile
         else:
-            selectedTile = tile_under_mouse()
-        tiles[selectedTile].spread = Global.spreadTypeList[1] # muuttaa hiiren alla olevan tilen hilloa 
-        $grafiikkatilet.getSpread(tiles[selectedTile].grafiikkatilet)
-        $grafiikkatilet.setSpread(tiles[selectedTile].grafiikkatilet,tiles[selectedTile].spread)
-        $grafiikkatilet.getSpread(tiles[selectedTile].grafiikkatilet)
+            selectedTile = tile
+        tiles[tile].spread = Global.spreadTypeList[1] # muuttaa hiiren alla olevan tilen hilloa 
+        $grafiikkatilet.getSpread(tiles[tile].grafiikkatilet)
+        $grafiikkatilet.setSpread(tiles[tile].grafiikkatilet,tiles[tile].spread)
+        $grafiikkatilet.getSpread(tiles[tile].grafiikkatilet)
+        #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
         print(selectedTile, targetTile) 
