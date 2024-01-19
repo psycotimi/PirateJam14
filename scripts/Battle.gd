@@ -12,7 +12,7 @@ func roll_dice(amountOfDice: int) -> int:
         dieRoll = rng.randi_range(1, Global.dieMax+1)
         diceSum += dieRoll
         
-        print("Die ", die, ": ", dieRoll) # debug print
+        # print("Die ", die, ": ", dieRoll) # debug print
 
     return diceSum
 
@@ -30,8 +30,8 @@ func did_attacker_win(attackerDice: int, defenderDice: int) -> bool:
     defenceSum = roll_dice(defenderDice)
     
     # Debug prints.
-    print("Attack sum: ", attackSum)
-    print("Defence sum: ", defenceSum)
+    # print("Attack sum: ", attackSum)
+    # print("Defence sum: ", defenceSum)
     
     if (attackSum > defenceSum):
         return true
