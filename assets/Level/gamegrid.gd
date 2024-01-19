@@ -12,6 +12,9 @@ var offsetY = 12
 var selectedAlue
 var targetAlue
 
+var xAlku = 0
+var yAlku = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -79,8 +82,9 @@ func _ready():
         for ruutu in alueet[alue].ruudut:
             if tiles.has(str(ruutu)):
                 tiles[str(ruutu)].areaid = alueet[alue].areaid   
-        
-    alkupositio()
+    for n in 5:
+        alkupositio()
+    
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
     var tile = local_to_map(get_global_mouse_position())
@@ -130,8 +134,14 @@ func _input(_event):
             print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue)) 
 
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
-    alueet[str(Vector2i(0,0))].spread = Global.spreadTypeList[2]
-    update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+    xAlku = randi_range(0,3)
+    yAlku = randi_range(0,7)
+    if alueet[str(Vector2i(xAlku,yAlku))].spread == Global.spreadTypeList[1]:
+        alkupositio()
+    else:
+        alueet[str(Vector2i(xAlku,yAlku))].spread = Global.spreadTypeList[1]
+        alueet[str(Vector2i(xAlku,yAlku))].troops = 1
+        update_grafiikkatilet()
 
 # vaihtaa alueen, alueen ruutujen, ja ruutujen grafiikkatilejen hilloa.
 func setAlueSpread(alue,spread):
@@ -139,4 +149,3 @@ func setAlueSpread(alue,spread):
     for ruutu in alueet[alue].ruudut:
         tiles[str(ruutu)].spread = spread 
         $grafiikkatilet.setSpread(tiles[str(ruutu)].grafiikkatilet,tiles[str(ruutu)].spread)
-    

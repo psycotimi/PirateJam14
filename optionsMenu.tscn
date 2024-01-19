@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjbl3rg7p5h6o"]
+
+[ext_resource type="Script" path="res://optionsMenu.gd" id="1_gtcw6"]
+[ext_resource type="Texture2D" uid="uid://y2tmbn106gb8" path="res://assets/placeholder/mutet.png" id="2_hi06k"]
+[ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_j0a0r"]
+
+[sub_resource type="Theme" id="Theme_poclh"]
+default_font_size = 100
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7ihh"]
+atlas = ExtResource("2_hi06k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4vxu"]
+atlas = ExtResource("2_hi06k")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvl0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7ihh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4vxu")
+}],
+"loop": true,
+"name": &"mute",
+"speed": 5.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gtcw6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.576471, 0.439216, 0.333333, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 365.0
+offset_right = 889.0
+offset_bottom = 431.0
+theme = SubResource("Theme_poclh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Mute" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_j0a0r")
+text = "Mute"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_j0a0r")
+text = "Back"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1153, 443)
+sprite_frames = SubResource("SpriteFrames_dvl0o")
+animation = &"mute"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="MarginContainer/VBoxContainer/Back" method="_on_pressed"]
