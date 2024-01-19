@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dql6aufqubrsi" path="res://assets/UI/ui.tscn" id="5_anuo8"]
 
 [node name="TestGame" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_tobbp")
 
 [node name="GameArea" parent="." instance=ExtResource("2_kh1c3")]

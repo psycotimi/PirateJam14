@@ -8,6 +8,9 @@ extends CanvasLayer
 @onready var pbCount: Label = $PBTroopCounter/VBoxContainer/PBTroopCount
 @onready var jamCount: Label = $JamTroopCounter/VBoxContainer/JamTroopCount
 
+func _ready():
+    $PauseMenu.hide()
+
 # Tällä voidaan päivittää vuoronumero Globaalin muuttujan avulla (turnNumber).
 func update_turn_counter():
     turnNumber.text = str(Global.turnCounter)
@@ -29,3 +32,9 @@ func update_turn_arrow():
 func update_troop_count():
     pbCount.text = str(Global.pbTroopCount)
     jamCount.text = str(Global.jamTroopCount)
+
+# Pausetetaan peli ja avataan pause menu.
+func _on_pause_button_pressed():
+    get_tree().paused = true
+    $PauseMenu.show()
+
