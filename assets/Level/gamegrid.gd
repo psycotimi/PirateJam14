@@ -27,7 +27,7 @@ func _ready():
                 ]
             tiles[str(Vector2(x,y))] = {
                 "spread" : Global.spreadTypeList[0], # aluksi hilloton
-                "troops" : 0, # joukkojen lukumäärä tilellä, ehkä pitää siirtää alueeseen sitku semmonen on
+                "troops" : 0, # 0-1 solttuleipää
                 "areaid" : 0, # tätä voi käyttää myöhemmin
                 "grafiikkatilet" : grafiikkatilet,
             }
@@ -35,9 +35,13 @@ func _ready():
     # print(tiles) #Testi, että dictionary tulostuu oikein
     alkupositio()
 
-
+    var areaid = 0
+    var ruutuoffsetx = 0
     for x in range(0,8):
+        var ruutuoffsety = 0
         for y in range(0,8):
+            areaid += 1
+            
             # näistä pitää vielä poistaa gridin ulkopuoliset ruudut
             var legalmoves = [
                 Vector2(x+1,y),
@@ -46,43 +50,59 @@ func _ready():
                 Vector2(x,y-1)
                 ]
             var ruudut = [
-                Vector2(offsetX+x,offsetY+y),
-                Vector2(offsetX+x+1,offsetY+y),
-                Vector2(offsetX+x,offsetY+y+1),
-                Vector2(offsetX+x+1,offsetY+y+1)
+                Vector2(offsetX+x+ruutuoffsetx,offsetY+y+ruutuoffsety),
+                Vector2(offsetX+x+ruutuoffsetx,offsetY+y+ruutuoffsety+1),
+                Vector2(offsetX+x+ruutuoffsetx+1,offsetY+y+ruutuoffsety),
+                Vector2(offsetX+x+ruutuoffsetx+1,offsetY+y+ruutuoffsety+1)
                 ]
             alueet[str(Vector2i(x,y))] = {
                 "spread" : Global.spreadTypeList[0],
-                "troops" : 0,
+                "troops" : 0, # 0-3 solttuleipää
                 "ruudut" : ruudut,
-                "legalmoves" : legalmoves
+                "legalmoves" : legalmoves,
+                "areaid" : areaid
             }
+            ruutuoffsety += 1
+        ruutuoffsetx += 1
             
-    # laillisten siirtojen laillisuuden tarkistus 
+     
     for alue in alueet:
+        # laillisten siirtojen laillisuuden tarkistus
         for legalmove in alueet[alue].legalmoves:
             if !alueet.has(str(legalmove)):
-                print(legalmove, " pitäisi poistaa")
+                #print(legalmove, " pitäisi poistaa")
+                # poistetaan gridin ulkopuoliset siirrot laillisista siirroista
                 var index = alueet[alue].legalmoves.find(legalmove)
                 alueet[alue].legalmoves.erase(legalmove)
-        print(alueet[alue].legalmoves)    
+        #print(alueet[alue].legalmoves) 
+        
+        # 
+        for ruutu in alueet[alue].ruudut:
+            if tiles.has(str(ruutu)):
+                tiles[str(ruutu)].areaid = alueet[alue].areaid   
         
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
     var tile = local_to_map(get_global_mouse_position())
-    
+    var areaid
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
            erase_cell(1, Vector2i(x,y))
             
     if tiles.has(str(tile)):
-        set_cell(1, Vector2i(tile), 1, Vector2i(0,0), 0)
+        areaid = tiles[str(tile)].areaid
+        for alue in alueet:
+            if alueet[str(alue)].areaid == areaid:
+                for ruutu in alueet[str(alue)].ruudut:
+                    set_cell(1, Vector2i(ruutu), 1, Vector2i(0,0), 0)
         
-
+# päivittää kaikki tilet
 func update_grafiikkatilet():
-  for tile in tiles:
-    $grafiikkatilet.setSpread(tiles[tile].grafiikkatilet,tiles[tile].spread)
+    for alue in alueet:
+        for ruutu in alueet[alue].ruudut:
+            tiles[str(ruutu)].spread = alueet[alue].spread
+            $grafiikkatilet.setSpread(tiles[str(ruutu)].grafiikkatilet,tiles[str(ruutu)].spread)
 
 func tile_under_mouse():
   return(str(local_to_map(get_global_mouse_position())))
