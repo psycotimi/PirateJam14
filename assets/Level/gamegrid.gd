@@ -58,11 +58,11 @@ func _ready():
                 Vector2(offsetX+x+ruutuoffsetx+1,offsetY+y+ruutuoffsety+1)
                 ]
             alueet[str(Vector2i(x,y))] = {
+                "areaid" : areaid,
                 "spread" : Global.spreadTypeList[0],
                 "troops" : 0, # 0-3 solttuleipää
                 "ruudut" : ruudut,
-                "legalmoves" : legalmoves,
-                "areaid" : areaid
+                "legalmoves" : legalmoves
             }
             ruutuoffsety += 1
         ruutuoffsetx += 1
@@ -84,7 +84,7 @@ func _ready():
     for n in 5:
         alkupositio()
         alkupositio2()
-    print(alueet)
+    #print(alueet)
     update_grafiikkatilet()
     
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -119,7 +119,9 @@ func alue_under_mouse():
         for alue in alueet:
             if alueet[alue].areaid == areaid:
                 return str(alue)
-        
+
+
+# Kun hiirellä painetaan ruutua, valitaan kyseinen ruutu ja painamalla uudestaan, valitaan toinenkin ruutu   
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
         var alue = alue_under_mouse()
@@ -131,7 +133,7 @@ func _input(_event):
                 targetAlue = alue
             else:
                 selectedAlue = alue
-            setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen hilloa
+            setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
             #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
             print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue))
 
@@ -161,3 +163,4 @@ func setAlueSpread(alue,spread):
     for ruutu in alueet[alue].ruudut:
         tiles[str(ruutu)].spread = spread 
         $grafiikkatilet.setSpread(tiles[str(ruutu)].grafiikkatilet,tiles[str(ruutu)].spread)
+
