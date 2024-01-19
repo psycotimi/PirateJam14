@@ -38,6 +38,7 @@ func _ready():
             }
             set_cell(0, Vector2i(x,y), 0, Vector2i(0,0),0)
     # print(tiles) #Testi, että dictionary tulostuu oikein
+    alkupositio()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -73,3 +74,7 @@ func _input(_event):
             $grafiikkatilet.setSpread(tiles[tile].grafiikkatilet,tiles[tile].spread)
             #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
             print("selected tile: " + str(selectedTile), " | target tile: " + str(targetTile)) 
+
+func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
+    tiles[str(Vector2i(23,12))].spread = Global.spreadTypeList[1]
+    update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
