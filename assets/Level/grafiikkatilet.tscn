@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://b6yelhpm3trio"]
 
-[ext_resource type="Texture2D" uid="uid://n7fy7yxtm5pr" path="res://assets/placeholder/hilloaleivassa_tilemap.png" id="1_agofe"]
+[ext_resource type="Texture2D" uid="uid://4lmhtk6srjby" path="res://assets/graphics/Hillosheet.png" id="1_lcwrn"]
 [ext_resource type="Texture2D" uid="uid://kbfxw2xlrjjt" path="res://assets/placeholder/leipaahillossa_tilemap.png" id="2_n6a5v"]
 [ext_resource type="Texture2D" uid="uid://b4x4276g7b4db" path="res://assets/placeholder/leipaapahkinavoissa_tilemap.png" id="3_1cr0t"]
-[ext_resource type="Texture2D" uid="uid://ca3ftiftv0wqf" path="res://assets/placeholder/pahkinavoitaleivassa_tilemap.png" id="4_m5us3"]
+[ext_resource type="Texture2D" uid="uid://ca17udjk5kgkg" path="res://assets/graphics/pbsheet.png" id="4_8mcad"]
 [ext_resource type="Script" path="res://assets/Level/grafiikkatilet.gd" id="5_iqfni"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyrn7"]
-texture = ExtResource("1_agofe")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a617i"]
+texture = ExtResource("1_lcwrn")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 2
@@ -112,7 +112,7 @@ texture = ExtResource("1_agofe")
 texture = ExtResource("2_n6a5v")
 0:0/0 = 0
 0:0/0/terrain_set = 0
-0:0/0/terrain = 0
+0:0/0/terrain = 2
 0:0/0/terrains_peering_bit/right_side = 0
 0:0/0/terrains_peering_bit/bottom_right_corner = 0
 0:0/0/terrains_peering_bit/bottom_side = 0
@@ -134,7 +134,7 @@ texture = ExtResource("2_n6a5v")
 1:0/0/terrains_peering_bit/top_right_corner = 2
 2:0/0 = 0
 2:0/0/terrain_set = 0
-2:0/0/terrain = 0
+2:0/0/terrain = 2
 2:0/0/terrains_peering_bit/right_side = 2
 2:0/0/terrains_peering_bit/bottom_right_corner = 2
 2:0/0/terrains_peering_bit/bottom_side = 0
@@ -185,7 +185,7 @@ texture = ExtResource("2_n6a5v")
 5:1/0 = 0
 0:2/0 = 0
 0:2/0/terrain_set = 0
-0:2/0/terrain = 0
+0:2/0/terrain = 2
 0:2/0/terrains_peering_bit/right_side = 0
 0:2/0/terrains_peering_bit/bottom_right_corner = 2
 0:2/0/terrains_peering_bit/bottom_side = 2
@@ -208,7 +208,7 @@ texture = ExtResource("2_n6a5v")
 2:2/next_alternative_id = 3
 2:2/0 = 0
 2:2/0/terrain_set = 0
-2:2/0/terrain = 0
+2:2/0/terrain = 2
 2:2/0/terrains_peering_bit/right_side = 2
 2:2/0/terrains_peering_bit/bottom_right_corner = 2
 2:2/0/terrains_peering_bit/bottom_side = 2
@@ -243,7 +243,7 @@ texture = ExtResource("2_n6a5v")
 texture = ExtResource("3_1cr0t")
 0:0/0 = 0
 0:0/0/terrain_set = 0
-0:0/0/terrain = 0
+0:0/0/terrain = 1
 0:0/0/terrains_peering_bit/right_side = 0
 0:0/0/terrains_peering_bit/bottom_right_corner = 0
 0:0/0/terrains_peering_bit/bottom_side = 0
@@ -265,7 +265,7 @@ texture = ExtResource("3_1cr0t")
 1:0/0/terrains_peering_bit/top_right_corner = 1
 2:0/0 = 0
 2:0/0/terrain_set = 0
-2:0/0/terrain = 0
+2:0/0/terrain = 1
 2:0/0/terrains_peering_bit/right_side = 1
 2:0/0/terrains_peering_bit/bottom_right_corner = 1
 2:0/0/terrains_peering_bit/bottom_side = 0
@@ -309,7 +309,7 @@ texture = ExtResource("3_1cr0t")
 2:1/0/terrains_peering_bit/top_right_corner = 1
 0:2/0 = 0
 0:2/0/terrain_set = 0
-0:2/0/terrain = 0
+0:2/0/terrain = 1
 0:2/0/terrains_peering_bit/right_side = 0
 0:2/0/terrains_peering_bit/bottom_right_corner = 1
 0:2/0/terrains_peering_bit/bottom_side = 1
@@ -331,7 +331,7 @@ texture = ExtResource("3_1cr0t")
 1:2/0/terrains_peering_bit/top_right_corner = 0
 2:2/0 = 0
 2:2/0/terrain_set = 0
-2:2/0/terrain = 0
+2:2/0/terrain = 1
 2:2/0/terrains_peering_bit/right_side = 1
 2:2/0/terrains_peering_bit/bottom_right_corner = 1
 2:2/0/terrains_peering_bit/bottom_side = 1
@@ -341,8 +341,8 @@ texture = ExtResource("3_1cr0t")
 2:2/0/terrains_peering_bit/top_side = 0
 2:2/0/terrains_peering_bit/top_right_corner = 1
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ifmj"]
-texture = ExtResource("4_m5us3")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l28mi"]
+texture = ExtResource("4_8mcad")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
@@ -450,11 +450,11 @@ terrain_set_0/terrain_0/color = Color(0.827451, 0.733333, 0, 1)
 terrain_set_0/terrain_1/name = "pb"
 terrain_set_0/terrain_1/color = Color(0.470588, 0.262745, 0, 1)
 terrain_set_0/terrain_2/name = "jam"
-terrain_set_0/terrain_2/color = Color(0.796078, 0.25098, 0.341176, 1)
+terrain_set_0/terrain_2/color = Color(0.298039, 0.482353, 0.713726, 1)
 sources/1 = SubResource("TileSetAtlasSource_nmtsp")
-sources/0 = SubResource("TileSetAtlasSource_hyrn7")
 sources/2 = SubResource("TileSetAtlasSource_umsle")
-sources/3 = SubResource("TileSetAtlasSource_3ifmj")
+sources/0 = SubResource("TileSetAtlasSource_a617i")
+sources/3 = SubResource("TileSetAtlasSource_l28mi")
 
 [node name="grafiikkatilet" type="TileMap"]
 tile_set = SubResource("TileSet_2fsjf")
