@@ -2,7 +2,6 @@ extends TileMap
 
 var gridSize = Global.gridsize
 var tiles = {}
-var prevtile = Vector2i(0,0)
 var troopLabel = Label.new()
 var offsetX = 23
 var offsetY = 12
