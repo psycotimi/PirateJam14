@@ -72,7 +72,6 @@ func _ready():
             if !alueet.has(str(legalmove)):
                 #print(legalmove, " pitäisi poistaa")
                 # poistetaan gridin ulkopuoliset siirrot laillisista siirroista
-                var index = alueet[alue].legalmoves.find(legalmove)
                 alueet[alue].legalmoves.erase(legalmove)
         #print(alueet[alue].legalmoves) 
         
@@ -108,14 +107,15 @@ func tile_under_mouse():
   return(str(local_to_map(get_global_mouse_position())))
  
 func alue_under_mouse():
-    var areaid = tiles[str(local_to_map(get_global_mouse_position()))].areaid
-    for alue in alueet:
-        if alueet[alue].areaid == areaid:
-            return str(alue)
-    
+    var tile = tile_under_mouse()
+    if tiles.has(tile):
+        var areaid = tiles[str(local_to_map(get_global_mouse_position()))].areaid
+        for alue in alueet:
+            if alueet[alue].areaid == areaid:
+                return str(alue)
+        
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
-        var tile = tile_under_mouse()
         var alue = alue_under_mouse()
         if alueet.has(alue):
             if targetAlue != null:

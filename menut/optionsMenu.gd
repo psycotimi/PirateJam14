@@ -3,7 +3,7 @@ extends Control
 # Nappulat joilla palataan main menuun ja mutetaan kaikki äänet
 
 func _on_back_pressed():
-    get_tree().change_scene_to_file("res://menu.tscn")
+    get_tree().change_scene_to_file("res://menut/menu.tscn")
 
 
 func _on_mute_pressed():

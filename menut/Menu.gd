@@ -6,7 +6,7 @@ func _on_play_pressed():
 
 # avaa options
 func _on_options_pressed():
-   get_tree().change_scene_to_file("res://optionsMenu.tscn")
+   get_tree().change_scene_to_file("res://menut/optionsMenu.tscn")
 
 # sulje peli
 func _on_quit_pressed():
