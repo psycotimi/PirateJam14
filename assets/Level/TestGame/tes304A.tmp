@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbhajou5uidn1"]
+
+[ext_resource type="Script" path="res://assets/Level/TestGame/TestGame.gd" id="1_tobbp"]
+[ext_resource type="PackedScene" uid="uid://c7if3cbhxnxko" path="res://assets/Level/GameArea/game_area.tscn" id="2_kh1c3"]
+[ext_resource type="PackedScene" uid="uid://ctuc5ws8v3q5b" path="res://assets/Level/gamegrid.tscn" id="3_mp01c"]
+[ext_resource type="AudioStream" uid="uid://dpiqgspduwljj" path="res://assets/sounds/sbreaditmaintheme.wav" id="4_5kaea"]
+[ext_resource type="PackedScene" uid="uid://dql6aufqubrsi" path="res://assets/UI/ui.tscn" id="5_anuo8"]
+
+[node name="TestGame" type="Node2D"]
+script = ExtResource("1_tobbp")
+
+[node name="GameArea" parent="." instance=ExtResource("2_kh1c3")]
+visible = false
+top_level = true
+position = Vector2(727, 500)
+
+[node name="GameArea2" parent="." instance=ExtResource("2_kh1c3")]
+visible = false
+top_level = true
+position = Vector2(727, 397)
+
+[node name="gamegrid" parent="." instance=ExtResource("3_mp01c")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5kaea")
+autoplay = true
+
+[node name="UI" parent="." instance=ExtResource("5_anuo8")]
