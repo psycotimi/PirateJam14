@@ -67,7 +67,6 @@ func _ready():
             ruutuoffsety += 1
         ruutuoffsetx += 1
             
-    print(alueet)
     for alue in alueet:
         # laillisten siirtojen laillisuuden tarkistus
         for legalmove in alueet[alue].legalmoves:
@@ -85,6 +84,8 @@ func _ready():
     for n in 5:
         alkupositio()
         alkupositio2()
+    print(alueet)
+    update_grafiikkatilet()
     
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -132,7 +133,7 @@ func _input(_event):
                 selectedAlue = alue
             setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen hilloa
             #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
-            print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue)) 
+            print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue))
 
 # Arvotaan aloitus ruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -143,7 +144,6 @@ func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
     else:
         alueet[str(Vector2i(xAlku,yAlku))].spread = Global.spreadTypeList[1]
         alueet[str(Vector2i(xAlku,yAlku))].troops = 1
-        update_grafiikkatilet()
 
 # Arvotaan aloitus ruudut peanut hillolle ja laitetaan joka ruutuun myös yksi troop
 func alkupositio2(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -154,7 +154,6 @@ func alkupositio2(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
     else:
         alueet[str(Vector2i(xAlku,yAlku))].spread = Global.spreadTypeList[2]
         alueet[str(Vector2i(xAlku,yAlku))].troops = 1
-        update_grafiikkatilet()
 
 # vaihtaa alueen, alueen ruutujen, ja ruutujen grafiikkatilejen hilloa.
 func setAlueSpread(alue,spread):
