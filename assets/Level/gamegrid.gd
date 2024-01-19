@@ -9,8 +9,8 @@ var troopLabel = Label.new()
 var offsetX = 23
 var offsetY = 12
 
-var selectedTile
-var targetTile
+var selectedAlue
+var targetAlue
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,7 +33,7 @@ func _ready():
             }
             set_cell(0, Vector2i(x,y), 0, Vector2i(0,0),0)
     # print(tiles) #Testi, että dictionary tulostuu oikein
-    alkupositio()
+
 
     var areaid = 0
     var ruutuoffsetx = 0
@@ -65,7 +65,7 @@ func _ready():
             ruutuoffsety += 1
         ruutuoffsetx += 1
             
-     
+    print(alueet)
     for alue in alueet:
         # laillisten siirtojen laillisuuden tarkistus
         for legalmove in alueet[alue].legalmoves:
@@ -81,7 +81,7 @@ func _ready():
             if tiles.has(str(ruutu)):
                 tiles[str(ruutu)].areaid = alueet[alue].areaid   
         
-
+    alkupositio()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
     var tile = local_to_map(get_global_mouse_position())
@@ -106,23 +106,37 @@ func update_grafiikkatilet():
 
 func tile_under_mouse():
   return(str(local_to_map(get_global_mouse_position())))
+ 
+func alue_under_mouse():
+    var areaid = tiles[str(local_to_map(get_global_mouse_position()))].areaid
+    for alue in alueet:
+        if alueet[alue].areaid == areaid:
+            return str(alue)
     
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
         var tile = tile_under_mouse()
-        if tiles.has(tile):
-            if targetTile != null:
-                selectedTile = tile
-                targetTile = null
-            elif selectedTile != null:
-                targetTile = tile
+        var alue = alue_under_mouse()
+        if alueet.has(alue):
+            if targetAlue != null:
+                selectedAlue = alue
+                targetAlue = null
+            elif selectedAlue != null:
+                targetAlue = alue
             else:
-                selectedTile = tile
-            tiles[tile].spread = Global.spreadTypeList[1] # muuttaa hiiren alla olevan tilen hilloa 
-            $grafiikkatilet.setSpread(tiles[tile].grafiikkatilet,tiles[tile].spread)
+                selectedAlue = alue
+            setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen hilloa
             #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
-            print("selected tile: " + str(selectedTile), " | target tile: " + str(targetTile)) 
+            print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue)) 
 
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
-    tiles[str(Vector2i(23,12))].spread = Global.spreadTypeList[1]
+    alueet[str(Vector2i(0,0))].spread = Global.spreadTypeList[2]
     update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+
+# vaihtaa alueen, alueen ruutujen, ja ruutujen grafiikkatilejen hilloa.
+func setAlueSpread(alue,spread):
+    alueet[alue].spread = spread
+    for ruutu in alueet[alue].ruudut:
+        tiles[str(ruutu)].spread = spread 
+        $grafiikkatilet.setSpread(tiles[str(ruutu)].grafiikkatilet,tiles[str(ruutu)].spread)
+    

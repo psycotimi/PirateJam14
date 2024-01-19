@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://thkmxy1yuflt"]
 
-[ext_resource type="Script" path="res://Menu.gd" id="1_ne4na"]
+[ext_resource type="Script" path="res://menut/Menu.gd" id="1_ne4na"]
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_42k54"]
-[ext_resource type="PackedScene" path="res://mainmenun_tausta.tscn" id="2_hk5kq"]
+[ext_resource type="PackedScene" uid="uid://cm7t2ldke1rqx" path="res://menut/mainmenun_tausta.tscn" id="2_hk5kq"]
 [ext_resource type="FontFile" uid="uid://gh01am2n77bp" path="res://assets/fonts/MOOD MKII Outline.ttf" id="3_4jxvi"]
 
 [sub_resource type="Theme" id="Theme_8da6w"]
