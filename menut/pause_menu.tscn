@@ -30,6 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 760.0
 offset_top = 400.0
 offset_right = 1160.0
@@ -51,6 +52,7 @@ text = "Quit
 "
 
 [node name="Otsikko" type="Label" parent="."]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 100.0
 offset_right = 1600.0
