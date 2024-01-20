@@ -125,10 +125,14 @@ func alue_under_mouse():
 func _input(_event):
     
     if Input.is_action_just_pressed("select_tile"):
-        # poistaa legalmovet näkyvistä, 
+        # poistaa legalmovet näkyvistä, ja sotilaat
         removeLegalmoves()
+        # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
         update_alueet()
-        var valinta = ruudunValinta()
+        # alueenValinta palauttaa kaksi aluetta, voi muokata jotenkin jos sekavaa
+        var valinta = alueenValinta()
+        if !valinta:
+            return
         selectedAlue = valinta[0]
         targetAlue = valinta[1]
         valitseRuutuJostaHyokataan(selectedAlue)
@@ -189,6 +193,7 @@ func removeLegalmoves():
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
             erase_cell(3, Vector2i(x,y))
+            erase_cell(2, Vector2i(x,y))
 
 func update_alueet():
     sijoitaTroopitAlueille()
@@ -206,7 +211,7 @@ func update_alueet():
                 alueet[alue].legalmoves.erase(legalmove)
                 continue
 
-func ruudunValinta():
+func alueenValinta():
     var alue = alue_under_mouse()
     if alueet.has(alue):
             if targetAlue != null:
