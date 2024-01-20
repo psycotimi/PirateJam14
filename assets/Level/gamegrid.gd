@@ -195,6 +195,9 @@ func sijoitaTroopitAlueille():
 func valitseRuutuJostaHyokataan(alue):
         if alueet[(alue)].spread == Global.spreadTypeList[1] && alueet[(alue)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
             for legalmove in alueet[str(alue)].legalmoves:
+                # jos ruutu on oma ja ruudussa on jo 3 solttu, se ei ole laillinen
+                if alueet[str(legalmove)].troops >= 3 && alueet[str(legalmove)].spread == Global.whoseTurn:
+                    continue
                 for ruutu in alueet[str(legalmove)].ruudut:
                     set_cell(3, ruutu, 4,Vector2i(0,0),0)
                     
