@@ -15,6 +15,8 @@ var targetAlue
 var xAlku = 0
 var yAlku = 0
 
+var lahtoxy
+var kohdexy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -121,7 +123,7 @@ func alue_under_mouse():
                 return str(alue)
 
 
-# Kun hiirellä painetaan ruutua, valitaan kyseinen ruutu ja painamalla uudestaan, valitaan toinenkin ruutu   
+# Kun hiirellä painetaan ruutua, valitaan kyseinen ruutu
 func _input(_event):
     
     if Input.is_action_just_pressed("select_tile"):
@@ -134,7 +136,17 @@ func _input(_event):
         # estää kaatumisen jos klikkaa ohi leivästä
         if !valinta:
             return
-        valitseRuutuJostaHyokataan(valinta)
+            
+        # valitaan alue
+        if alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
+            valitseRuutuJostaHyokataan(valinta)
+            lahtoxy = valinta
+            
+        # jos jo yksi ruutu valittu, valitaan kohdealue
+        elif lahtoxy != null:
+            kohdexy = valinta
+            liikuHyokkaa(lahtoxy, kohdexy)
+        print("lahtoxy ", lahtoxy, "kohdexy ", kohdexy)
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -175,16 +187,22 @@ func sijoitaTroopitAlueille():
 # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita.
 # tekemättä tästä: kutsua hyökkäystä, kutsua liikkumista
 func valitseRuutuJostaHyokataan(alue):
-        if alueet[(alue)].spread == Global.spreadTypeList[1] && alueet[(alue)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
-            for legalmove in alueet[str(alue)].legalmoves:
-                for ruutu in alueet[str(legalmove)].ruudut:
-                    set_cell(3, ruutu, 4,Vector2i(0,0),0)
-                    #liiku(lahto,kohde)
-                    #hyokkaa()
+        for legalmove in alueet[str(alue)].legalmoves:
+            for ruutu in alueet[str(legalmove)].ruudut:
+                set_cell(3, ruutu, 4,Vector2i(0,0),0)
+
+# tässä käydään läpi onko kyseessä hyökkäys vai liikuminen ja sen jälkeen kutsutaan oikeaa funktiota
+func liikuHyokkaa(lahto, kohde):
+   # if alueet[str(lahto)].legalmoves.has(str(kohde)):
+       # print("alueet[str(lahto)].legalmoves")
+    for legalmove in  alueet[str(lahto)].legalmoves:
+        if str(legalmove) == kohde:
+            print("mor")
 
 # liikkuminen
-func liiku(lahto, kohde):
-    print(lahto, kohde)
+func liiku(lahto):
+    
+    print(lahto)
     
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -216,8 +234,6 @@ func update_alueet():
 func alueenValinta():
     var alue = alue_under_mouse()
     if alueet.has(alue):
-            selectedAlue = alue
-            # setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
-            # update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
-            print("selected alue: " + str(selectedAlue), " | Troops in alue: ", +(alueet[str(alue)].troops))
-            return(selectedAlue)
+        selectedAlue = alue
+        print("selected alue: " + str(selectedAlue), " | Troops in alue: ", +(alueet[str(alue)].troops))
+        return(selectedAlue)
