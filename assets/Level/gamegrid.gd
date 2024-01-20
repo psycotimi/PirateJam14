@@ -84,6 +84,7 @@ func _ready():
     for n in 5:
         alkupositio()
         alkupositio2()
+        sijoitaTroopitAlueille()
     #print(alueet)
     update_grafiikkatilet()
     
@@ -125,6 +126,14 @@ func alue_under_mouse():
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
         var alue = alue_under_mouse()
+        valitseRuutuJostaHyokataan(alue)
+        #liiku()
+        #hyokkaa()
+        # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, jos on näytetään mahdolliset
+        # ruudut, joihin voi liikkua tai hyökätä. Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita
+        # tekemättä tästä: mahdollisten ruutujen väritys, kutsua hyökkäystä, kutsua liikkumista, olisi toki syytä
+        # lisätä myös tarkistus; onko pelaajan vuoro 
+ 
         if alueet.has(alue):
             if targetAlue != null:
                 selectedAlue = alue
@@ -135,9 +144,9 @@ func _input(_event):
                 selectedAlue = alue
             setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
             #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
-            print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue))
+            print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue), " | Troops in tile: ", +(alueet[str(alue)].troops))
 
-# Arvotaan aloitus ruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
+# Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
     xAlku = randi_range(0,3)
     yAlku = randi_range(0,7)
@@ -147,8 +156,8 @@ func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
         alueet[str(Vector2i(xAlku,yAlku))].spread = Global.spreadTypeList[1]
         alueet[str(Vector2i(xAlku,yAlku))].troops = 1
 
-# Arvotaan aloitus ruudut peanut hillolle ja laitetaan joka ruutuun myös yksi troop
-func alkupositio2(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
+# Arvotaan aloitusruudut peanut hillolle ja laitetaan joka ruutuun myös yksi troop
+func alkupositio2():
     xAlku = randi_range(4,7)
     yAlku = randi_range(0,7)
     if alueet[str(Vector2i(xAlku,yAlku))].spread == Global.spreadTypeList[2]:
@@ -164,3 +173,13 @@ func setAlueSpread(alue,spread):
         tiles[str(ruutu)].spread = spread 
         $grafiikkatilet.setSpread(tiles[str(ruutu)].grafiikkatilet,tiles[str(ruutu)].spread)
 
+# piirtää ukkelit alueille, joissa troops > 0
+func sijoitaTroopitAlueille():
+    for alue in alueet:
+        if alueet[str(alue)].troops == 1:
+            print("moi")
+
+# valitaan ruutu, josta joko hyokataan tai liikutaan
+func valitseRuutuJostaHyokataan(alue):
+        if alueet[(alue)].spread == Global.spreadTypeList[1] && alueet[(alue)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
+            print(alueet[(alue)].legalmoves)
