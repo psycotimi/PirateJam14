@@ -16,7 +16,7 @@ const gridsize: int = 16
 # vuoronumero
 var turnCounter: int = 0
 # Kenen vuoro on? Hyödynnetään spreadTypeListiä
-var whoseTurn: String = spreadTypeList[0]
+var whoseTurn: String = spreadTypeList[1]
 
 # Molempien joukkojen sotilaiden määrä
 var pbTroopCount: int = 0
