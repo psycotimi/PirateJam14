@@ -129,7 +129,10 @@ func alue_under_mouse():
 
 # Kun hiirellä painetaan ruutua, valitaan kyseinen ruutu ja painamalla uudestaan, valitaan toinenkin ruutu   
 func _input(_event):
+    
     if Input.is_action_just_pressed("select_tile"):
+        # poistaa legalmovet näkyvistä, 
+        removeLegalmoves()
         sijoitaTroopitAlueille()
         var alue = alue_under_mouse()
         valitseRuutuJostaHyokataan(alue)
@@ -139,7 +142,7 @@ func _input(_event):
         # ruudut, joihin voi liikkua tai hyökätä. Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita
         # tekemättä tästä: mahdollisten ruutujen väritys, kutsua hyökkäystä, kutsua liikkumista, olisi toki syytä
         # lisätä myös tarkistus; onko pelaajan vuoro 
- 
+        
         if alueet.has(alue):
             if targetAlue != null:
                 selectedAlue = alue
@@ -191,4 +194,12 @@ func sijoitaTroopitAlueille():
 # valitaan ruutu, josta joko hyokataan tai liikutaan
 func valitseRuutuJostaHyokataan(alue):
         if alueet[(alue)].spread == Global.spreadTypeList[1] && alueet[(alue)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
-            print(alueet[(alue)].legalmoves)
+            for legalmove in alueet[str(alue)].legalmoves:
+                for ruutu in alueet[str(legalmove)].ruudut:
+                    set_cell(3, ruutu, 4,Vector2i(0,0),0)
+                    
+#poistaa legalmovet näkyvistä
+func removeLegalmoves():
+    for x in range(offsetX, gridSize+offsetX):
+        for y in range(offsetY, gridSize+offsetY):
+            erase_cell(3, Vector2i(x,y))
