@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6yelhpm3trio"]
+[gd_scene load_steps=11 format=3 uid="uid://b6yelhpm3trio"]
 
 [ext_resource type="Texture2D" uid="uid://4lmhtk6srjby" path="res://assets/graphics/Hillosheet.png" id="1_dyjom"]
 [ext_resource type="Texture2D" uid="uid://kbfxw2xlrjjt" path="res://assets/placeholder/leipaahillossa_tilemap.png" id="2_n6a5v"]
 [ext_resource type="Texture2D" uid="uid://b4x4276g7b4db" path="res://assets/placeholder/leipaapahkinavoissa_tilemap.png" id="3_1cr0t"]
 [ext_resource type="Texture2D" uid="uid://ca17udjk5kgkg" path="res://assets/graphics/pbsheet.png" id="4_a1yfu"]
 [ext_resource type="Script" path="res://assets/Level/grafiikkatilet.gd" id="5_iqfni"]
-[ext_resource type="Texture2D" uid="uid://bqcohi88q5amt" path="res://assets/placeholder/unisexSolttu.png" id="5_kq4di"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyrn7"]
 texture = ExtResource("1_dyjom")
@@ -417,10 +416,6 @@ texture = ExtResource("4_a1yfu")
 2:2/0/terrains_peering_bit/top_side = 1
 2:2/0/terrains_peering_bit/top_right_corner = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sdfyg"]
-texture = ExtResource("5_kq4di")
-0:0/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_2fsjf"]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "none"
@@ -433,7 +428,6 @@ sources/1 = SubResource("TileSetAtlasSource_nmtsp")
 sources/0 = SubResource("TileSetAtlasSource_hyrn7")
 sources/2 = SubResource("TileSetAtlasSource_umsle")
 sources/3 = SubResource("TileSetAtlasSource_3ifmj")
-sources/4 = SubResource("TileSetAtlasSource_sdfyg")
 
 [node name="grafiikkatilet" type="TileMap"]
 tile_set = SubResource("TileSet_2fsjf")

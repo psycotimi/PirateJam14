@@ -35,6 +35,11 @@ func _ready():
                 "grafiikkatilet" : grafiikkatilet,
             }
             set_cell(0, Vector2i(x,y), 0, Vector2i(0,0),0)
+            add_layer(1)
+            add_layer(2)
+            add_layer(3)
+            set_cell(2, Vector2i(x,y), 0, Vector2i(0,0),0)
+            set_cell(3, Vector2i(x,y), 0, Vector2i(0,0),0)
     # print(tiles) #Testi, että dictionary tulostuu oikein
 
     var areaid = 0
@@ -125,6 +130,7 @@ func alue_under_mouse():
 # Kun hiirellä painetaan ruutua, valitaan kyseinen ruutu ja painamalla uudestaan, valitaan toinenkin ruutu   
 func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
+        sijoitaTroopitAlueille()
         var alue = alue_under_mouse()
         valitseRuutuJostaHyokataan(alue)
         #liiku()
@@ -176,8 +182,11 @@ func setAlueSpread(alue,spread):
 # piirtää ukkelit alueille, joissa troops > 0
 func sijoitaTroopitAlueille():
     for alue in alueet:
-        if alueet[str(alue)].troops == 1:
-            print("moi")
+        var ruudut = alueet[alue].ruudut
+        for x in range(0,alueet[str(alue)].troops):
+            print(ruudut[x])
+            tiles[str(ruudut[x])].troops = 1
+            set_cell(2,ruudut[x],3,Vector2i(0,0),0)
 
 # valitaan ruutu, josta joko hyokataan tai liikutaan
 func valitseRuutuJostaHyokataan(alue):
