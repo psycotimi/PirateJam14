@@ -2,8 +2,8 @@ extends TileMap
 
 var gridSize = Global.gridsize
 var tiles = {}
-
 var alueet = {}
+var alueetbyid = {} 
 
 var troopLabel = Label.new()
 var offsetX = 23
@@ -30,7 +30,6 @@ func _ready():
                 ]
             tiles[str(Vector2(x,y))] = {
                 "spread" : Global.spreadTypeList[0], # aluksi hilloton
-                "troops" : 0, # 0-1 solttuleipää
                 "areaid" : 0, # tätä voi käyttää myöhemmin
                 "grafiikkatilet" : grafiikkatilet,
             }
@@ -69,23 +68,18 @@ func _ready():
                 "ruudut" : ruudut,
                 "legalmoves" : legalmoves
             }
+            alueetbyid[areaid] = { 
+                "legalmoves" : legalmoves,
+                "positio" : Vector2i(x,y),
+                "ruudut" : ruudut
+            }
+            for ruutu in ruudut:
+                if tiles.has(str(ruutu)):
+                    tiles[str(ruutu)].areaid = areaid  
             ruutuoffsety += 1
         ruutuoffsetx += 1
-            
-    for alue in alueet:
-        # laillisten siirtojen laillisuuden tarkistus
-        for legalmove in alueet[alue].legalmoves:
-            if !alueet.has(str(legalmove)):
-                #print(legalmove, " pitäisi poistaa")
-                # poistetaan gridin ulkopuoliset siirrot laillisista siirroista
-                var index = alueet[alue].legalmoves.find(legalmove)
-                alueet[alue].legalmoves.erase(legalmove)
-        #print(alueet[alue].legalmoves) 
         
-        # 
-        for ruutu in alueet[alue].ruudut:
-            if tiles.has(str(ruutu)):
-                tiles[str(ruutu)].areaid = alueet[alue].areaid   
+         
     for n in 5:
         alkupositio()
         alkupositio2()
@@ -133,9 +127,11 @@ func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
         # poistaa legalmovet näkyvistä, 
         removeLegalmoves()
-        sijoitaTroopitAlueille()
-        var alue = alue_under_mouse()
-        valitseRuutuJostaHyokataan(alue)
+        update_alueet()
+        var valinta = ruudunValinta()
+        selectedAlue = valinta[0]
+        targetAlue = valinta[1]
+        valitseRuutuJostaHyokataan(selectedAlue)
         #liiku()
         #hyokkaa()
         # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, jos on näytetään mahdolliset
@@ -143,17 +139,7 @@ func _input(_event):
         # tekemättä tästä: mahdollisten ruutujen väritys, kutsua hyökkäystä, kutsua liikkumista, olisi toki syytä
         # lisätä myös tarkistus; onko pelaajan vuoro 
         
-        if alueet.has(alue):
-            if targetAlue != null:
-                selectedAlue = alue
-                targetAlue = null
-            elif selectedAlue != null:
-                targetAlue = alue
-            else:
-                selectedAlue = alue
-            setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
-            #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
-            print("selected tile: " + str(selectedAlue), " | target tile: " + str(targetAlue), " | Troops in tile: ", +(alueet[str(alue)].troops))
+        
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -195,9 +181,6 @@ func sijoitaTroopitAlueille():
 func valitseRuutuJostaHyokataan(alue):
         if alueet[(alue)].spread == Global.spreadTypeList[1] && alueet[(alue)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
             for legalmove in alueet[str(alue)].legalmoves:
-                # jos ruutu on oma ja ruudussa on jo 3 solttu, se ei ole laillinen
-                if alueet[str(legalmove)].troops >= 3 && alueet[str(legalmove)].spread == Global.whoseTurn:
-                    continue
                 for ruutu in alueet[str(legalmove)].ruudut:
                     set_cell(3, ruutu, 4,Vector2i(0,0),0)
                     
@@ -206,3 +189,34 @@ func removeLegalmoves():
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
             erase_cell(3, Vector2i(x,y))
+
+func update_alueet():
+    sijoitaTroopitAlueille()
+    for alue in alueet:
+        alueet[str(alue)].legalmoves = alueetbyid[alueet[str(alue)].areaid].legalmoves
+        # laillisten siirtojen laillisuuden tarkistus
+        for legalmove in alueet[alue].legalmoves:
+            if !alueet.has(str(legalmove)):
+                #print(legalmove, " pitäisi poistaa")
+                # poistetaan gridin ulkopuoliset siirrot laillisista siirroista
+                alueet[alue].legalmoves.erase(legalmove)
+                continue
+            # jos ruutu on oma ja ruudussa on jo 3 solttu, se ei ole laillinen
+            if alueet[str(legalmove)].troops >= 3 && alueet[str(legalmove)].spread == alueet[str(alue)].spread:
+                alueet[alue].legalmoves.erase(legalmove)
+                continue
+
+func ruudunValinta():
+    var alue = alue_under_mouse()
+    if alueet.has(alue):
+            if targetAlue != null:
+                selectedAlue = alue
+                targetAlue = null
+            elif selectedAlue != null:
+                targetAlue = alue
+            else:
+                selectedAlue = alue
+            setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
+            #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+            print("selected alue: " + str(selectedAlue), " | target alue: " + str(targetAlue), " | Troops in alue: ", +(alueet[str(alue)].troops))
+            return([selectedAlue,targetAlue])
