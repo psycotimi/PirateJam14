@@ -131,6 +131,7 @@ func _input(_event):
         update_alueet()
         # alueenValinta palauttaa kaksi aluetta, voi muokata jotenkin jos sekavaa
         var valinta = alueenValinta()
+        # estää kaatumisen jos klikkaa ohi leivästä
         if !valinta:
             return
         selectedAlue = valinta[0]
