@@ -83,7 +83,7 @@ func _ready():
     for n in 5:
         alkupositio()
         alkupositio2()
-        sijoitaTroopitAlueille()
+    sijoitaTroopitAlueille()
     #print(alueet)
     update_grafiikkatilet()
     
@@ -136,15 +136,9 @@ func _input(_event):
             return
         selectedAlue = valinta[0]
         targetAlue = valinta[1]
-        valitseRuutuJostaHyokataan(selectedAlue)
-        #liiku()
-        #hyokkaa()
-        # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, jos on näytetään mahdolliset
-        # ruudut, joihin voi liikkua tai hyökätä. Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita
-        # tekemättä tästä: mahdollisten ruutujen väritys, kutsua hyökkäystä, kutsua liikkumista, olisi toki syytä
-        # lisätä myös tarkistus; onko pelaajan vuoro 
         
-        
+        if valinta[1] != null:
+            valitseRuutuJostaHyokataan(selectedAlue, targetAlue)
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -182,13 +176,24 @@ func sijoitaTroopitAlueille():
             tiles[str(ruudut[x])].troops = 1
             set_cell(2,ruudut[x],3,Vector2i(0,0),0)
 
-# valitaan ruutu, josta joko hyokataan tai liikutaan
-func valitseRuutuJostaHyokataan(alue):
+# tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita.
+# tekemättä tästä: kutsua hyökkäystä, kutsua liikkumista
+func valitseRuutuJostaHyokataan(alue, kohde):
         if alueet[(alue)].spread == Global.spreadTypeList[1] && alueet[(alue)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
             for legalmove in alueet[str(alue)].legalmoves:
                 for ruutu in alueet[str(legalmove)].ruudut:
                     set_cell(3, ruutu, 4,Vector2i(0,0),0)
-                    
+                    #liiku(lahto,kohde)
+                    #hyokkaa()
+
+# liikkuminen
+func liiku(lahto, kohde):
+    print(lahto, kohde)
+    
+# hyökkäys
+func hyokkaa(lahto, kohde):
+    print(lahto, kohde)
+                   
 #poistaa legalmovet näkyvistä
 func removeLegalmoves():
     for x in range(offsetX, gridSize+offsetX):
@@ -222,7 +227,7 @@ func alueenValinta():
                 targetAlue = alue
             else:
                 selectedAlue = alue
-            setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
-            #update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
+            # setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
+            # update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
             print("selected alue: " + str(selectedAlue), " | target alue: " + str(targetAlue), " | Troops in alue: ", +(alueet[str(alue)].troops))
             return([selectedAlue,targetAlue])
