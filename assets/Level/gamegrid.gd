@@ -134,11 +134,7 @@ func _input(_event):
         # estää kaatumisen jos klikkaa ohi leivästä
         if !valinta:
             return
-        selectedAlue = valinta[0]
-        targetAlue = valinta[1]
-        
-        if valinta[1] != null:
-            valitseRuutuJostaHyokataan(selectedAlue, targetAlue)
+        valitseRuutuJostaHyokataan(valinta)
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -178,7 +174,7 @@ func sijoitaTroopitAlueille():
 
 # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita.
 # tekemättä tästä: kutsua hyökkäystä, kutsua liikkumista
-func valitseRuutuJostaHyokataan(alue, kohde):
+func valitseRuutuJostaHyokataan(alue):
         if alueet[(alue)].spread == Global.spreadTypeList[1] && alueet[(alue)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
             for legalmove in alueet[str(alue)].legalmoves:
                 for ruutu in alueet[str(legalmove)].ruudut:
@@ -220,14 +216,8 @@ func update_alueet():
 func alueenValinta():
     var alue = alue_under_mouse()
     if alueet.has(alue):
-            if targetAlue != null:
-                selectedAlue = alue
-                targetAlue = null
-            elif selectedAlue != null:
-                targetAlue = alue
-            else:
-                selectedAlue = alue
+            selectedAlue = alue
             # setAlueSpread(alue,Global.spreadTypeList[1]) # muuttaa hiiren alla olevan alueen peanutbutteriksi
             # update_grafiikkatilet() # ei kuulu ajaa joka framella, täällä testitarkotuksena
-            print("selected alue: " + str(selectedAlue), " | target alue: " + str(targetAlue), " | Troops in alue: ", +(alueet[str(alue)].troops))
-            return([selectedAlue,targetAlue])
+            print("selected alue: " + str(selectedAlue), " | Troops in alue: ", +(alueet[str(alue)].troops))
+            return(selectedAlue)
