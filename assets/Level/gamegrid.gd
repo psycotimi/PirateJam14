@@ -4,6 +4,8 @@ var gridSize = Global.gridsize
 var tiles = {}
 var alueet = {}
 var alueetbyid = {} 
+var pbalueet = []
+var jamalueet = []
 
 var troopLabel = Label.new()
 var offsetX = 23
@@ -141,16 +143,17 @@ func _input(_event):
             return
             
         # jos jo yksi ruutu valittu, valitaan kohdealue
-        if lahtoxy != null:
+        if selectedAlue != null:
             kohdexy = valinta
-            liikuHyokkaa(lahtoxy, kohdexy)
-            lahtoxy = null
+            liikuHyokkaa(selectedAlue, kohdexy)
+            selectedAlue = null
         # valitaan alue
         if alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1]:
             valitseRuutuJostaHyokataan(valinta)
-            lahtoxy = valinta
+            selectedAlue = valinta
             
-        
+        # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
+        update_alueet()
         print("lahtoxy ", lahtoxy, "kohdexy ", kohdexy)
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
@@ -183,6 +186,10 @@ func setAlueSpread(alue,spread):
 # piirtää ukkelit alueille, joissa troops > 0
 func sijoitaTroopitAlueille():
     for alue in alueet:
+        if alueet[str(alue)].spread == Global.whoseTurn && alueet[str(alue)].troops > 0 && selectedAlue == null:
+            for ruutu in alueet[str(alue)].ruudut:
+                set_cell(3, ruutu, 4,Vector2i(0,0),0)
+
         var ruudut = alueet[alue].ruudut
         for x in range(0,alueet[str(alue)].troops):
             print(ruudut[x])
@@ -221,7 +228,8 @@ func liiku(lahto, kohde):
     while (alueet[str(lahto)].troops > 0 and alueet[str(kohde)].troops < Global.troopCountMax):
         alueet[str(lahto)].troops -= 1
         alueet[str(kohde)].troops += 1 
-    print(lahto)
+    print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
+    update_alueet()
     
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -233,6 +241,7 @@ func hyokkaa(lahto, kohde):
     else:
         alueet[str(lahto)].troops = 0
     print(lahto, kohde)
+
                    
 #poistaa legalmovet näkyvistä
 func removeLegalmoves():
@@ -243,8 +252,14 @@ func removeLegalmoves():
 
 func update_alueet():
     sijoitaTroopitAlueille()
+    pbalueet = []
+    jamalueet = []
     for alue in alueet:
         alueet[str(alue)].legalmoves = alueetbyid[alueet[str(alue)].areaid].legalmoves
+        if alueet[str(alue)].spread == Global.spreadTypeList[1]:
+            pbalueet.append(alue)
+        elif alueet[str(alue)].spread == Global.spreadTypeList[2]:
+            jamalueet.append(alue)
         # laillisten siirtojen laillisuuden tarkistus
         for legalmove in alueet[alue].legalmoves:
             if !alueet.has(str(legalmove)):
