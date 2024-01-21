@@ -93,7 +93,6 @@ func _ready():
         alkupositio()
         alkupositio2()
     sijoitaTroopitAlueille()
-    #print(alueet)
     update_grafiikkatilet()
     
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -157,7 +156,7 @@ func _input(_event):
             
             
         # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
-        print("lahtoxy ", selectedAlue, "kohdexy ", kohdexy)
+        # print("lahtoxy ", selectedAlue, "kohdexy ", kohdexy)
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -220,8 +219,6 @@ func liikuHyokkaa(lahto, kohde):
             # jos alue vihun alue ja alue tyhjä, liikuu
             else:
                 liiku(lahto,kohde)
-            print("mor")
-            
 
 # liikkuminen
 func liiku(lahto, kohde):
@@ -232,14 +229,13 @@ func liiku(lahto, kohde):
         alueet[str(lahto)].troops -= 1
         alueet[str(kohde)].troops += 1
         
-        print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
-    print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
+        #print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
+    #print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
     Global.turnCounter += 1
     turnModulo = Global.turnCounter % 2 + 1
     Global.whoseTurn = Global.spreadTypeList[turnModulo]
     #$UI.update_turn_counter()
-    
-    
+     
 # hyökkäys
 func hyokkaa(lahto, kohde):
     var hyokkaajia = alueet[str(lahto)].troops
@@ -248,9 +244,11 @@ func hyokkaa(lahto, kohde):
         alueet[str(kohde)].troops = 0
         liiku(lahto,kohde)
     else:
+        Global.turnCounter += 1
+        turnModulo = Global.turnCounter % 2 + 1
+        Global.whoseTurn = Global.spreadTypeList[turnModulo]
         alueet[str(lahto)].troops = 0
-
-                   
+                 
 #poistaa legalmovet näkyvistä ja vanhat troopit
 func removeLegalmoves():
     for x in range(offsetX, gridSize+offsetX):
@@ -279,11 +277,11 @@ func update_alueet():
                 alueet[alue].legalmoves.erase(legalmove)
             # jos ruutu on oma ja ruudussa on jo 4 solttua, se ei ole laillinen
             elif alueet[str(legalmove)].troops >= Global.troopCountMax && alueet[str(legalmove)].spread == alueet[str(alue)].spread:
-                print(legalmove, "alueella liikaa solttuja")
+                #print(legalmove, "alueella liikaa solttuja")
                 alueet[alue].legalmoves.erase(legalmove)
 
 func alueenValinta():
     var alue = alue_under_mouse()
     if alueet.has(alue):
-        print("selected alue: " + str(alue), " | Troops in alue: ", +(alueet[str(alue)].troops))
+        #print("selected alue: " + str(alue), " | Troops in alue: ", +(alueet[str(alue)].troops))
         return(alue)
