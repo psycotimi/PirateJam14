@@ -143,7 +143,7 @@ func _input(_event):
             return
             
         # jos jo yksi ruutu valittu, valitaan kohdealue
-        if selectedAlue != null:
+        elif selectedAlue != null && valinta != null:
             kohdexy = valinta
             liikuHyokkaa(selectedAlue, kohdexy)
             update_alueet()
@@ -184,17 +184,14 @@ func setAlueSpread(alue,spread):
         tiles[str(ruutu)].spread = spread 
         $grafiikkatilet.setSpread(tiles[str(ruutu)].grafiikkatilet,tiles[str(ruutu)].spread)
 
-# piirtää ukkelit alueille, joissa troops > 0
+# piirtää ukkelit alueille, joissa troops > 0 # piirtää 
 func sijoitaTroopitAlueille():
     for alue in alueet:
         if alueet[str(alue)].spread == Global.whoseTurn && alueet[str(alue)].troops > 0 && selectedAlue == null:
             for ruutu in alueet[str(alue)].ruudut:
                 set_cell(3, ruutu, 4,Vector2i(0,0),0)
-
         var ruudut = alueet[alue].ruudut
         for x in range(0,alueet[str(alue)].troops):
-            print(ruudut[x])
-            tiles[str(ruudut[x])].troops = 1
             set_cell(2,ruudut[x],3,Vector2i(0,0),0)
 
 # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita.
@@ -245,7 +242,6 @@ func hyokkaa(lahto, kohde):
         liiku(lahto,kohde)
     else:
         alueet[str(lahto)].troops = 0
-    print(lahto, kohde)
 
                    
 #poistaa legalmovet näkyvistä ja vanhat troopit
@@ -272,11 +268,10 @@ func update_alueet():
                 #print(legalmove, " pitäisi poistaa")
                 # poistetaan gridin ulkopuoliset siirrot laillisista siirroista
                 alueet[alue].legalmoves.erase(legalmove)
-                continue
-            # jos ruutu on oma ja ruudussa on jo 4 solttu, se ei ole laillinen
-            if alueet[str(legalmove)].troops >= Global.troopCountMax && alueet[str(legalmove)].spread == alueet[str(alue)].spread:
+            # jos ruutu on oma ja ruudussa on jo 4 solttua, se ei ole laillinen
+            elif alueet[str(legalmove)].troops >= Global.troopCountMax && alueet[str(legalmove)].spread == alueet[str(alue)].spread:
+                print(legalmove, "alueella liikaa solttuja")
                 alueet[alue].legalmoves.erase(legalmove)
-                continue
 
 func alueenValinta():
     var alue = alue_under_mouse()
