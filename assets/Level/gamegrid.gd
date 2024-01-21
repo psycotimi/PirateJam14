@@ -133,28 +133,30 @@ func _input(_event):
     
     if Input.is_action_just_pressed("select_tile"):
         # poistaa legalmovet näkyvistä, ja sotilaat
-        removeLegalmoves()
         # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
         update_alueet()
         # alueenValinta palauttaa kaksi aluetta, voi muokata jotenkin jos sekavaa
         var valinta = alueenValinta()
         # estää kaatumisen jos klikkaa ohi leivästä
         if !valinta:
+            selectedAlue = null
             return
             
         # jos jo yksi ruutu valittu, valitaan kohdealue
         if selectedAlue != null:
             kohdexy = valinta
             liikuHyokkaa(selectedAlue, kohdexy)
+            update_alueet()
             selectedAlue = null
         # valitaan alue
-        if alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1]:
-            valitseRuutuJostaHyokataan(valinta)
+        elif alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1] && selectedAlue == null:
             selectedAlue = valinta
+            update_alueet()
+            valitseRuutuJostaHyokataan(valinta)
+            
             
         # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
-        update_alueet()
-        print("lahtoxy ", lahtoxy, "kohdexy ", kohdexy)
+        print("lahtoxy ", selectedAlue, "kohdexy ", kohdexy)
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -199,15 +201,17 @@ func sijoitaTroopitAlueille():
 # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita.
 # tekemättä tästä: kutsua hyökkäystä, kutsua liikkumista
 func valitseRuutuJostaHyokataan(alue):
-        for legalmove in alueet[str(alue)].legalmoves:
-            for ruutu in alueet[str(legalmove)].ruudut:
-                set_cell(3, ruutu, 4,Vector2i(0,0),0)
+    for legalmove in alueet[str(alue)].legalmoves:
+        for ruutu in alueet[str(legalmove)].ruudut:
+            set_cell(3, ruutu, 4,Vector2i(0,0),0)
 
 # tässä käydään läpi onko kyseessä hyökkäys vai liikuminen ja sen jälkeen kutsutaan oikeaa funktiota
 func liikuHyokkaa(lahto, kohde):
    # if alueet[str(lahto)].legalmoves.has(str(kohde)):
        # print("alueet[str(lahto)].legalmoves")
     for legalmove in alueet[str(lahto)].legalmoves:
+        selectedAlue = null
+        update_alueet()
         if str(legalmove) == kohde:
             # jos alue omaa hilloa tai neutraali, liikkuu, jos mahtuu
             if (alueet[str(lahto)].spread == alueet[str(kohde)].spread or alueet[str(kohde)].spread == Global.spreadTypeList[0]) && alueet[str(kohde)].troops < Global.troopCountMax:
@@ -219,6 +223,7 @@ func liikuHyokkaa(lahto, kohde):
             else:
                 liiku(lahto,kohde)
             print("mor")
+            
 
 # liikkuminen
 func liiku(lahto, kohde):
@@ -227,9 +232,10 @@ func liiku(lahto, kohde):
     # looppaa niin kauan kunnes lähtöruutu on tyhjä tai kohderuutu täynnä
     while (alueet[str(lahto)].troops > 0 and alueet[str(kohde)].troops < Global.troopCountMax):
         alueet[str(lahto)].troops -= 1
-        alueet[str(kohde)].troops += 1 
-    print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
-    update_alueet()
+        alueet[str(kohde)].troops += 1
+        
+        print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
+    
     
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -243,7 +249,7 @@ func hyokkaa(lahto, kohde):
     print(lahto, kohde)
 
                    
-#poistaa legalmovet näkyvistä
+#poistaa legalmovet näkyvistä ja vanhat troopit
 func removeLegalmoves():
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
@@ -251,6 +257,7 @@ func removeLegalmoves():
             erase_cell(2, Vector2i(x,y))
 
 func update_alueet():
+    removeLegalmoves()
     sijoitaTroopitAlueille()
     pbalueet = []
     jamalueet = []
