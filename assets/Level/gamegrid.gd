@@ -147,7 +147,6 @@ func _input(_event):
             kohdexy = valinta
             liikuHyokkaa(selectedAlue, kohdexy)
             update_alueet()
-            selectedAlue = null
         # valitaan alue
         elif alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1] && selectedAlue == null:
             selectedAlue = valinta
