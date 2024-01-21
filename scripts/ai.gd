@@ -23,4 +23,6 @@ func selectmove(alueet, pelaajanalueet, aialueet):
                 siirto = [lahtoalue,legalmove]
             elif !pelaajanalueet.has(legalmove) && !aialueet.has(legalmove) && alueet[str(legalmove)].troops > 0:
                 siirto = [lahtoalue,legalmove]
+    var sleep = randf_range(1, 3)
+    await get_tree().create_timer(sleep).timeout
     return siirto
