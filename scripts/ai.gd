@@ -17,12 +17,14 @@ func selectmove(alueet, pelaajanalueet, aialueet):
         if alueet[lahtoalue].troops <= 0:
             continue
         for legalmove in alueet[str(lahtoalue)].legalmoves:
-            if siirto == []:
+            if !pelaajanalueet.has(legalmove) && !aialueet.has(legalmove):
                 siirto = [lahtoalue,legalmove]
             if pelaajanalueet.has(legalmove) && alueet[str(lahtoalue)].troops > alueet[str(legalmove)].troops:
                 siirto = [lahtoalue,legalmove]
             elif !pelaajanalueet.has(legalmove) && !aialueet.has(legalmove) && alueet[str(legalmove)].troops > 0:
                 siirto = [lahtoalue,legalmove]
-    var sleep = randf_range(1, 3)
-    await get_tree().create_timer(sleep).timeout
+            if siirto == []:
+                siirto = [lahtoalue,legalmove]
+            
+
     return siirto

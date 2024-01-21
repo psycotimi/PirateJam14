@@ -294,6 +294,7 @@ func ainvuoro():
         update_alueet()
         updated = true
     else:
-        var siirto = await $AI.selectmove(alueet, pbalueet,jamalueet)
+        var siirto = $AI.selectmove(alueet, pbalueet,jamalueet)
         liikuHyokkaa(str(siirto[0]),str(siirto[1]))
+        update_alueet()
         updated = false
