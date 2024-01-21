@@ -13,7 +13,7 @@ func _ready():
 
 # Tällä voidaan päivittää vuoronumero Globaalin muuttujan avulla (turnNumber).
 func update_turn_counter():
-    turnNumber.text = str(Global.turnCounter)
+    turnNumber.text = str(Global.turnCounter + 1)
 
 # Tällä voidaan päivittää vuorossa olevan pelaajan merkki Globaalin muuttujan
 # avulla (whoseTurn = "none" / "pb" / "jam").
