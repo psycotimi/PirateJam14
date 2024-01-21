@@ -138,7 +138,6 @@ func _input(_event):
     if Input.is_action_just_pressed("select_tile"):
         # poistaa legalmovet näkyvistä, ja sotilaat
         # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
-        update_alueet()
         # alueenValinta palauttaa kaksi aluetta, voi muokata jotenkin jos sekavaa
         var valinta = alueenValinta()
         # estää kaatumisen jos klikkaa ohi leivästä
@@ -150,7 +149,6 @@ func _input(_event):
         elif selectedAlue != null && valinta != null:
             kohdexy = valinta
             liikuHyokkaa(selectedAlue, kohdexy)
-            update_alueet()
         # valitaan alue
         elif alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1] && selectedAlue == null:
             selectedAlue = valinta
@@ -191,9 +189,12 @@ func setAlueSpread(alue,spread):
 # piirtää ukkelit alueille, joissa troops > 0 # piirtää 
 func sijoitaTroopitAlueille():
     for alue in alueet:
+        # highlightaa alueen, jos on pelaajan vuoro ja alueella on joukkoja
         if alueet[str(alue)].spread == Global.whoseTurn && alueet[str(alue)].troops > 0 && selectedAlue == null:
             for ruutu in alueet[str(alue)].ruudut:
                 set_cell(3, ruutu, 4,Vector2i(0,0),0)
+                
+# piirtää ukot alueen ruutuihin
         var ruudut = alueet[alue].ruudut
         for x in range(0,alueet[str(alue)].troops):
             set_cell(2,ruudut[x],3,Vector2i(0,0),0)
@@ -238,6 +239,7 @@ func liiku(lahto, kohde):
     turnModulo = Global.turnCounter % 2 + 1
     Global.whoseTurn = Global.spreadTypeList[turnModulo]
     #$UI.update_turn_counter()
+    update_alueet()
      
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -261,26 +263,22 @@ func removeLegalmoves():
 
 func update_alueet():
     updatetroops()
-    pbalueet = []
-    jamalueet = []
-    for alue in alueet:
-        alueet[str(alue)].legalmoves = alueetbyid[alueet[str(alue)].areaid].legalmoves
-        if alueet[str(alue)].spread == Global.spreadTypeList[1]:
-            pbalueet.append(alue)
-        elif alueet[str(alue)].spread == Global.spreadTypeList[2]:
-            jamalueet.append(alue)
+    for id in alueetbyid:
+        var alue = alueetbyid[id].positio
+        var legalmoves = generatelegalmoves(alue)
         if alueet[str(alue)].troops <= 0:
             alueet[str(alue)].legalmoves = []
-        # laillisten siirtojen laillisuuden tarkistus
-        for legalmove in alueet[alue].legalmoves:
-            if !alueet.has(str(legalmove)):
-                #print(legalmove, " pitäisi poistaa")
-                # poistetaan gridin ulkopuoliset siirrot laillisista siirroista
-                alueet[alue].legalmoves.erase(legalmove)
-            # jos ruutu on oma ja ruudussa on jo 4 solttua, se ei ole laillinen
-            elif alueet[str(legalmove)].troops >= Global.troopCountMax && alueet[str(legalmove)].spread == alueet[str(alue)].spread:
-                #print(legalmove, "alueella liikaa solttuja")
-                alueet[alue].legalmoves.erase(legalmove)
+        else:
+            alueet[str(alue)].legalmoves = legalmoves
+        if alueet[str(alue)].spread == Global.spreadTypeList[1] && !pbalueet.has(alue):
+            pbalueet.append(alue)
+            if jamalueet.has(alue):
+                jamalueet.erase(alue)
+        elif alueet[str(alue)].spread == Global.spreadTypeList[2] && !jamalueet.has(alue):
+            jamalueet.append(alue)
+            if pbalueet.has(alue):
+                pbalueet.erase(alue)
+        
 
 func alueenValinta():
     var alue = alue_under_mouse()
@@ -293,6 +291,7 @@ func ainvuoro():
         update_alueet()
         updated = true
     else:
+        
         var siirto = $AI.selectmove(alueet, pbalueet,jamalueet)
         if siirto != []:
             liikuHyokkaa(str(siirto[0]),str(siirto[1]))
@@ -302,7 +301,26 @@ func ainvuoro():
             Global.whoseTurn = Global.spreadTypeList[turnModulo]
         updatetroops()
         updated = false
-        
+
+func generatelegalmoves(alue):
+    var legalmoves = []
+    var move 
+    for x in range(alue.x-1,alue.x+2):
+        for y in range(alue.y-1,alue.y+2):
+            move = Vector2i(x,y)
+            # jos siirto alueen ulkopuolella
+            if x != alue.x and y != alue.y:
+                continue
+            elif x < 0 or x > 7 or y < 0 or y > 7 or alue == move:
+                continue
+            # jos alue on oma ja siinä on jo 4 sotilasta
+            elif alueet[str(alue)].spread == alueet[str(move)].spread && alueet[str(move)].troops >= Global.troopCountMax:
+                continue
+                #jos ei jää kumpaankaan noista niin siirto laillinen
+            else:
+                legalmoves.append(move)
+    return legalmoves
+
 func updatetroops():
     removeLegalmoves()
     sijoitaTroopitAlueille()
