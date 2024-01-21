@@ -260,8 +260,7 @@ func removeLegalmoves():
             erase_cell(2, Vector2i(x,y))
 
 func update_alueet():
-    removeLegalmoves()
-    sijoitaTroopitAlueille()
+    updatetroops()
     pbalueet = []
     jamalueet = []
     for alue in alueet:
@@ -295,6 +294,15 @@ func ainvuoro():
         updated = true
     else:
         var siirto = $AI.selectmove(alueet, pbalueet,jamalueet)
-        liikuHyokkaa(str(siirto[0]),str(siirto[1]))
-        update_alueet()
+        if siirto != []:
+            liikuHyokkaa(str(siirto[0]),str(siirto[1]))
+        else:
+            Global.turnCounter += 1
+            turnModulo = Global.turnCounter % 2 + 1
+            Global.whoseTurn = Global.spreadTypeList[turnModulo]
+        updatetroops()
         updated = false
+        
+func updatetroops():
+    removeLegalmoves()
+    sijoitaTroopitAlueille()
