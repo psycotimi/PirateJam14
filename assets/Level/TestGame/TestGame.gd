@@ -12,16 +12,6 @@ var selectedTile
 var targetTile
 
 func _ready():
-    var battle = battleScripts.new()
-
-    for roll in range(10):
-        var attackerWon = battle.did_attacker_win(3, 3)
-        if attackerWon:
-            print("Attacker won!")
-        else:
-            print("Defender won!")
-        print()
-
     # Arvojen muuttaminen debuggaukseen
     Global.pbTroopCount = 10
     Global.jamTroopCount = 4
