@@ -18,8 +18,11 @@ var yAlku = 0
 var lahtoxy
 var kohdexy
 
+const battleScripts = preload("res://scripts/Battle.gd")
+var battle
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    battle = battleScripts.new()
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
             troopLabel.position = Vector2(x,y)
@@ -137,15 +140,17 @@ func _input(_event):
         if !valinta:
             return
             
+        # jos jo yksi ruutu valittu, valitaan kohdealue
+        if lahtoxy != null:
+            kohdexy = valinta
+            liikuHyokkaa(lahtoxy, kohdexy)
+            lahtoxy = null
         # valitaan alue
-        if alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops != 0 && Global.whoseTurn == Global.spreadTypeList[1]:
+        if alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1]:
             valitseRuutuJostaHyokataan(valinta)
             lahtoxy = valinta
             
-        # jos jo yksi ruutu valittu, valitaan kohdealue
-        elif lahtoxy != null:
-            kohdexy = valinta
-            liikuHyokkaa(lahtoxy, kohdexy)
+        
         print("lahtoxy ", lahtoxy, "kohdexy ", kohdexy)
 
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
@@ -195,17 +200,38 @@ func valitseRuutuJostaHyokataan(alue):
 func liikuHyokkaa(lahto, kohde):
    # if alueet[str(lahto)].legalmoves.has(str(kohde)):
        # print("alueet[str(lahto)].legalmoves")
-    for legalmove in  alueet[str(lahto)].legalmoves:
+    for legalmove in alueet[str(lahto)].legalmoves:
         if str(legalmove) == kohde:
+            # jos alue omaa hilloa tai neutraali, liikkuu, jos mahtuu
+            if (alueet[str(lahto)].spread == alueet[str(kohde)].spread or alueet[str(kohde)].spread == Global.spreadTypeList[0]) && alueet[str(kohde)].troops < Global.troopCountMax:
+                liiku(lahto, kohde)
+            # jos vihun alue ja alueella joukkoja, hyökkää
+            elif alueet[str(lahto)].spread != alueet[str(kohde)].spread && alueet[str(kohde)].troops > 0:
+                hyokkaa(lahto,kohde)
+            # jos alue vihun alue ja alue tyhjä, liikuu
+            else:
+                liiku(lahto,kohde)
             print("mor")
 
 # liikkuminen
-func liiku(lahto):
-    
+func liiku(lahto, kohde):
+    # muuttaa kohteen levitteen samaksi kuin lähtöruudun
+    setAlueSpread(kohde,alueet[str(lahto)].spread)
+    # looppaa niin kauan kunnes lähtöruutu on tyhjä tai kohderuutu täynnä
+    while (alueet[str(lahto)].troops > 0 and alueet[str(kohde)].troops < Global.troopCountMax):
+        alueet[str(lahto)].troops -= 1
+        alueet[str(kohde)].troops += 1 
     print(lahto)
     
 # hyökkäys
 func hyokkaa(lahto, kohde):
+    var hyokkaajia = alueet[str(lahto)].troops
+    var puolustajia = alueet[str(kohde)].troops
+    if battle.did_attacker_win(hyokkaajia, puolustajia):
+        alueet[str(kohde)].troops = 0
+        liiku(lahto,kohde)
+    else:
+        alueet[str(lahto)].troops = 0
     print(lahto, kohde)
                    
 #poistaa legalmovet näkyvistä
@@ -226,14 +252,13 @@ func update_alueet():
                 # poistetaan gridin ulkopuoliset siirrot laillisista siirroista
                 alueet[alue].legalmoves.erase(legalmove)
                 continue
-            # jos ruutu on oma ja ruudussa on jo 3 solttu, se ei ole laillinen
-            if alueet[str(legalmove)].troops >= 3 && alueet[str(legalmove)].spread == alueet[str(alue)].spread:
+            # jos ruutu on oma ja ruudussa on jo 4 solttu, se ei ole laillinen
+            if alueet[str(legalmove)].troops >= Global.troopCountMax && alueet[str(legalmove)].spread == alueet[str(alue)].spread:
                 alueet[alue].legalmoves.erase(legalmove)
                 continue
 
 func alueenValinta():
     var alue = alue_under_mouse()
     if alueet.has(alue):
-        selectedAlue = alue
-        print("selected alue: " + str(selectedAlue), " | Troops in alue: ", +(alueet[str(alue)].troops))
-        return(selectedAlue)
+        print("selected alue: " + str(alue), " | Troops in alue: ", +(alueet[str(alue)].troops))
+        return(alue)

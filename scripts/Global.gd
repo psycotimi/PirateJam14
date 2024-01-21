@@ -6,7 +6,7 @@ extends Node
 # 0 for none (bread), 1 for pb, 2 for jam).
 const spreadTypeList: Array = ["none", "pb", "jam"]
 # Can be changed (maybe), but 3 seems to be the choise here.
-const troopCountMax: int = 3
+const troopCountMax: int = 4
 # Determines the dice to be used, most likely will be d6.
 const dieMax: int = 6
 
