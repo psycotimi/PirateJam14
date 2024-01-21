@@ -11,5 +11,16 @@ func _process(delta):
     pass
 
 
-func selectmove(alueet, pelaajanalueet, jamalueet):
-    pass
+func selectmove(alueet, pelaajanalueet, aialueet):
+    var siirto = []
+    for lahtoalue in aialueet:
+        if alueet[lahtoalue].troops <= 0:
+            continue
+        for legalmove in alueet[str(lahtoalue)].legalmoves:
+            if siirto == []:
+                siirto = [lahtoalue,legalmove]
+            if pelaajanalueet.has(legalmove) && alueet[str(lahtoalue)].troops > alueet[str(legalmove)].troops:
+                siirto = [lahtoalue,legalmove]
+            elif !pelaajanalueet.has(legalmove) && !aialueet.has(legalmove) && alueet[str(legalmove)].troops > 0:
+                siirto = [lahtoalue,legalmove]
+    return siirto
