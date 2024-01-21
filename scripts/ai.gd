@@ -11,5 +11,5 @@ func _process(delta):
     pass
 
 
-func selectmove():
+func selectmove(alueet, pelaajanalueet, jamalueet):
     pass

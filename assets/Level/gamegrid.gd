@@ -262,6 +262,8 @@ func update_alueet():
             pbalueet.append(alue)
         elif alueet[str(alue)].spread == Global.spreadTypeList[2]:
             jamalueet.append(alue)
+        if alueet[str(alue)].troops <= 0:
+            alueet[str(alue)].legalmoves = []
         # laillisten siirtojen laillisuuden tarkistus
         for legalmove in alueet[alue].legalmoves:
             if !alueet.has(str(legalmove)):
