@@ -1,6 +1,5 @@
 extends Node
 
-
 # Variables to be used globally with "Global.<variable_name>".
 
 # 0 for none (bread), 1 for pb, 2 for jam).
@@ -15,6 +14,7 @@ const gridsize: int = 16
 
 # vuoronumero
 var turnCounter: int = 0
+
 # Kenen vuoro on? Hyödynnetään spreadTypeListiä
 var whoseTurn: String = spreadTypeList[1]
 

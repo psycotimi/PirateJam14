@@ -20,6 +20,8 @@ var yAlku = 0
 var lahtoxy
 var kohdexy
 
+var turnModulo = 1
+
 const battleScripts = preload("res://scripts/Battle.gd")
 var battle
 # Called when the node enters the scene tree for the first time.
@@ -231,6 +233,11 @@ func liiku(lahto, kohde):
         alueet[str(kohde)].troops += 1
         
         print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
+    print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
+    Global.turnCounter += 1
+    turnModulo = Global.turnCounter % 2 + 1
+    Global.whoseTurn = Global.spreadTypeList[turnModulo]
+    #$UI.update_turn_counter()
     
     
 # hyökkäys

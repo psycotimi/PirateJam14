@@ -23,7 +23,6 @@ func _ready():
         print()
 
     # Arvojen muuttaminen debuggaukseen
-    Global.turnCounter = 3
     Global.pbTroopCount = 10
     Global.jamTroopCount = 4
     Global.whoseTurn = "pb"
