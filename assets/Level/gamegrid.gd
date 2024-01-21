@@ -24,6 +24,7 @@ var turnModulo = 1
 
 const battleScripts = preload("res://scripts/Battle.gd")
 var battle
+var updated = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
     battle = battleScripts.new()
@@ -110,7 +111,9 @@ func _process(_delta):
             if alueet[str(alue)].areaid == areaid:
                 for ruutu in alueet[str(alue)].ruudut:
                     set_cell(1, Vector2i(ruutu), 1, Vector2i(0,0), 0)
-        
+    if Global.whoseTurn == "jam":
+       ainvuoro()
+            
 # päivittää kaikki tilet
 func update_grafiikkatilet():
     for alue in alueet:
@@ -287,3 +290,12 @@ func alueenValinta():
     if alueet.has(alue):
         print("selected alue: " + str(alue), " | Troops in alue: ", +(alueet[str(alue)].troops))
         return(alue)
+
+func ainvuoro():
+    if updated == false:
+        update_alueet()
+        updated = true
+    else:
+        var siirto = await $AI.selectmove(alueet, pbalueet,jamalueet)
+        liikuHyokkaa(str(siirto[0]),str(siirto[1]))
+        updated = false
