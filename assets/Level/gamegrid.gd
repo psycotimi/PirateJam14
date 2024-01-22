@@ -333,7 +333,7 @@ func spawnaaukkoja():
         if endlessloop > 100:
             return
         # yrittää pari kertaa löytää hillotonta
-        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan <= 2:
+        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 2:
             yritauudestaan += 1
             i -= 1
         elif alueet[str(Vector2i(x,y))].troops >= Global.troopCountMax:
