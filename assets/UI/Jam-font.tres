@@ -1,9 +1,9 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cbisq0vmaf2xo"]
 
-[ext_resource type="FontFile" uid="uid://gh01am2n77bp" path="res://assets/fonts/MOOD MKII Outline.ttf" id="1_fspao"]
+[ext_resource type="FontFile" uid="uid://clia7kiu3o7au" path="res://assets/fonts/MOOD MKII.ttf" id="1_dnvy3"]
 
 [resource]
-font = ExtResource("1_fspao")
+font = ExtResource("1_dnvy3")
 font_size = 20
 font_color = Color(0.443137, 0, 0.337255, 1)
 outline_size = 3

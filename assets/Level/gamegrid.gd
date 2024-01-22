@@ -280,6 +280,11 @@ func removeLegalmoves():
             erase_cell(2, Vector2i(x,y))
 
 func update_alueet():
+    var playerwon = false
+    var playerlost = false
+    var pbtroops = 0
+    var jamtroops = 0
+    
     for id in alueetbyid:
         var alue = alueetbyid[id].positio
         var legalmoves = generatelegalmoves(alue)
@@ -288,13 +293,22 @@ func update_alueet():
         else:
             alueet[str(alue)].legalmoves = legalmoves
         if alueet[str(alue)].spread == Global.spreadTypeList[1] && !pbalueet.has(alue):
+            pbtroops += alueet[str(alue)].troops 
             pbalueet.append(alue)
             if jamalueet.has(alue):
                 jamalueet.erase(alue)
         elif alueet[str(alue)].spread == Global.spreadTypeList[2] && !jamalueet.has(alue):
+            jamtroops += alueet[str(alue)].troops
             jamalueet.append(alue)
             if pbalueet.has(alue):
                 pbalueet.erase(alue)
+                #wincondition ja losecondition
+    Global.pbTroopCount = pbtroops
+    Global.jamTroopCount = jamtroops
+    if pbalueet == [] or pbtroops == 0:
+        playerlost = true
+    if jamalueet == [] or jamtroops == 0:
+        playerwon = true
         
 
 func alueenValinta():
