@@ -131,6 +131,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Options"]
+layout_mode = 0
 offset_left = 840.0
 offset_top = 365.0
 offset_right = 889.0
