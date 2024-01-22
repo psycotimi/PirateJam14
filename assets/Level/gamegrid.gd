@@ -111,9 +111,7 @@ func _process(_delta):
                 for ruutu in alueet[str(alue)].ruudut:
                     set_cell(1, Vector2i(ruutu), 1, Vector2i(0,0), 0)
                     
-    if Global.whoseTurn == "jam":
-        ainvuoro()
-        spawnaaukkoja()
+    
     
             
 # päivittää kaikki tilet
@@ -244,13 +242,8 @@ func liiku(lahto, kohde):
         
         #print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
     #print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
-    Global.turnCounter += 1
-    turnModulo = Global.turnCounter % 2 + 1
-    Global.whoseTurn = Global.spreadTypeList[turnModulo]
-    $UI.update_turn_counter()
-    $UI.update_turn_arrow()
-    $UI.update_troop_count()
     update_alueet()
+    updateTurn()
      
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -260,13 +253,8 @@ func hyokkaa(lahto, kohde):
         alueet[str(kohde)].troops = 0
         liiku(lahto,kohde)
     else:
-        Global.turnCounter += 1
-        turnModulo = Global.turnCounter % 2 + 1
-        Global.whoseTurn = Global.spreadTypeList[turnModulo]
         alueet[str(lahto)].troops = 0
-        $UI.update_turn_counter()
-        $UI.update_turn_arrow()
-        $UI.update_troop_count()
+        updateTurn()
                  
 #poistaa legalmovet ja troopit näkyvistä
 func removeLegalmoves():
@@ -301,20 +289,14 @@ func alueenValinta():
         return(alue)
 
 func ainvuoro():
-    if updated == false:
-        update_alueet()
-        updated = true
+    update_alueet()
+    var siirto = await $AI.selectmove(alueet, pbalueet,jamalueet)
+    if siirto != []:
+        liikuHyokkaa(str(siirto[0]),str(siirto[1]))
     else:
-        var siirto = $AI.selectmove(alueet, pbalueet,jamalueet)
-        if siirto != []:
-            get_tree().create_timer(1.0).timeout
-            liikuHyokkaa(str(siirto[0]),str(siirto[1]))
-        else:
-            Global.turnCounter += 1
-            turnModulo = Global.turnCounter % 2 + 1
-            Global.whoseTurn = Global.spreadTypeList[turnModulo]
-        updatetroops()
-        updated = false
+        updateTurn()
+    updatetroops()
+    updated = false
 
 func generatelegalmoves(alue):
     var legalmoves = []
@@ -354,3 +336,14 @@ func spawnaaukkoja():
             alueet[str(Vector2i(x,y))].troops =+ 1
     updatetroops()
     
+func updateTurn():
+    Global.turnCounter += 1
+    turnModulo = Global.turnCounter % 2 + 1
+    Global.whoseTurn = Global.spreadTypeList[turnModulo]    
+    $UI.update_turn_counter()
+    $UI.update_turn_arrow()
+    $UI.update_troop_count()
+    
+    if Global.whoseTurn == "jam":
+        ainvuoro()
+        spawnaaukkoja()

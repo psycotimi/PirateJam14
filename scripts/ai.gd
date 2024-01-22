@@ -48,6 +48,7 @@ func selectmove(alueet, pelaajanalueet, aialueet):
     goodmoves.shuffle()
     betterthanbadmoves.shuffle()
     baadmoves.shuffle()
+    await get_tree().create_timer(randf_range(0.5,2)).timeout
     if goodmoves == []:
         if betterthanbadmoves == []:
             if baadmoves == []:
