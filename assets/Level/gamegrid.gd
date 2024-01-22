@@ -237,8 +237,11 @@ func liiku(lahto, kohde):
     setAlueSpread(kohde,alueet[str(lahto)].spread)
     # looppaa niin kauan kunnes lähtöruutu on tyhjä tai kohderuutu täynnä
     while (alueet[str(lahto)].troops > 0 and alueet[str(kohde)].troops < Global.troopCountMax):
+        $liikesound.pitch_scale = randf_range(1.5,2.5)
+        $liikesound.play()
         alueet[str(lahto)].troops -= 1
         alueet[str(kohde)].troops += 1
+        updatetroops()
         
         #print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
     #print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
@@ -249,11 +252,24 @@ func liiku(lahto, kohde):
 func hyokkaa(lahto, kohde):
     var hyokkaajia = alueet[str(lahto)].troops
     var puolustajia = alueet[str(kohde)].troops
+    var randomlosses = randf_range(0,1)
+    $attacksound.pitch_scale = randf_range(1.5,3)
+    $attacksound.play()
     if battle.did_attacker_win(hyokkaajia, puolustajia):
         alueet[str(kohde)].troops = 0
+        #voittajallakin chanssi menettää unitteja
+        if randomlosses < 0.5 && alueet[str(lahto)].troops > 1:
+            alueet[str(lahto)].troops -= 1
+            if randomlosses < 0.33 && alueet[str(lahto)].troops > 1:
+                alueet[str(lahto)].troops -= 1
         liiku(lahto,kohde)
     else:
         alueet[str(lahto)].troops = 0
+        #voittajallakin chanssi menettaa unittei
+        if randomlosses < 0.5 && alueet[str(kohde)].troops > 1:
+            alueet[str(kohde)].troops -= 1
+            if randomlosses < 0.33 && alueet[str(kohde)].troops > 1:
+                alueet[str(kohde)].troops -= 1
         updateTurn()
                  
 #poistaa legalmovet ja troopit näkyvistä
