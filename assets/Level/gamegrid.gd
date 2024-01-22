@@ -197,7 +197,7 @@ func setAlueSpread(alue,spread):
 func sijoitaTroopitAlueille():
     for alue in alueet:
         # highlightaa alueen, jos on pelaajan vuoro ja alueella on joukkoja
-        if alueet[str(alue)].spread == Global.whoseTurn && alueet[str(alue)].troops > 0 && selectedAlue == null:
+        if alueet[str(alue)].spread == Global.whoseTurn && Global.spreadTypeList[1] == Global.whoseTurn && alueet[str(alue)].troops > 0 && selectedAlue == null:
             for ruutu in alueet[str(alue)].ruudut:
                 set_cell(3, ruutu, 4,Vector2i(0,0),0)
                 
@@ -336,10 +336,11 @@ func spawnaaukkoja():
         # yrittää pari kertaa löytää hillotonta
         if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 2:
             yritauudestaan += 1
-        if alueet[str(Vector2i(x,y))].troops >= Global.troopCountMax:
+            continue
+        if alueet[str(Vector2i(x,y))].troops >= Global.troopCountMax-1:
             continue
         else:
-            alueet[str(Vector2i(x,y))].troops =+ 1
+            alueet[str(Vector2i(x,y))].troops += 1
             spawnattu += 1
     updatetroops()
     

@@ -18,6 +18,11 @@ func selectmove(alueet, pelaajanalueet, aialueet):
     var siirto = []
     var ukollisetalueet = []
     var pelaajanspread = alueet[str(pelaajanalueet[0])].spread
+    
+    # jos ei ole enään alueita
+    if aialueet == []:
+        return []
+        
     #edes joku siirto
     for lahtoalue in aialueet:
         if alueet[str(lahtoalue)].troops <= 0:
@@ -53,6 +58,7 @@ func selectmove(alueet, pelaajanalueet, aialueet):
         if betterthanbadmoves == []:
             if baadmoves == []:
                 print("ukot loppu")
+                return []
             else:
                 siirto = baadmoves[0]
         else:
