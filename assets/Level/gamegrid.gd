@@ -111,7 +111,8 @@ func _process(_delta):
                 for ruutu in alueet[str(alue)].ruudut:
                     set_cell(1, Vector2i(ruutu), 1, Vector2i(0,0), 0)
     if Global.whoseTurn == "jam":
-       ainvuoro()
+        ainvuoro()
+        spawnaaukkoja()
             
 # päivittää kaikki tilet
 func update_grafiikkatilet():
@@ -136,6 +137,7 @@ func alue_under_mouse():
 func _input(_event):
     
     if Input.is_action_just_pressed("select_tile"):
+        
         # poistaa legalmovet näkyvistä, ja sotilaat
         # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
         # alueenValinta palauttaa kaksi aluetta, voi muokata jotenkin jos sekavaa
@@ -143,17 +145,21 @@ func _input(_event):
         # estää kaatumisen jos klikkaa ohi leivästä
         if !valinta:
             selectedAlue = null
+            updatetroops()
             return
             
         # jos jo yksi ruutu valittu, valitaan kohdealue
         elif selectedAlue != null && valinta != null:
             kohdexy = valinta
             liikuHyokkaa(selectedAlue, kohdexy)
+            return
         # valitaan alue
-        elif alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1] && selectedAlue == null:
+        elif alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1]:
             selectedAlue = valinta
             update_alueet()
+            updatetroops()
             valitseRuutuJostaHyokataan(valinta)
+            
             
             
         # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
@@ -212,7 +218,7 @@ func liikuHyokkaa(lahto, kohde):
        # print("alueet[str(lahto)].legalmoves")
     for legalmove in alueet[str(lahto)].legalmoves:
         selectedAlue = null
-        update_alueet()
+        updatetroops()
         if str(legalmove) == kohde:
             # jos alue omaa hilloa tai neutraali, liikkuu, jos mahtuu
             if (alueet[str(lahto)].spread == alueet[str(kohde)].spread or alueet[str(kohde)].spread == Global.spreadTypeList[0]) && alueet[str(kohde)].troops < Global.troopCountMax:
@@ -254,7 +260,7 @@ func hyokkaa(lahto, kohde):
         Global.whoseTurn = Global.spreadTypeList[turnModulo]
         alueet[str(lahto)].troops = 0
                  
-#poistaa legalmovet näkyvistä ja vanhat troopit
+#poistaa legalmovet ja troopit näkyvistä
 func removeLegalmoves():
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
@@ -262,7 +268,6 @@ func removeLegalmoves():
             erase_cell(2, Vector2i(x,y))
 
 func update_alueet():
-    updatetroops()
     for id in alueetbyid:
         var alue = alueetbyid[id].positio
         var legalmoves = generatelegalmoves(alue)
@@ -282,6 +287,7 @@ func update_alueet():
 
 func alueenValinta():
     var alue = alue_under_mouse()
+    updatetroops()
     if alueet.has(alue):
         #print("selected alue: " + str(alue), " | Troops in alue: ", +(alueet[str(alue)].troops))
         return(alue)
@@ -324,3 +330,19 @@ func generatelegalmoves(alue):
 func updatetroops():
     removeLegalmoves()
     sijoitaTroopitAlueille()
+
+func spawnaaukkoja():
+    var spawnmaara = 2
+    var yritauudestaan = 0
+    for i in range(spawnmaara-1):
+        var x = randi_range(0,7)
+        var y = randi_range(0,7)
+        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 5:
+            yritauudestaan += 1
+            i -= 1
+        elif alueet[str(Vector2i(x,y))].troops >= Global.troopCountMax:
+            yritauudestaan = 0
+        else:
+            alueet[str(Vector2i(x,y))].troops =+ 1
+    updatetroops()
+    

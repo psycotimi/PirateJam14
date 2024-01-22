@@ -16,13 +16,14 @@ func selectmove(alueet, pelaajanalueet, aialueet):
     var baadmoves = []
     var betterthanbadmoves = []
     var siirto = []
-    var ukollisetalueet = aialueet
+    var ukollisetalueet = []
     var pelaajanspread = alueet[str(pelaajanalueet[0])].spread
     #edes joku siirto
     for lahtoalue in aialueet:
         if alueet[str(lahtoalue)].troops <= 0:
-            ukollisetalueet.erase(lahtoalue)
+            continue
         else:
+            ukollisetalueet.append(lahtoalue)
             for legalmove in alueet[str(lahtoalue)].legalmoves:
                 baadmoves.append([lahtoalue,legalmove])
         
