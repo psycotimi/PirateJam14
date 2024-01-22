@@ -110,9 +110,11 @@ func _process(_delta):
             if alueet[str(alue)].areaid == areaid:
                 for ruutu in alueet[str(alue)].ruudut:
                     set_cell(1, Vector2i(ruutu), 1, Vector2i(0,0), 0)
+                    
     if Global.whoseTurn == "jam":
         ainvuoro()
         spawnaaukkoja()
+    
             
 # päivittää kaikki tilet
 func update_grafiikkatilet():
@@ -135,6 +137,7 @@ func alue_under_mouse():
 
 # Kun hiirellä painetaan ruutua, valitaan kyseinen ruutu
 func _input(_event):
+    
     
     if Input.is_action_just_pressed("select_tile"):
         
@@ -297,9 +300,9 @@ func ainvuoro():
         update_alueet()
         updated = true
     else:
-        
         var siirto = $AI.selectmove(alueet, pbalueet,jamalueet)
         if siirto != []:
+            get_tree().create_timer(1.0).timeout
             liikuHyokkaa(str(siirto[0]),str(siirto[1]))
         else:
             Global.turnCounter += 1
