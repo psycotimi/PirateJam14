@@ -248,6 +248,8 @@ func liiku(lahto, kohde):
     turnModulo = Global.turnCounter % 2 + 1
     Global.whoseTurn = Global.spreadTypeList[turnModulo]
     $UI.update_turn_counter()
+    $UI.update_turn_arrow()
+    $UI.update_troop_count()
     update_alueet()
      
 # hyökkäys
@@ -263,6 +265,8 @@ func hyokkaa(lahto, kohde):
         Global.whoseTurn = Global.spreadTypeList[turnModulo]
         alueet[str(lahto)].troops = 0
         $UI.update_turn_counter()
+        $UI.update_turn_arrow()
+        $UI.update_troop_count()
                  
 #poistaa legalmovet ja troopit näkyvistä
 func removeLegalmoves():
