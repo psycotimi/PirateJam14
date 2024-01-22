@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctuc5ws8v3q5b"]
+[gd_scene load_steps=14 format=3 uid="uid://ctuc5ws8v3q5b"]
 
 [ext_resource type="Texture2D" uid="uid://b061d5xepxe35" path="res://assets/placeholder/nakymaton.png" id="1_28tqg"]
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://e1r7c8501d82" path="res://assets/placeholder/legalMove.png" id="4_ddnn7"]
 [ext_resource type="Texture2D" uid="uid://blc6xuskdvvbf" path="res://assets/placeholder/tausta kesken.jpg" id="5_gxe0f"]
 [ext_resource type="Script" path="res://scripts/ai.gd" id="8_3psaj"]
-[ext_resource type="PackedScene" uid="uid://dql6aufqubrsi" path="res://assets/UI/ui.tscn" id="9_pjt5f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qok67"]
 texture = ExtResource("1_28tqg")
@@ -57,5 +56,3 @@ texture = ExtResource("5_gxe0f")
 
 [node name="AI" type="Node2D" parent="."]
 script = ExtResource("8_3psaj")
-
-[node name="UI" parent="." instance=ExtResource("9_pjt5f")]

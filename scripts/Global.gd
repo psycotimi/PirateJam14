@@ -18,6 +18,6 @@ var turnCounter: int = 0
 # Kenen vuoro on? Hyödynnetään spreadTypeListiä
 var whoseTurn: String = spreadTypeList[1]
 
-# Molempien joukkojen sotilaiden määrä
-var pbTroopCount: int = 0
-var jamTroopCount: int = 0
+# Molempien joukkojen sotilaiden määrä, alussa on 5
+var pbTroopCount: int = 5
+var jamTroopCount: int = 5

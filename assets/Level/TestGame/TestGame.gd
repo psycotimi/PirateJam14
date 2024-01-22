@@ -9,9 +9,3 @@ const battleScripts = preload("res://scripts/Battle.gd")
 
 var selectedTile
 var targetTile
-
-func _ready():
-    # Arvojen muuttaminen debuggaukseen
-    Global.pbTroopCount = 10
-    Global.jamTroopCount = 4
-    Global.whoseTurn = "pb"
