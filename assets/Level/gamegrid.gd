@@ -324,14 +324,20 @@ func updatetroops():
 func spawnaaukkoja():
     var spawnmaara = 2
     var yritauudestaan = 0
+    var endlessloop = 0
     for i in range(spawnmaara-1):
         var x = randi_range(0,7)
         var y = randi_range(0,7)
-        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 5:
+        endlessloop += 1
+        #estää looppaamasta jos kenttä täynnä joukkoja
+        if endlessloop > 100:
+            return
+        # yrittää pari kertaa löytää hillotonta
+        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan <= 2:
             yritauudestaan += 1
             i -= 1
         elif alueet[str(Vector2i(x,y))].troops >= Global.troopCountMax:
-            yritauudestaan = 0
+            yritauudestaan -= 1
         else:
             alueet[str(Vector2i(x,y))].troops =+ 1
     updatetroops()
