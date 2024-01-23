@@ -76,6 +76,11 @@ layout_mode = 2
 theme = ExtResource("1_jgq60")
 text = "Resume"
 
+[node name="Restart" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_jgq60")
+text = "Restart"
+
 [node name="Options" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_jgq60")
@@ -157,6 +162,7 @@ sprite_frames = SubResource("SpriteFrames_vbn2c")
 animation = &"mute"
 
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Options/MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]

@@ -9,3 +9,8 @@ const battleScripts = preload("res://scripts/Battle.gd")
 
 var selectedTile
 var targetTile
+
+func _ready():
+    Global.turnCounter = 0
+    Global.pbTroopCount = 5
+    Global.jamTroopCount = 5

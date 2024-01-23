@@ -39,3 +39,10 @@ func _on_mute_pressed():
 func _on_back_pressed():
     $Options.hide()
     $Pause.show()
+
+
+func _on_restart_pressed():
+    get_tree().paused = false
+    get_tree().change_scene_to_file("res://assets/Level/TestGame/test_game.tscn")
+    
+    
