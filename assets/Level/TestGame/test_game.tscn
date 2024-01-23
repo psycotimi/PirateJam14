@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbhajou5uidn1"]
+[gd_scene load_steps=11 format=3 uid="uid://dbhajou5uidn1"]
 
 [ext_resource type="Script" path="res://assets/Level/TestGame/TestGame.gd" id="1_tobbp"]
 [ext_resource type="PackedScene" uid="uid://c7if3cbhxnxko" path="res://assets/Level/GameArea/game_area.tscn" id="2_kh1c3"]
 [ext_resource type="PackedScene" uid="uid://ctuc5ws8v3q5b" path="res://assets/Level/gamegrid.tscn" id="3_mp01c"]
 [ext_resource type="AudioStream" uid="uid://dpiqgspduwljj" path="res://assets/sounds/sbreaditmaintheme.wav" id="4_5kaea"]
 [ext_resource type="PackedScene" uid="uid://dql6aufqubrsi" path="res://assets/UI/ui.tscn" id="4_bursq"]
+[ext_resource type="Texture2D" uid="uid://b2h5nvbclt28d" path="res://icon.svg" id="6_qs1h3"]
+[ext_resource type="Script" path="res://scripts/pbkenraali.gd" id="7_5awsm"]
+[ext_resource type="Script" path="res://scripts/pbjalat.gd" id="7_f1k78"]
+[ext_resource type="Script" path="res://scripts/jamkenraali.gd" id="9_qhflg"]
+[ext_resource type="Script" path="res://scripts/jamjalat.gd" id="10_g3qpo"]
 
 [node name="TestGame" type="Node2D"]
 process_mode = 1
@@ -27,3 +32,25 @@ position = Vector2(727, 397)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5kaea")
 autoplay = true
+
+[node name="pbkenraali" type="Sprite2D" parent="."]
+position = Vector2(-150, 500)
+texture = ExtResource("6_qs1h3")
+script = ExtResource("7_5awsm")
+
+[node name="pbjalat" type="Sprite2D" parent="pbkenraali"]
+show_behind_parent = true
+position = Vector2(0, 64)
+texture = ExtResource("6_qs1h3")
+script = ExtResource("7_f1k78")
+
+[node name="jamkenraali" type="Sprite2D" parent="."]
+position = Vector2(2220, 500)
+texture = ExtResource("6_qs1h3")
+script = ExtResource("9_qhflg")
+
+[node name="jamjalat" type="Sprite2D" parent="jamkenraali"]
+show_behind_parent = true
+position = Vector2(0, 64)
+texture = ExtResource("6_qs1h3")
+script = ExtResource("10_g3qpo")
