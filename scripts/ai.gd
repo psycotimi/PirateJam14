@@ -32,7 +32,7 @@ func selectmove(alueet, pelaajanalueet, aialueet):
             for legalmove in alueet[str(lahtoalue)].legalmoves:
                 baadmoves.append([lahtoalue,legalmove])
         
-    # liikkuu leivälle
+    # liikkuu leivälle tai vihun alueelle riippumatta joukoista
     for lahtoalue in ukollisetalueet:
         for legalmove in alueet[str(lahtoalue)].legalmoves:
             if alueet[str(legalmove)].spread != alueet[str(lahtoalue)].spread:
@@ -41,12 +41,14 @@ func selectmove(alueet, pelaajanalueet, aialueet):
     # liikkuu leivälle jos saa ukkoja
     for lahtoalue in ukollisetalueet:
         for legalmove in alueet[str(lahtoalue)].legalmoves:
-            if alueet[str(legalmove)].spread != pelaajanspread && alueet[str(legalmove)].troops > 0:
+            if aialueet.has(legalmove):
+                continue
+            elif alueet[str(legalmove)].spread != pelaajanspread && alueet[str(legalmove)].troops > 0:
                 goodmoves.append([lahtoalue,legalmove])
                                 
     # hyökkää jos ylivoima
     for lahtoalue in ukollisetalueet:
-        for legalmove in alueet[str(lahtoalue)].legalmoves:                
+        for legalmove in alueet[str(lahtoalue)].legalmoves:            
            if alueet[str(legalmove)].spread == pelaajanspread && alueet[str(lahtoalue)].troops > alueet[str(legalmove)].troops:
                 goodmoves.append([lahtoalue,legalmove])
 

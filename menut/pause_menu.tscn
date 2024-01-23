@@ -4,7 +4,11 @@
 [ext_resource type="Script" path="res://menut/pause_menu.gd" id="1_wxv4d"]
 [ext_resource type="FontFile" uid="uid://gh01am2n77bp" path="res://assets/fonts/MOOD MKII Outline.ttf" id="2_uraca"]
 [ext_resource type="Texture2D" uid="uid://y2tmbn106gb8" path="res://assets/placeholder/mutet.png" id="4_3sjr5"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="5_3o6y8"]
+=======
+[ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="5_k5x6p"]
+>>>>>>> 06b4c0e5de1d5633b8060e4f6184d8b5a430614a
 
 [sub_resource type="Theme" id="Theme_fgpe8"]
 default_font_size = 100
@@ -163,7 +167,11 @@ sprite_frames = SubResource("SpriteFrames_vbn2c")
 animation = &"mute"
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
+<<<<<<< HEAD
 stream = ExtResource("5_3o6y8")
+=======
+stream = ExtResource("5_k5x6p")
+>>>>>>> 06b4c0e5de1d5633b8060e4f6184d8b5a430614a
 
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
