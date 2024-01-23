@@ -35,6 +35,11 @@ func update_troop_count():
 
 # Pausetetaan peli ja avataan pause menu.
 func _on_pause_button_pressed():
+    await buttonsound()
     get_tree().paused = true
     $PauseMenu.show()
 
+func buttonsound():
+    $buttonsound.pitch_scale = randf_range(2,3)
+    $buttonsound.play()
+    await get_tree().create_timer(0.1).timeout

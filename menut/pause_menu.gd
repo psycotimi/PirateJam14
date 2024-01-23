@@ -6,21 +6,25 @@ func _ready():
 
 # jatka peliä
 func _on_resume_pressed():
+    await buttonsound()
     hide()
     get_tree().paused = false
     
 # sulje peli
 func _on_quit_pressed():
-   get_tree().quit()
+    await buttonsound()
+    get_tree().quit()
 
 
 func _on_options_pressed():
+    await buttonsound()
     $Pause.hide()
     $Options.show()
 
 
 # nämä funktiot options menun sisällä
 func _on_mute_pressed():
+    await buttonsound()
     if $Options/AnimatedSprite2D.get_frame() == 0:
         
         # mutee kaikki äänet
@@ -37,5 +41,11 @@ func _on_mute_pressed():
 
 
 func _on_back_pressed():
+    buttonsound()
     $Options.hide()
     $Pause.show()
+
+func buttonsound():
+    $buttonsound.pitch_scale = randf_range(2,3)
+    $buttonsound.play()
+    await get_tree().create_timer(0.1).timeout
