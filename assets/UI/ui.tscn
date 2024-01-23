@@ -6,7 +6,7 @@
 [ext_resource type="LabelSettings" uid="uid://cbisq0vmaf2xo" path="res://assets/UI/Jam-font.tres" id="2_khqc4"]
 [ext_resource type="LabelSettings" uid="uid://bph8vv85ngard" path="res://assets/UI/Neutral-font.tres" id="3_acmhd"]
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="5_akvru"]
-[ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="7_n5c1w"]
+[ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="7_s5bsp"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_6io2n")
@@ -169,6 +169,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_n5c1w")
+stream = ExtResource("7_s5bsp")
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
