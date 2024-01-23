@@ -260,6 +260,7 @@ func hyokkaa(lahto, kohde):
         #voittajallakin chanssi menettää unitteja
         if randomlosses < 0.5 && alueet[str(lahto)].troops > 1:
             alueet[str(lahto)].troops -= 1
+            randomlosses = randf_range(0,1)
             if randomlosses < 0.33 && alueet[str(lahto)].troops > 1:
                 alueet[str(lahto)].troops -= 1
         liiku(lahto,kohde)
@@ -330,7 +331,6 @@ func ainvuoro():
     else:
         updateTurn()
     updatetroops()
-    updated = false
 
 func generatelegalmoves(alue):
     var legalmoves = []
