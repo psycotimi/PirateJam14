@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://menut/pause_menu.gd" id="1_wxv4d"]
 [ext_resource type="FontFile" uid="uid://gh01am2n77bp" path="res://assets/fonts/MOOD MKII Outline.ttf" id="2_uraca"]
 [ext_resource type="Texture2D" uid="uid://y2tmbn106gb8" path="res://assets/placeholder/mutet.png" id="4_3sjr5"]
-[ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="5_k5x6p"]
+[ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="5_3o6y8"]
 
 [sub_resource type="Theme" id="Theme_fgpe8"]
 default_font_size = 100
@@ -51,6 +51,15 @@ script = ExtResource("1_wxv4d")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+modulate = Color(0.576471, 0.439216, 0.333333, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Pause"]
 layout_mode = 0
@@ -114,6 +123,19 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ColorRect" type="ColorRect" parent="Options"]
+modulate = Color(0.576471, 0.439216, 0.333333, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="Options"]
 layout_mode = 0
 offset_left = 840.0
@@ -141,7 +163,7 @@ sprite_frames = SubResource("SpriteFrames_vbn2c")
 animation = &"mute"
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_k5x6p")
+stream = ExtResource("5_3o6y8")
 
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
