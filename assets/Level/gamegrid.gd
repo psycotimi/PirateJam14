@@ -256,7 +256,9 @@ func liiku(lahto, kohde):
         #print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
     #print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
     update_alueet()
-    await updateTurn()
+    #päivitän ain vuoron muualla, vasta kun ukot spawnattu
+    if Global.whoseTurn == Global.spreadTypeList[1]:
+        await updateTurn()
      
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -292,7 +294,9 @@ func hyokkaa(lahto, kohde):
             alueet[str(kohde)].troops -= 1
             if randomlosses < 0.33 && alueet[str(kohde)].troops > 1:
                 alueet[str(kohde)].troops -= 1
-        await updateTurn()
+        #päivitän ain vuoron muualla, vasta kun ukot spawnattu
+        if Global.whoseTurn == Global.spreadTypeList[1]:
+            await updateTurn()
                  
 #poistaa legalmovet ja troopit näkyvistä
 func removeLegalmoves():
@@ -350,8 +354,8 @@ func ainvuoro():
         liikuHyokkaa(str(siirto[0]),str(siirto[1]))
         await get_tree().create_timer(0.5).timeout
         await spawnaaukkoja()
-    else:
-        await updateTurn()
+    #ain vuoro loppuu vasta kun ukot spawnattu
+    await updateTurn()
     updatetroops()
     highlightLegalMoves()
 
@@ -413,9 +417,7 @@ func updateTurn():
     $UI.update_turn_counter()
     $UI.update_turn_arrow()
     $UI.update_troop_count()
-    updatetroops()
-    
-    
+    updatetroops()   
     
     if Global.whoseTurn == "jam":
         await ainvuoro()
