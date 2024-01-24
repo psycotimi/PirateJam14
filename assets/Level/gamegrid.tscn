@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ctuc5ws8v3q5b"]
+[gd_scene load_steps=17 format=3 uid="uid://ctuc5ws8v3q5b"]
 
 [ext_resource type="Texture2D" uid="uid://b061d5xepxe35" path="res://assets/placeholder/nakymaton.png" id="1_28tqg"]
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/ai.gd" id="8_3psaj"]
 [ext_resource type="AudioStream" uid="uid://i34x8htlibye" path="res://assets/sounds/attack!.wav" id="9_grodn"]
 [ext_resource type="AudioStream" uid="uid://dttxc561ce8v6" path="res://assets/sounds/blob.wav" id="10_0t2d8"]
+[ext_resource type="AudioStream" uid="uid://c15b2w7dt01lk" path="res://assets/sounds/blum.wav" id="11_xuwyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qok67"]
 texture = ExtResource("1_28tqg")
@@ -65,3 +66,8 @@ stream = ExtResource("9_grodn")
 [node name="liikesound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_0t2d8")
 pitch_scale = 3.0
+
+[node name="spawningsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xuwyg")
+volume_db = 5.0
+pitch_scale = 1.8

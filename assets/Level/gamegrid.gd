@@ -11,7 +11,7 @@ var troopLabel = Label.new()
 var offsetX = 23
 var offsetY = 12
 
-var selectedAlue
+var selectedAlue = null
 var targetAlue
 
 var xAlku = 0
@@ -94,6 +94,8 @@ func _ready():
         alkupositio()
         alkupositio2()
     sijoitaTroopitAlueille()
+    update_alueet()
+    highlightLegalMoves()
     update_grafiikkatilet()
     
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -147,6 +149,7 @@ func _input(_event):
         if !valinta:
             selectedAlue = null
             updatetroops()
+            highlightLegalMoves()
             return
             
         # jos jo yksi ruutu valittu, valitaan kohdealue
@@ -159,6 +162,7 @@ func _input(_event):
             selectedAlue = valinta
             update_alueet()
             updatetroops()
+            highlightLegalMoves()
             valitseRuutuJostaHyokataan(valinta)
             
             
@@ -196,15 +200,20 @@ func setAlueSpread(alue,spread):
 # piirtää ukkelit alueille, joissa troops > 0 # piirtää 
 func sijoitaTroopitAlueille():
     for alue in alueet:
-        # highlightaa alueen, jos on pelaajan vuoro ja alueella on joukkoja
-        if alueet[str(alue)].spread == Global.whoseTurn && Global.spreadTypeList[1] == Global.whoseTurn && alueet[str(alue)].troops > 0 && selectedAlue == null:
-            for ruutu in alueet[str(alue)].ruudut:
-                set_cell(3, ruutu, 4,Vector2i(0,0),0)
-                
 # piirtää ukot alueen ruutuihin
         var ruudut = alueet[alue].ruudut
         for x in range(0,alueet[str(alue)].troops):
             set_cell(2,ruudut[x],3,Vector2i(0,0),0)
+            
+            #siirsin omaan funktioon, enemmän iterointia mut selkeempi
+func highlightLegalMoves():
+    for alue in pbalueet:
+        if alueet[str(alue)].troops <= 0:
+            continue
+        # highlightaa alueen, jos on pelaajan vuoro ja alueella on joukkoja
+        elif Global.spreadTypeList[1] == Global.whoseTurn && alueet[str(alue)].troops > 0 && selectedAlue == null:
+            for ruutu in alueet[str(alue)].ruudut:
+                set_cell(3, ruutu, 4,Vector2i(0,0),0)
 
 # tarkastetaan onko valittu ruutu PEANUTbutter aluetta, ja onko siinä tropppeja, Mikäli liikutaan tai hyökätään, kutsutaan kyseisiä funktioita.
 # tekemättä tästä: kutsua hyökkäystä, kutsua liikkumista
@@ -242,11 +251,12 @@ func liiku(lahto, kohde):
         alueet[str(lahto)].troops -= 1
         alueet[str(kohde)].troops += 1
         updatetroops()
+        await get_tree().create_timer(0.1).timeout
         
         #print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
     #print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
     update_alueet()
-    updateTurn()
+    await updateTurn()
      
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -271,7 +281,7 @@ func hyokkaa(lahto, kohde):
             alueet[str(kohde)].troops -= 1
             if randomlosses < 0.33 && alueet[str(kohde)].troops > 1:
                 alueet[str(kohde)].troops -= 1
-        updateTurn()
+        await updateTurn()
                  
 #poistaa legalmovet ja troopit näkyvistä
 func removeLegalmoves():
@@ -318,7 +328,7 @@ func update_alueet():
 
 func alueenValinta():
     var alue = alue_under_mouse()
-    updatetroops()
+    highlightLegalMoves()
     if alueet.has(alue):
         #print("selected alue: " + str(alue), " | Troops in alue: ", +(alueet[str(alue)].troops))
         return(alue)
@@ -328,9 +338,12 @@ func ainvuoro():
     var siirto = await $AI.selectmove(alueet, pbalueet,jamalueet)
     if siirto != []:
         liikuHyokkaa(str(siirto[0]),str(siirto[1]))
+        await get_tree().create_timer(0.5).timeout
+        await spawnaaukkoja()
     else:
-        updateTurn()
+        await updateTurn()
     updatetroops()
+    highlightLegalMoves()
 
 func generatelegalmoves(alue):
     var legalmoves = []
@@ -376,7 +389,11 @@ func spawnaaukkoja():
         else:
             alueet[str(Vector2i(x,y))].troops += 1
             spawnattu += 1
-    updatetroops()
+            $spawningsound.play()
+            updatetroops()
+            await get_tree().create_timer(0.5).timeout
+    highlightLegalMoves()
+            
     
 func updateTurn():
     Global.turnCounter += 1
@@ -385,7 +402,10 @@ func updateTurn():
     $UI.update_turn_counter()
     $UI.update_turn_arrow()
     $UI.update_troop_count()
+    updatetroops()
+    
+    
     
     if Global.whoseTurn == "jam":
-        ainvuoro()
-        spawnaaukkoja()
+        await ainvuoro()
+        

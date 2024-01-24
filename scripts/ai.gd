@@ -36,7 +36,7 @@ func selectmove(alueet, pelaajanalueet, aialueet):
     for lahtoalue in ukollisetalueet:
         for legalmove in alueet[str(lahtoalue)].legalmoves:
             if alueet[str(legalmove)].spread != alueet[str(lahtoalue)].spread:
-                betterthanbadmoves.append([lahtoalue,legalmove])
+                baadmoves.append([lahtoalue,legalmove])
                 
     # liikkuu leivälle jos saa ukkoja
     for lahtoalue in ukollisetalueet:
@@ -48,9 +48,12 @@ func selectmove(alueet, pelaajanalueet, aialueet):
                                 
     # hyökkää jos ylivoima
     for lahtoalue in ukollisetalueet:
-        for legalmove in alueet[str(lahtoalue)].legalmoves:            
+        for legalmove in alueet[str(lahtoalue)].legalmoves:          
            if alueet[str(legalmove)].spread == pelaajanspread && alueet[str(lahtoalue)].troops > alueet[str(legalmove)].troops:
-                goodmoves.append([lahtoalue,legalmove])
+                if alueet[str(legalmove)].troops > 0:
+                    goodmoves.append([lahtoalue,legalmove])
+                else:
+                    betterthanbadmoves.append([lahtoalue,legalmove])
 
     goodmoves.shuffle()
     betterthanbadmoves.shuffle()
