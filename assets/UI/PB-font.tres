@@ -1,13 +1,11 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c6juy32odjefi"]
 
-[ext_resource type="FontFile" uid="uid://clia7kiu3o7au" path="res://assets/fonts/MOOD MKII.ttf" id="1_k5c7y"]
+[ext_resource type="FontFile" uid="uid://gbq5lp8rmpti" path="res://assets/fonts/Antonio-Bold.ttf" id="1_qlo6l"]
 
 [resource]
-font = ExtResource("1_k5c7y")
-font_size = 20
-font_color = Color(0.556863, 0.341176, 0, 1)
-outline_size = 3
-outline_color = Color(0.992157, 0.72549, 0.486275, 1)
+font = ExtResource("1_qlo6l")
+font_size = 50
+font_color = Color(0.662745, 0.321569, 0.0666667, 1)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 0.870588)
-shadow_offset = Vector2(2, 2)
+shadow_offset = Vector2(-2, 2)

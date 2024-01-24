@@ -1,15 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbhajou5uidn1"]
+[gd_scene load_steps=18 format=3 uid="uid://dbhajou5uidn1"]
 
 [ext_resource type="Script" path="res://assets/Level/TestGame/TestGame.gd" id="1_tobbp"]
 [ext_resource type="PackedScene" uid="uid://c7if3cbhxnxko" path="res://assets/Level/GameArea/game_area.tscn" id="2_kh1c3"]
 [ext_resource type="PackedScene" uid="uid://ctuc5ws8v3q5b" path="res://assets/Level/gamegrid.tscn" id="3_mp01c"]
 [ext_resource type="AudioStream" uid="uid://dpiqgspduwljj" path="res://assets/sounds/sbreaditmaintheme.wav" id="4_5kaea"]
 [ext_resource type="PackedScene" uid="uid://dql6aufqubrsi" path="res://assets/UI/ui.tscn" id="4_bursq"]
-[ext_resource type="Texture2D" uid="uid://b2h5nvbclt28d" path="res://icon.svg" id="6_qs1h3"]
+[ext_resource type="Texture2D" uid="uid://b0ihunw7ipj63" path="res://assets/graphics/kenraalit/normikenraalipb.png" id="6_vqks3"]
 [ext_resource type="Script" path="res://scripts/pbkenraali.gd" id="7_5awsm"]
 [ext_resource type="Script" path="res://scripts/pbjalat.gd" id="7_f1k78"]
+[ext_resource type="Texture2D" uid="uid://di16ysrmymm6v" path="res://assets/graphics/kenraalit/jalatkenraalipb.png" id="8_vj3gv"]
 [ext_resource type="Script" path="res://scripts/jamkenraali.gd" id="9_qhflg"]
+[ext_resource type="Texture2D" uid="uid://caykqtoo7b5ui" path="res://assets/graphics/kenraalit/normikenraalijam.png" id="10_fxg13"]
 [ext_resource type="Script" path="res://scripts/jamjalat.gd" id="10_g3qpo"]
+[ext_resource type="Texture2D" uid="uid://b3h1h8m6ejvp" path="res://assets/graphics/kenraalit/hyokkayskenraalipb.png" id="10_hnk4w"]
+[ext_resource type="Texture2D" uid="uid://b2s5gbvgbli8" path="res://assets/graphics/kenraalit/haviokenraalipb.png" id="11_b4ddg"]
+[ext_resource type="Texture2D" uid="uid://cyt25agw2gijd" path="res://assets/graphics/kenraalit/jalatkenraalijam.png" id="12_wphhu"]
+[ext_resource type="Texture2D" uid="uid://b3iliegr05iao" path="res://assets/graphics/kenraalit/hyokkayskenraalijam.png" id="16_tmidp"]
+[ext_resource type="Texture2D" uid="uid://gj766fe66ofp" path="res://assets/graphics/kenraalit/haviokenraalijam.png" id="17_odhqs"]
 
 [node name="TestGame" type="Node2D"]
 process_mode = 1
@@ -33,24 +40,45 @@ position = Vector2(727, 397)
 stream = ExtResource("4_5kaea")
 autoplay = true
 
-[node name="pbkenraali" type="Sprite2D" parent="."]
-position = Vector2(-150, 500)
-texture = ExtResource("6_qs1h3")
+[node name="pbkenraali" type="Node2D" parent="."]
+position = Vector2(-150, 780)
 script = ExtResource("7_5awsm")
 
 [node name="pbjalat" type="Sprite2D" parent="pbkenraali"]
 show_behind_parent = true
-position = Vector2(0, 64)
-texture = ExtResource("6_qs1h3")
+position = Vector2(-32, 112)
+texture = ExtResource("8_vj3gv")
 script = ExtResource("7_f1k78")
 
-[node name="jamkenraali" type="Sprite2D" parent="."]
-position = Vector2(2220, 500)
-texture = ExtResource("6_qs1h3")
+[node name="normaali" type="Sprite2D" parent="pbkenraali"]
+texture = ExtResource("6_vqks3")
+
+[node name="hyokkays" type="Sprite2D" parent="pbkenraali"]
+visible = false
+texture = ExtResource("10_hnk4w")
+
+[node name="havio" type="Sprite2D" parent="pbkenraali"]
+visible = false
+texture = ExtResource("11_b4ddg")
+
+[node name="jamkenraali" type="Node2D" parent="."]
+position = Vector2(2220, 780)
 script = ExtResource("9_qhflg")
 
 [node name="jamjalat" type="Sprite2D" parent="jamkenraali"]
 show_behind_parent = true
-position = Vector2(0, 64)
-texture = ExtResource("6_qs1h3")
+position = Vector2(32, 112)
+texture = ExtResource("12_wphhu")
 script = ExtResource("10_g3qpo")
+
+[node name="normaali" type="Sprite2D" parent="jamkenraali"]
+texture = ExtResource("10_fxg13")
+
+[node name="hyokkays" type="Sprite2D" parent="jamkenraali"]
+visible = false
+position = Vector2(2220, 780)
+texture = ExtResource("16_tmidp")
+
+[node name="havio" type="Sprite2D" parent="jamkenraali"]
+visible = false
+texture = ExtResource("17_odhqs")

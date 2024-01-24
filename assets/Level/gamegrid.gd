@@ -282,6 +282,7 @@ func hyokkaa(lahto, kohde):
     else:
         while alueet[str(lahto)].troops > 0:
             $attacksound.pitch_scale = randf_range(1.5,3)
+            $attacksound.volume_db = randf_range(0,10)
             $attacksound.play()
             alueet[str(lahto)].troops -= 1
             updatetroops()
@@ -390,7 +391,7 @@ func spawnaaukkoja():
         if endlessloop > 100:
             return
         # yrittää pari kertaa löytää hillotonta
-        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 5:
+        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 2:
             yritauudestaan += 1
             continue
         if alueet[str(Vector2i(x,y))].troops >= Global.troopCountMax-1:
@@ -398,7 +399,7 @@ func spawnaaukkoja():
         else:
             alueet[str(Vector2i(x,y))].troops += 1
             spawnattu += 1
-            $spawningsound.pitch_scale = randf_range(1.5,2)
+            $spawningsound.pitch_scale = randf_range(1.5,2.5)
             $spawningsound.play()
             updatetroops()
             await get_tree().create_timer(0.5).timeout
