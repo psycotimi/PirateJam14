@@ -162,7 +162,6 @@ func _input(_event):
             selectedAlue = valinta
             update_alueet()
             updatetroops()
-            highlightLegalMoves()
             valitseRuutuJostaHyokataan(valinta)
             
             
@@ -207,6 +206,7 @@ func sijoitaTroopitAlueille():
             
             #siirsin omaan funktioon, enemmän iterointia mut selkeempi
 func highlightLegalMoves():
+    selectedAlue = null
     for alue in pbalueet:
         if alueet[str(alue)].troops <= 0:
             continue
@@ -263,10 +263,15 @@ func hyokkaa(lahto, kohde):
     var hyokkaajia = alueet[str(lahto)].troops
     var puolustajia = alueet[str(kohde)].troops
     var randomlosses = randf_range(0,1)
-    $attacksound.pitch_scale = randf_range(1.5,3)
-    $attacksound.play()
+    
     if battle.did_attacker_win(hyokkaajia, puolustajia):
-        alueet[str(kohde)].troops = 0
+        while alueet[str(kohde)].troops > 0:
+            $attacksound.pitch_scale = randf_range(1.5,3)
+            $attacksound.volume_db = randf_range(0,10)
+            $attacksound.play()
+            alueet[str(kohde)].troops -= 1
+            updatetroops()
+            await get_tree().create_timer(0.1).timeout
         #voittajallakin chanssi menettää unitteja
         if randomlosses < 0.5 && alueet[str(lahto)].troops > 1:
             alueet[str(lahto)].troops -= 1
@@ -275,7 +280,12 @@ func hyokkaa(lahto, kohde):
                 alueet[str(lahto)].troops -= 1
         liiku(lahto,kohde)
     else:
-        alueet[str(lahto)].troops = 0
+        while alueet[str(lahto)].troops > 0:
+            $attacksound.pitch_scale = randf_range(1.5,3)
+            $attacksound.play()
+            alueet[str(lahto)].troops -= 1
+            updatetroops()
+            await get_tree().create_timer(0.1).timeout
         #voittajallakin chanssi menettaa unittei
         if randomlosses < 0.5 && alueet[str(kohde)].troops > 1:
             alueet[str(kohde)].troops -= 1
@@ -328,7 +338,6 @@ func update_alueet():
 
 func alueenValinta():
     var alue = alue_under_mouse()
-    highlightLegalMoves()
     if alueet.has(alue):
         #print("selected alue: " + str(alue), " | Troops in alue: ", +(alueet[str(alue)].troops))
         return(alue)
@@ -381,7 +390,7 @@ func spawnaaukkoja():
         if endlessloop > 100:
             return
         # yrittää pari kertaa löytää hillotonta
-        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 2:
+        if alueet[str(Vector2i(x,y))].spread != Global.spreadTypeList[0] && yritauudestaan < 5:
             yritauudestaan += 1
             continue
         if alueet[str(Vector2i(x,y))].troops >= Global.troopCountMax-1:
@@ -389,6 +398,7 @@ func spawnaaukkoja():
         else:
             alueet[str(Vector2i(x,y))].troops += 1
             spawnattu += 1
+            $spawningsound.pitch_scale = randf_range(1.5,2)
             $spawningsound.play()
             updatetroops()
             await get_tree().create_timer(0.5).timeout
