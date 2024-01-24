@@ -8,8 +8,8 @@ var pbalueet = []
 var jamalueet = []
 
 var troopLabel = Label.new()
-var offsetX = 23
-var offsetY = 12
+var offsetX = 22
+var offsetY = 13
 
 var selectedAlue = null
 var targetAlue
