@@ -22,6 +22,8 @@ var kohdexy
 
 var turnModulo = 1
 
+const jamkenraali = preload("res://scripts/jamilmeet.gd")
+const pbkenraali = preload("res://scripts/pbilmeet.gd")
 const battleScripts = preload("res://scripts/Battle.gd")
 var battle
 var updated = false
@@ -272,7 +274,7 @@ func liiku(lahto, kohde):
     update_alueet()
     #päivitän ain vuoron muualla, vasta kun ukot spawnattu
     if Global.whoseTurn == Global.spreadTypeList[1]:
-        await updateTurn()
+        updateTurn()
      
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -282,6 +284,8 @@ func hyokkaa(lahto, kohde):
     var pilvipositio = Vector2i(0,0)
     var lahtoruudut = alueet[str(lahto)].ruudut
     var kohderuudut = alueet[str(kohde)].ruudut
+    var hyokkaaja = alueet[str(lahto)].spread
+        
     
     #taistelupilven position purkkaetsintä
     for ruutu in lahtoruudut:
@@ -296,7 +300,8 @@ func hyokkaa(lahto, kohde):
                     
     $taistelupilvi.position = pilvipositio
     $taistelupilvi.show()
-    
+    if hyokkaaja == Global.spreadTypeList[2]:
+        Global.whoseTurn = Global.spreadTypeList[0]
     if battle.did_attacker_win(hyokkaajia, puolustajia):
         while alueet[str(kohde)].troops > 0:
             $attacksound.pitch_scale = randf_range(1.5,3)
@@ -387,10 +392,11 @@ func ainvuoro():
     var siirto = await $AI.selectmove(alueet, pbalueet,jamalueet)
     if siirto != []:
         liikuHyokkaa(str(siirto[0]),str(siirto[1]))
+        Global.whoseTurn = Global.spreadTypeList[0]
         await get_tree().create_timer(0.5).timeout
         await spawnaaukkoja()
     #ain vuoro loppuu vasta kun ukot spawnattu
-    await updateTurn()
+    updateTurn()
     updatetroops()
     highlightLegalMoves()
 

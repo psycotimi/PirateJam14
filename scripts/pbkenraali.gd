@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if global_position.x > 450:
-        set_script(null)
+        set_script("nullres://scripts/pbilmeet.gd")
     else:
         pos.x = delta*movementspeed
         position.x += pos.x

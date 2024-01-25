@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbhajou5uidn1"]
+[gd_scene load_steps=20 format=3 uid="uid://dbhajou5uidn1"]
 
 [ext_resource type="Script" path="res://assets/Level/TestGame/TestGame.gd" id="1_tobbp"]
 [ext_resource type="PackedScene" uid="uid://c7if3cbhxnxko" path="res://assets/Level/GameArea/game_area.tscn" id="2_kh1c3"]
@@ -14,9 +14,11 @@
 [ext_resource type="Script" path="res://scripts/jamjalat.gd" id="10_g3qpo"]
 [ext_resource type="Texture2D" uid="uid://b3h1h8m6ejvp" path="res://assets/graphics/kenraalit/hyokkayskenraalipb.png" id="10_hnk4w"]
 [ext_resource type="Texture2D" uid="uid://b2s5gbvgbli8" path="res://assets/graphics/kenraalit/haviokenraalipb.png" id="11_b4ddg"]
+[ext_resource type="Texture2D" uid="uid://wm8dis5hdsns" path="res://assets/graphics/kenraalit/voittokenraalipb.png" id="12_6igl1"]
 [ext_resource type="Texture2D" uid="uid://cyt25agw2gijd" path="res://assets/graphics/kenraalit/jalatkenraalijam.png" id="12_wphhu"]
 [ext_resource type="Texture2D" uid="uid://b3iliegr05iao" path="res://assets/graphics/kenraalit/hyokkayskenraalijam.png" id="16_tmidp"]
 [ext_resource type="Texture2D" uid="uid://gj766fe66ofp" path="res://assets/graphics/kenraalit/haviokenraalijam.png" id="17_odhqs"]
+[ext_resource type="Texture2D" uid="uid://cbr0jdnsbwomx" path="res://assets/graphics/kenraalit/voittokenraalijam.png" id="19_wymqe"]
 
 [node name="TestGame" type="Node2D"]
 process_mode = 1
@@ -61,6 +63,10 @@ texture = ExtResource("10_hnk4w")
 visible = false
 texture = ExtResource("11_b4ddg")
 
+[node name="voitto" type="Sprite2D" parent="pbkenraali"]
+visible = false
+texture = ExtResource("12_6igl1")
+
 [node name="jamkenraali" type="Node2D" parent="."]
 position = Vector2(2220, 780)
 script = ExtResource("9_qhflg")
@@ -82,3 +88,7 @@ texture = ExtResource("16_tmidp")
 [node name="havio" type="Sprite2D" parent="jamkenraali"]
 visible = false
 texture = ExtResource("17_odhqs")
+
+[node name="voitto" type="Sprite2D" parent="jamkenraali"]
+visible = false
+texture = ExtResource("19_wymqe")
