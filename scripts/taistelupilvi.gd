@@ -10,5 +10,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     phase += delta
-    rotation_degrees = -30*sin(shufflespeed*phase)
+    rotation_degrees = -40*sin(shufflespeed*phase)
     pass

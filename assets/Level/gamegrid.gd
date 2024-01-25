@@ -27,6 +27,7 @@ var battle
 var updated = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    $taistelupilvi.hide()
     battle = battleScripts.new()
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
@@ -278,21 +279,18 @@ func hyokkaa(lahto, kohde):
     var hyokkaajia = alueet[str(lahto)].troops
     var puolustajia = alueet[str(kohde)].troops
     var randomlosses = randf_range(0,1)
-    var pilvipositio
+    var pilvipositio = Vector2i(0,0)
     var lahtoruudut = alueet[str(lahto)].ruudut
     var kohderuudut = alueet[str(kohde)].ruudut
     
     #taistelupilven position purkkaetsintä
     for ruutu in lahtoruudut:
         if kohderuudut.has(Vector2i(ruutu.x+1,ruutu.y)):
-            pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
-            
+            pilvipositio = Vector2i(32*(ruutu.x+1),32*ruutu.y)            
         if kohderuudut.has(Vector2i(ruutu.x-1,ruutu.y)):
             pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
-
         if kohderuudut.has(Vector2i(ruutu.x,ruutu.y+1)):
-            pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
-            
+            pilvipositio = Vector2i(32*ruutu.x,32*(ruutu.y+1))
         if kohderuudut.has(Vector2i(ruutu.x,ruutu.y-1)):
             pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
                     
@@ -331,7 +329,8 @@ func hyokkaa(lahto, kohde):
         #päivitän ain vuoron muualla, vasta kun ukot spawnattu
         if Global.whoseTurn == Global.spreadTypeList[1]:
             $taistelupilvi.hide()
-            await updateTurn()
+            updateTurn()
+    $taistelupilvi.hide()
                  
 #poistaa legalmovet ja troopit näkyvistä
 func removeLegalmoves():
