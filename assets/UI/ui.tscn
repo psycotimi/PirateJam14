@@ -1,12 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://dql6aufqubrsi"]
+[gd_scene load_steps=18 format=3 uid="uid://dql6aufqubrsi"]
 
 [ext_resource type="Script" path="res://assets/UI/ui.gd" id="1_6io2n"]
 [ext_resource type="LabelSettings" uid="uid://c6juy32odjefi" path="res://assets/UI/PB-font.tres" id="1_jk8j8"]
 [ext_resource type="PackedScene" uid="uid://o3mjmew4gp7l" path="res://menut/pause_menu.tscn" id="2_07eyq"]
 [ext_resource type="LabelSettings" uid="uid://cbisq0vmaf2xo" path="res://assets/UI/Jam-font.tres" id="2_khqc4"]
-[ext_resource type="LabelSettings" uid="uid://bph8vv85ngard" path="res://assets/UI/Neutral-font.tres" id="3_acmhd"]
+[ext_resource type="Texture2D" uid="uid://ya8oqlr3878u" path="res://assets/graphics/PBTROOPS.png" id="2_ywk2c"]
+[ext_resource type="Texture2D" uid="uid://cac3suy7l3xvd" path="res://assets/graphics/scoretoast.png" id="3_77fma"]
+[ext_resource type="Texture2D" uid="uid://crb37kb5u8udk" path="res://assets/graphics/pbnuoli.png" id="4_vhlj3"]
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="5_akvru"]
+[ext_resource type="Texture2D" uid="uid://cr2m3ygrddp8g" path="res://assets/graphics/JAMTROOPS.png" id="5_n020l"]
+[ext_resource type="Texture2D" uid="uid://cjwvywjtd57ey" path="res://assets/graphics/jamnuoli.png" id="5_or86i"]
+[ext_resource type="Texture2D" uid="uid://bremh1rt2kyi7" path="res://assets/graphics/pause.png" id="5_x80d5"]
+[ext_resource type="Texture2D" uid="uid://hmb2ba4fefc0" path="res://assets/graphics/paahdin.png" id="6_p6w8c"]
+[ext_resource type="Texture2D" uid="uid://bsuoknpoe2mgb" path="res://assets/graphics/turn.png" id="7_ayoae"]
 [ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="7_s5bsp"]
+[ext_resource type="FontFile" uid="uid://gbq5lp8rmpti" path="res://assets/fonts/Antonio-Bold.ttf" id="9_3bru6"]
+[ext_resource type="Texture2D" uid="uid://xqou3e8lgfoj" path="res://assets/graphics/1. kohdistuskerros.png" id="10_87c18"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tie47"]
+font = ExtResource("9_3bru6")
+font_size = 50
+font_color = Color(0.913725, 0.729412, 0.282353, 1)
+outline_color = Color(0.639216, 0.458824, 0.101961, 1)
+shadow_size = 8
+shadow_color = Color(0.639216, 0.458824, 0.101961, 1)
+shadow_offset = Vector2(1, 2)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_6io2n")
@@ -17,27 +35,25 @@ anchor_left = 0.05
 anchor_top = 0.8
 anchor_right = 0.2
 anchor_bottom = 0.95
-offset_top = -40.0
+offset_top = -650.0
 offset_right = 40.0
+offset_bottom = -610.0
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PBTroopCounter"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -88.0
-offset_right = 146.0
-grow_vertical = 0
+[node name="Label" type="Sprite2D" parent="PBTroopCounter"]
+position = Vector2(195, 95)
+texture = ExtResource("2_ywk2c")
 
-[node name="Label" type="Label" parent="PBTroopCounter/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "PB Troops"
-label_settings = ExtResource("1_jk8j8")
+[node name="leipä" type="Sprite2D" parent="PBTroopCounter"]
+position = Vector2(265, -10)
+texture = ExtResource("3_77fma")
 
-[node name="PBTroopCount" type="Label" parent="PBTroopCounter/VBoxContainer"]
-layout_mode = 2
+[node name="PBTroopCount" type="Label" parent="PBTroopCounter"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = -40.0
+offset_right = 310.0
+offset_bottom = 36.0
 theme_override_font_sizes/font_size = 30
 text = "5"
 label_settings = ExtResource("1_jk8j8")
@@ -49,32 +65,26 @@ anchor_left = 0.8
 anchor_top = 0.8
 anchor_right = 0.95
 anchor_bottom = 0.95
-offset_left = -0.400024
-offset_top = -40.4
-offset_bottom = -0.400024
+offset_left = 14.0
+offset_top = -650.0
+offset_right = 36.0
+offset_bottom = -632.0
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="JamTroopCounter"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -163.0
-offset_top = -88.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="Label" type="Sprite2D" parent="JamTroopCounter"]
+position = Vector2(85, 80)
+texture = ExtResource("5_n020l")
 
-[node name="Label" type="Label" parent="JamTroopCounter/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Jam Troops"
-label_settings = ExtResource("2_khqc4")
-horizontal_alignment = 2
+[node name="leipä" type="Sprite2D" parent="JamTroopCounter"]
+position = Vector2(10, -10)
+texture = ExtResource("3_77fma")
 
-[node name="JamTroopCount" type="Label" parent="JamTroopCounter/VBoxContainer"]
+[node name="JamTroopCount" type="Label" parent="JamTroopCounter"]
 layout_mode = 2
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 60.0
+offset_bottom = 36.0
 theme_override_font_sizes/font_size = 30
 text = "5"
 label_settings = ExtResource("2_khqc4")
@@ -89,35 +99,13 @@ anchor_bottom = 0.2
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PBArrow" type="Label" parent="TurnCounter"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -34.5
-offset_right = 58.0
-offset_bottom = 34.5
-grow_vertical = 2
-scale = Vector2(2, 2)
-text = "<"
-label_settings = ExtResource("1_jk8j8")
+[node name="PBArrow" type="Sprite2D" parent="TurnCounter"]
+position = Vector2(-25, 155)
+texture = ExtResource("4_vhlj3")
 
-[node name="JamArrow" type="Label" parent="TurnCounter"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -34.5
-offset_bottom = 34.5
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(2, 2)
-size_flags_horizontal = 8
-text = ">"
-label_settings = ExtResource("2_khqc4")
+[node name="JamArrow" type="Sprite2D" parent="TurnCounter"]
+position = Vector2(605, 155)
+texture = ExtResource("5_or86i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TurnCounter"]
 layout_mode = 1
@@ -134,16 +122,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = -10
 
-[node name="Turn" type="Label" parent="TurnCounter/VBoxContainer"]
-layout_mode = 2
-text = "TURN"
-label_settings = ExtResource("3_acmhd")
+[node name="Turn" type="Sprite2D" parent="TurnCounter/VBoxContainer"]
+position = Vector2(50, 145)
+texture = ExtResource("6_p6w8c")
 
-[node name="TurnNumber" type="Label" parent="TurnCounter/VBoxContainer"]
-layout_mode = 2
+[node name="turntext" type="Sprite2D" parent="TurnCounter/VBoxContainer/Turn"]
+position = Vector2(0, -25)
+texture = ExtResource("7_ayoae")
+
+[node name="TurnNumber" type="Label" parent="TurnCounter/VBoxContainer/Turn"]
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 76.0
+theme = ExtResource("5_akvru")
 text = "1
 "
-label_settings = ExtResource("3_acmhd")
+label_settings = SubResource("LabelSettings_tie47")
 horizontal_alignment = 1
 
 [node name="PauseButton" type="Button" parent="."]
@@ -152,14 +146,17 @@ anchor_left = 0.02
 anchor_top = 0.02
 anchor_right = 0.04
 anchor_bottom = 0.04
-offset_left = -3.4
-offset_top = 13.4
-offset_right = 18.2
-offset_bottom = 51.8
+offset_left = -18.4
+offset_top = -1.6
+offset_right = 143.2
+offset_bottom = 36.8
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_akvru")
-text = "Pause"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PauseButton"]
+texture = ExtResource("5_x80d5")
+centered = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_07eyq")]
 anchors_preset = 15
@@ -170,5 +167,11 @@ grow_vertical = 2
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_s5bsp")
+
+[node name="1_Kohdistuskerros" type="Sprite2D" parent="."]
+visible = false
+z_index = -100
+position = Vector2(960, 540)
+texture = ExtResource("10_87c18")
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

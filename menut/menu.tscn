@@ -1,22 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://thkmxy1yuflt"]
+[gd_scene load_steps=8 format=3 uid="uid://thkmxy1yuflt"]
 
 [ext_resource type="Script" path="res://menut/Menu.gd" id="1_ne4na"]
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_42k54"]
 [ext_resource type="PackedScene" uid="uid://cm7t2ldke1rqx" path="res://menut/mainmenun_tausta.tscn" id="2_hk5kq"]
-[ext_resource type="FontFile" uid="uid://gh01am2n77bp" path="res://assets/fonts/MOOD MKII Outline.ttf" id="3_4jxvi"]
 [ext_resource type="FontFile" uid="uid://clia7kiu3o7au" path="res://assets/fonts/MOOD MKII.ttf" id="5_o533m"]
 [ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="6_kh10d"]
 
 [sub_resource type="Theme" id="Theme_8da6w"]
 default_font_size = 100
 
-[sub_resource type="Theme" id="Theme_f4wq8"]
-default_font = ExtResource("3_4jxvi")
-default_font_size = 200
-
 [sub_resource type="LabelSettings" id="LabelSettings_s23pc"]
 font = ExtResource("5_o533m")
 font_size = 100
+font_color = Color(0.913725, 0.729412, 0.282353, 1)
+outline_size = 12
+outline_color = Color(0.639216, 0.458824, 0.101961, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -74,13 +72,13 @@ offset_left = 360.0
 offset_top = 100.0
 offset_right = 1560.0
 offset_bottom = 380.0
-theme = SubResource("Theme_f4wq8")
+theme = ExtResource("2_42k54")
 theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.913725, 0.729412, 0.282353, 1)
 text = "Sbread It"
 label_settings = SubResource("LabelSettings_s23pc")
 
 [node name="ColorRect2" type="ColorRect" parent="Otsikko"]
-modulate = Color(0.882353, 0, 0.180392, 1)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -91,6 +89,8 @@ offset_right = 50.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_42k54")
+color = Color(0.356863, 0.658824, 0.156863, 1)
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kh10d")

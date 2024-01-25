@@ -2,11 +2,11 @@ extends CanvasLayer
 
 
 # onready tarkoittaa että koodirivi suoritetaan vain kun scene on ready.
-@onready var turnNumber: Label = $TurnCounter/VBoxContainer/TurnNumber
-@onready var pbArrow: Label = $TurnCounter/PBArrow
-@onready var jamArrow: Label = $TurnCounter/JamArrow
-@onready var pbCount: Label = $PBTroopCounter/VBoxContainer/PBTroopCount
-@onready var jamCount: Label = $JamTroopCounter/VBoxContainer/JamTroopCount
+@onready var turnNumber: Label = $TurnCounter/VBoxContainer/Turn/TurnNumber
+@onready var pbArrow: Sprite2D = $TurnCounter/PBArrow
+@onready var jamArrow: Sprite2D = $TurnCounter/JamArrow
+@onready var pbCount: Label = $PBTroopCounter/PBTroopCount
+@onready var jamCount: Label = $JamTroopCounter/JamTroopCount
 
 func _ready():
 	$PauseMenu.hide()

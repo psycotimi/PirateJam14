@@ -1,7 +1,7 @@
 extends TileMap
 
-var offsetX = 23*2
-var offsetY = 12*2
+var offsetX = 22*2
+var offsetY = 13*2
 var gridSize = Global.gridsize*2 
 var allTiles = {}
 var neighbours = []
