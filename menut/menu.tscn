@@ -94,7 +94,6 @@ color = Color(0.356863, 0.658824, 0.156863, 1)
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kh10d")
-volume_db = 5.0
 pitch_scale = 1.19
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]

@@ -24,6 +24,6 @@ func _on_mute_pressed():
         AudioServer.set_bus_mute(bus_idx, false)
 
 func buttonsound():
-    $buttonsound.pitch_scale = randf_range(2,3)
+    $buttonsound.pitch_scale = 1.5
     $buttonsound.play()
     await get_tree().create_timer(0.1).timeout

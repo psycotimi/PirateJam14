@@ -83,7 +83,6 @@ animation = &"mute"
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_y5qsp")
-pitch_scale = 2.73
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
