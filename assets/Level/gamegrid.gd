@@ -90,7 +90,7 @@ func _ready():
         ruutuoffsetx += 1
         
          
-    for n in 5:
+    for n in 1:
         alkupositio()
         alkupositio2()
     sijoitaTroopitAlueille()

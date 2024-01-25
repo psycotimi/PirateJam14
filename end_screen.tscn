@@ -37,5 +37,12 @@ offset_right = 279.0
 offset_bottom = 430.0
 texture = ExtResource("3_vva1y")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 878.0
+offset_top = 580.0
+offset_right = 1005.0
+offset_bottom = 628.0
+text = "VICTORY \\o/"
+
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

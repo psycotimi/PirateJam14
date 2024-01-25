@@ -37,5 +37,12 @@ offset_right = 345.0
 offset_bottom = 430.0
 texture = ExtResource("3_u3uy6")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 884.0
+offset_top = 585.0
+offset_right = 1108.0
+offset_bottom = 693.0
+text = "You lost :((("
+
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
