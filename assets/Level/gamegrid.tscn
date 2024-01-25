@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ctuc5ws8v3q5b"]
+[gd_scene load_steps=27 format=3 uid="uid://ctuc5ws8v3q5b"]
 
 [ext_resource type="Texture2D" uid="uid://b061d5xepxe35" path="res://assets/placeholder/nakymaton.png" id="1_28tqg"]
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
@@ -15,6 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://i34x8htlibye" path="res://assets/sounds/attack!.wav" id="9_grodn"]
 [ext_resource type="AudioStream" uid="uid://dttxc561ce8v6" path="res://assets/sounds/blob.wav" id="10_0t2d8"]
 [ext_resource type="AudioStream" uid="uid://c15b2w7dt01lk" path="res://assets/sounds/blum.wav" id="11_xuwyg"]
+[ext_resource type="Texture2D" uid="uid://bpvudxektgdna" path="res://assets/graphics/taistelu.png" id="16_h5dvq"]
+[ext_resource type="Script" path="res://scripts/taistelupilvi.gd" id="17_qi5rq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qok67"]
 texture = ExtResource("1_28tqg")
@@ -98,3 +100,8 @@ pitch_scale = 3.0
 stream = ExtResource("11_xuwyg")
 volume_db = 5.0
 pitch_scale = 1.8
+
+[node name="taistelupilvi" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("16_h5dvq")
+script = ExtResource("17_qi5rq")
