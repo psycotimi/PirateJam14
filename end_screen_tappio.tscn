@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ahkquoyud6g"]
+
+[ext_resource type="Script" path="res://end_screen_tappio.gd" id="1_ihyw4"]
+[ext_resource type="Texture2D" uid="uid://cbr0jdnsbwomx" path="res://assets/graphics/kenraalit/voittokenraalijam.png" id="2_3edua"]
+[ext_resource type="Texture2D" uid="uid://cyt25agw2gijd" path="res://assets/graphics/kenraalit/jalatkenraalijam.png" id="3_u3uy6"]
+
+[node name="endScreenTappio" type="CanvasLayer"]
+script = ExtResource("1_ihyw4")
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 740.0
+offset_top = 737.0
+offset_right = 916.0
+offset_bottom = 885.0
+text = "Retry"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 1029.0
+offset_top = 732.0
+offset_right = 1201.0
+offset_bottom = 886.0
+text = "Quit
+"
+
+[node name="pbLost" type="TextureRect" parent="."]
+offset_left = 687.0
+offset_top = 101.0
+offset_right = 1135.0
+offset_bottom = 549.0
+texture = ExtResource("2_3edua")
+
+[node name="pbLost2" type="TextureRect" parent="pbLost"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 302.0
+offset_right = 345.0
+offset_bottom = 430.0
+texture = ExtResource("3_u3uy6")
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

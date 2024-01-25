@@ -92,7 +92,7 @@ func _ready():
          
     for n in 5:
         alkupositio()
-        alkupositio2()
+        #alkupositio2()
     sijoitaTroopitAlueille()
     update_alueet()
     highlightLegalMoves()
@@ -263,7 +263,8 @@ func liiku(lahto, kohde):
         alueet[str(lahto)].troops -= 1
         alueet[str(kohde)].troops += 1
         updatetroops()
-        await get_tree().create_timer(0.1).timeout
+        if Global.pbTroopCount != 0:
+            await get_tree().create_timer(0.1).timeout
         
         #print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
     #print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
@@ -349,9 +350,10 @@ func update_alueet():
     $UI.update_troop_count()
     if pbalueet == [] or pbtroops == 0:
         playerlost = true
+        get_tree().change_scene_to_file("res://end_screen_tappio.tscn")
     if jamalueet == [] or jamtroops == 0:
         playerwon = true
-        
+        get_tree().change_scene_to_file("res://end_screen.tscn")
 
 func alueenValinta():
     var alue = alue_under_mouse()
