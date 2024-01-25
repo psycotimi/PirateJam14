@@ -92,7 +92,7 @@ func _ready():
          
     for n in 5:
         alkupositio()
-        #alkupositio2()
+        alkupositio2()
     sijoitaTroopitAlueille()
     update_alueet()
     highlightLegalMoves()
