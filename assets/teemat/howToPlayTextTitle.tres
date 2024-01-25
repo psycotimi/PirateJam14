@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://br42m33bw4p8a"]
+
+[ext_resource type="FontFile" uid="uid://gbq5lp8rmpti" path="res://assets/fonts/Antonio-Bold.ttf" id="1_f0nco"]
+
+[resource]
+default_font = ExtResource("1_f0nco")
+default_font_size = 24
