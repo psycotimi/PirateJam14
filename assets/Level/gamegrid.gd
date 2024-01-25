@@ -33,10 +33,10 @@ func _ready():
             troopLabel.position = Vector2(x,y)
 
             var grafiikkatilet = [
-                Vector2(2*x,2*y),
-                Vector2(2*x,2*y+1),
-                Vector2(2*x+1,2*y),
-                Vector2(2*x+1,2*y+1)
+                Vector2i(2*x,2*y),
+                Vector2i(2*x,2*y+1),
+                Vector2i(2*x+1,2*y),
+                Vector2i(2*x+1,2*y+1)
                 ]
             tiles[str(Vector2(x,y))] = {
                 "spread" : Global.spreadTypeList[0], # aluksi hilloton
@@ -60,16 +60,16 @@ func _ready():
             
             # näistä pitää vielä poistaa gridin ulkopuoliset ruudut
             var legalmoves = [
-                Vector2(x+1,y),
-                Vector2(x-1,y),
-                Vector2(x,y+1),
-                Vector2(x,y-1)
+                Vector2i(x+1,y),
+                Vector2i(x-1,y),
+                Vector2i(x,y+1),
+                Vector2i(x,y-1)
                 ]
             var ruudut = [
-                Vector2(offsetX+x+ruutuoffsetx,offsetY+y+ruutuoffsety),
-                Vector2(offsetX+x+ruutuoffsetx,offsetY+y+ruutuoffsety+1),
-                Vector2(offsetX+x+ruutuoffsetx+1,offsetY+y+ruutuoffsety),
-                Vector2(offsetX+x+ruutuoffsetx+1,offsetY+y+ruutuoffsety+1)
+                Vector2i(offsetX+x+ruutuoffsetx,offsetY+y+ruutuoffsety),
+                Vector2i(offsetX+x+ruutuoffsetx,offsetY+y+ruutuoffsety+1),
+                Vector2i(offsetX+x+ruutuoffsetx+1,offsetY+y+ruutuoffsety),
+                Vector2i(offsetX+x+ruutuoffsetx+1,offsetY+y+ruutuoffsety+1)
                 ]
             alueet[str(Vector2i(x,y))] = {
                 "areaid" : areaid,
@@ -278,6 +278,26 @@ func hyokkaa(lahto, kohde):
     var hyokkaajia = alueet[str(lahto)].troops
     var puolustajia = alueet[str(kohde)].troops
     var randomlosses = randf_range(0,1)
+    var pilvipositio
+    var lahtoruudut = alueet[str(lahto)].ruudut
+    var kohderuudut = alueet[str(kohde)].ruudut
+    
+    #taistelupilven position purkkaetsintä
+    for ruutu in lahtoruudut:
+        if kohderuudut.has(Vector2i(ruutu.x+1,ruutu.y)):
+            pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
+            
+        if kohderuudut.has(Vector2i(ruutu.x-1,ruutu.y)):
+            pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
+
+        if kohderuudut.has(Vector2i(ruutu.x,ruutu.y+1)):
+            pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
+            
+        if kohderuudut.has(Vector2i(ruutu.x,ruutu.y-1)):
+            pilvipositio = Vector2i(32*ruutu.x,32*ruutu.y)
+                    
+    $taistelupilvi.position = pilvipositio
+    $taistelupilvi.show()
     
     if battle.did_attacker_win(hyokkaajia, puolustajia):
         while alueet[str(kohde)].troops > 0:
@@ -286,13 +306,14 @@ func hyokkaa(lahto, kohde):
             $attacksound.play()
             alueet[str(kohde)].troops -= 1
             updatetroops()
-            await get_tree().create_timer(0.1).timeout
+            await get_tree().create_timer(0.3).timeout
         #voittajallakin chanssi menettää unitteja
         if randomlosses < 0.5 && alueet[str(lahto)].troops > 1:
             alueet[str(lahto)].troops -= 1
             randomlosses = randf_range(0,1)
             if randomlosses < 0.33 && alueet[str(lahto)].troops > 1:
                 alueet[str(lahto)].troops -= 1
+        $taistelupilvi.hide()
         liiku(lahto,kohde)
     else:
         while alueet[str(lahto)].troops > 0:
@@ -301,7 +322,7 @@ func hyokkaa(lahto, kohde):
             $attacksound.play()
             alueet[str(lahto)].troops -= 1
             updatetroops()
-            await get_tree().create_timer(0.1).timeout
+            await get_tree().create_timer(0.3).timeout
         #voittajallakin chanssi menettaa unittei
         if randomlosses < 0.5 && alueet[str(kohde)].troops > 1:
             alueet[str(kohde)].troops -= 1
@@ -309,6 +330,7 @@ func hyokkaa(lahto, kohde):
                 alueet[str(kohde)].troops -= 1
         #päivitän ain vuoron muualla, vasta kun ukot spawnattu
         if Global.whoseTurn == Global.spreadTypeList[1]:
+            $taistelupilvi.hide()
             await updateTurn()
                  
 #poistaa legalmovet ja troopit näkyvistä
