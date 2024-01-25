@@ -1,13 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctuc5ws8v3q5b"]
+[gd_scene load_steps=25 format=3 uid="uid://ctuc5ws8v3q5b"]
 
 [ext_resource type="Texture2D" uid="uid://b061d5xepxe35" path="res://assets/placeholder/nakymaton.png" id="1_28tqg"]
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
 [ext_resource type="PackedScene" uid="uid://b6yelhpm3trio" path="res://assets/Level/grafiikkatilet.tscn" id="2_7rwvs"]
 [ext_resource type="Texture2D" uid="uid://3427cvea1luu" path="res://assets/placeholder/tileSelected.png" id="2_onncg"]
 [ext_resource type="Texture2D" uid="uid://bqcohi88q5amt" path="res://assets/placeholder/unisexSolttu.png" id="3_eknot"]
+[ext_resource type="Texture2D" uid="uid://cry3eporwqhi4" path="res://assets/graphics/sotilaat/sotilasjam.png" id="3_ialje"]
 [ext_resource type="Texture2D" uid="uid://e1r7c8501d82" path="res://assets/placeholder/legalMove.png" id="4_ddnn7"]
+[ext_resource type="Texture2D" uid="uid://b06nd3raxvsr0" path="res://assets/graphics/sotilaat/sotilaspb.png" id="6_xlkrf"]
 [ext_resource type="Texture2D" uid="uid://cg4mjkqn62h25" path="res://assets/graphics/2. pelissänäkyväpohja.png" id="7_1nuk6"]
+[ext_resource type="Texture2D" uid="uid://st8boiw2876e" path="res://assets/graphics/sotilaat/tyhjasotilas.png" id="7_diioa"]
 [ext_resource type="Script" path="res://scripts/ai.gd" id="8_3psaj"]
+[ext_resource type="Texture2D" uid="uid://6yv3agqhhy6p" path="res://assets/graphics/sotilaat/tyhjasotilashyppaa.png" id="8_stgi4"]
 [ext_resource type="AudioStream" uid="uid://i34x8htlibye" path="res://assets/sounds/attack!.wav" id="9_grodn"]
 [ext_resource type="AudioStream" uid="uid://dttxc561ce8v6" path="res://assets/sounds/blob.wav" id="10_0t2d8"]
 [ext_resource type="AudioStream" uid="uid://c15b2w7dt01lk" path="res://assets/sounds/blum.wav" id="11_xuwyg"]
@@ -22,6 +26,11 @@ texture = ExtResource("2_onncg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yo1qs"]
+texture = ExtResource("3_ialje")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii8xr"]
 texture = ExtResource("3_eknot")
 texture_region_size = Vector2i(32, 32)
@@ -32,12 +41,31 @@ texture = ExtResource("4_ddnn7")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4p05x"]
+texture = ExtResource("6_xlkrf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ps0h0"]
+texture = ExtResource("7_diioa")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7wx6"]
+texture = ExtResource("8_stgi4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_45ekr"]
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_8kf44")
 sources/0 = SubResource("TileSetAtlasSource_qok67")
 sources/3 = SubResource("TileSetAtlasSource_ii8xr")
 sources/4 = SubResource("TileSetAtlasSource_ikt1q")
+sources/2 = SubResource("TileSetAtlasSource_yo1qs")
+sources/5 = SubResource("TileSetAtlasSource_4p05x")
+sources/6 = SubResource("TileSetAtlasSource_ps0h0")
+sources/7 = SubResource("TileSetAtlasSource_d7wx6")
 
 [node name="gamegrid" type="TileMap"]
 visibility_layer = 3

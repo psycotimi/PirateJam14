@@ -199,10 +199,22 @@ func setAlueSpread(alue,spread):
 # piirtää ukkelit alueille, joissa troops > 0 # piirtää 
 func sijoitaTroopitAlueille():
     for alue in alueet:
-# piirtää ukot alueen ruutuihin
+    # piirtää ukot alueen ruutuihin
+        if alueet[str(alue)].troops <= 0:
+            continue
         var ruudut = alueet[alue].ruudut
-        for x in range(0,alueet[str(alue)].troops):
-            set_cell(2,ruudut[x],3,Vector2i(0,0),0)
+        #neutraaliukot
+        if alueet[alue].spread == Global.spreadTypeList[0]:
+            for x in range(0,alueet[str(alue)].troops):
+                set_cell(2,ruudut[x],6,Vector2i(0,0),0)
+        #pbukot
+        elif alueet[alue].spread == Global.spreadTypeList[1]:
+            for x in range(0,alueet[str(alue)].troops):
+                set_cell(2,ruudut[x],5,Vector2i(0,0),0)
+        #jamukot
+        if alueet[alue].spread == Global.spreadTypeList[2]:
+            for x in range(0,alueet[str(alue)].troops):
+                set_cell(2,ruudut[x],2,Vector2i(0,0),0)
             
             #siirsin omaan funktioon, enemmän iterointia mut selkeempi
 func highlightLegalMoves():
