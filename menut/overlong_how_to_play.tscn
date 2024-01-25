@@ -1,0 +1,163 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpi5bpgd82u53"]
+
+[ext_resource type="Script" path="res://menut/overlong_how_to_play.gd" id="1_iw7m1"]
+[ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="1_kiun7"]
+[ext_resource type="FontFile" uid="uid://gbq5lp8rmpti" path="res://assets/fonts/Antonio-Bold.ttf" id="2_g7nqg"]
+[ext_resource type="Theme" uid="uid://bj10chrrx6ft0" path="res://assets/teemat/howToPlayTextBody.tres" id="3_w1tnj"]
+[ext_resource type="Theme" uid="uid://br42m33bw4p8a" path="res://assets/teemat/howToPlayTextTitle.tres" id="4_72te4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w13mc"]
+font_size = 75
+
+[node name="overlongHowToPlay" type="Node2D"]
+script = ExtResource("1_iw7m1")
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 577.0
+theme = ExtResource("1_kiun7")
+theme_override_fonts/font = ExtResource("2_g7nqg")
+text = "How to Play 
+(The Overlong Version) "
+label_settings = SubResource("LabelSettings_w13mc")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.576471, 0.439216, 0.333333, 1)
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="."]
+offset_left = 880.0
+offset_top = 932.0
+offset_right = 1037.0
+offset_bottom = 1018.0
+theme = ExtResource("1_kiun7")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="textContainerLeft" type="Node2D" parent="."]
+position = Vector2(150, 250)
+
+[node name="prelude" type="Label" parent="textContainerLeft"]
+offset_right = 800.0
+offset_bottom = 220.0
+size_flags_vertical = 1
+theme = ExtResource("3_w1tnj")
+theme_override_fonts/font = ExtResource("2_g7nqg")
+theme_override_font_sizes/font_size = 23
+text = "Sbread It! is a turn-based strategy game. You play as the peanut butter sandwich Peter Nuttingham against the jelly sandwich Fraise Compote. The game area is divided into three types of squares: Peter’s (= you), Fraise’s (opponent) and neutrals. You (blue) and Fraise (magenta) both start with a few squares, other squares are neutral. Any of the squares may be either empty or house Toast Soldiers. Occasionally, new Toast Soldiers are added to random squares of any type.
+"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="winLose" type="Label" parent="textContainerLeft"]
+offset_top = 253.0
+offset_right = 780.0
+offset_bottom = 326.0
+size_flags_vertical = 1
+theme = ExtResource("3_w1tnj")
+theme_override_font_sizes/font_size = 23
+text = "Winning condition: Kill all the enemy Toast Soldiers.
+Losing condition: Lose all Toast Soldiers.
+"
+autowrap_mode = 2
+
+[node name="gamePlayTitle" type="Label" parent="textContainerLeft"]
+offset_top = 356.0
+offset_right = 780.0
+offset_bottom = 392.0
+size_flags_vertical = 1
+theme = ExtResource("4_72te4")
+text = "Gameplay:"
+autowrap_mode = 2
+
+[node name="gamePlayBody" type="Label" parent="textContainerLeft"]
+offset_top = 393.0
+offset_right = 780.0
+offset_bottom = 546.0
+size_flags_vertical = 1
+theme = ExtResource("3_w1tnj")
+text = "The active player can move their Toast Soldiers from one square to a square immediately next to it. When you click the square that houses the Soldiers you want to move, available moves are highlighted. Only Soldiers that belong to a player have actions."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="availableActionsTitle" type="Label" parent="textContainerLeft"]
+offset_top = 513.0
+offset_right = 780.0
+offset_bottom = 549.0
+size_flags_vertical = 1
+theme = ExtResource("4_72te4")
+text = "Available actions:"
+autowrap_mode = 2
+
+[node name="actionsBody" type="Label" parent="textContainerLeft"]
+offset_top = 550.0
+offset_right = 780.0
+offset_bottom = 664.0
+size_flags_vertical = 1
+theme = ExtResource("3_w1tnj")
+text = "1)	Move Soldiers between squares you control.
+2)	Capturing a neutral square.
+3)	Battle."
+autowrap_mode = 2
+
+[node name="textContainerRight" type="Node2D" parent="."]
+position = Vector2(990, 250)
+
+[node name="moveToOwnTitle" type="Label" parent="textContainerRight"]
+offset_right = 780.0
+offset_bottom = 34.0
+theme = ExtResource("4_72te4")
+text = "Moving Soldiers between squares you control"
+autowrap_mode = 2
+
+[node name="toOwnBody" type="Label" parent="textContainerRight"]
+offset_top = 37.0
+offset_right = 780.0
+offset_bottom = 137.0
+theme = ExtResource("3_w1tnj")
+text = "You can move your Soldiers to another square you control. One square may house at maximum four Soldiers. If the combined amount of moved Soldiers and the Soldiers in the target square exceeds four, the remaining soldiers stay in their original square."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="moveToNeutralTitle" type="Label" parent="textContainerRight"]
+offset_top = 209.0
+offset_right = 780.0
+offset_bottom = 245.0
+theme = ExtResource("4_72te4")
+text = "Capturing a neutral square"
+
+[node name="toNeutralBody" type="Label" parent="textContainerRight"]
+offset_top = 246.0
+offset_right = 780.0
+offset_bottom = 379.0
+theme = ExtResource("3_w1tnj")
+text = "When you move your soldiers to a neutral square, the square becomes yours. No combat is needed whether the neutral square houses Soldiers or not. All Soldiers in the neutral square are recruited to your army. If the combined amount of moved Soldiers and the Soldiers in the target square exceeds four, the remaining soldiers stay in their original square."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="battleTitle" type="Label" parent="textContainerRight"]
+offset_top = 448.0
+offset_right = 780.0
+offset_bottom = 484.0
+theme = ExtResource("4_72te4")
+text = "Battle"
+autowrap_mode = 2
+
+[node name="toBattleBody" type="Label" parent="textContainerRight"]
+offset_top = 484.0
+offset_right = 780.0
+offset_bottom = 651.0
+theme = ExtResource("3_w1tnj")
+text = "Trying to move to a square controlled by Fraise, you attempt to capture it. Neutral squares are captured without battle. However, if the square houses Soldiers, a battle is fought. During the battle, each soldier is worth a throw of 1d6. The player with the higher combined score wins. If the battle results in a tie, the defendant wins, and the attacker loses all the attacking Soldiers. When a battle is won, the attacker has a 50% chance of suffering one casualty and a 33% chance of two casualties."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
