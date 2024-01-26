@@ -66,6 +66,12 @@ theme = ExtResource("2_42k54")
 text = "Options
 "
 
+[node name="Story" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_42k54")
+theme_override_font_sizes/font_size = 0
+text = "Story"
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_42k54")
@@ -105,4 +111,5 @@ bus = &"sound"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HowToPlay" to="." method="_on_howtoplay_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

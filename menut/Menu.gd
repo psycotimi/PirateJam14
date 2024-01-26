@@ -25,3 +25,8 @@ func buttonsound():
 func _on_howtoplay_pressed():
     await buttonsound()
     get_tree().change_scene_to_file("res://menut/overlong_how_to_play.tscn")
+
+
+func _on_story_pressed():
+    await buttonsound()
+    get_tree().change_scene_to_file("res://menut/storyBeginning.tscn")
