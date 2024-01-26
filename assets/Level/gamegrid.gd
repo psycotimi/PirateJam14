@@ -25,11 +25,14 @@ var turnModulo = 1
 const jamkenraali = preload("res://scripts/jamilmeet.gd")
 const pbkenraali = preload("res://scripts/pbilmeet.gd")
 const battleScripts = preload("res://scripts/Battle.gd")
+const voittoRuutu = preload("res://end_screen.tscn")
 var battle
 var updated = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
     $taistelupilvi.hide()
+    jamilmeet = jamkenraali.new()
+    pbilmeet = pbkenraali.new()
     battle = battleScripts.new()
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
@@ -52,7 +55,6 @@ func _ready():
             add_layer(3)
             set_cell(2, Vector2i(x,y), 0, Vector2i(0,0),0)
             set_cell(3, Vector2i(x,y), 0, Vector2i(0,0),0)
-    # print(tiles) #Testi, että dictionary tulostuu oikein
 
     var areaid = 0
     var ruutuoffsetx = 0
@@ -93,7 +95,7 @@ func _ready():
         ruutuoffsetx += 1
         
          
-    for n in 5:
+    for n in 1:
         alkupositio()
         alkupositio2()
     sijoitaTroopitAlueille()
@@ -167,11 +169,6 @@ func _input(_event):
             updatetroops()
             valitseRuutuJostaHyokataan(valinta)
             
-            
-            
-        # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
-        # print("lahtoxy ", selectedAlue, "kohdexy ", kohdexy)
-
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
     xAlku = randi_range(0,3)
@@ -239,8 +236,6 @@ func valitseRuutuJostaHyokataan(alue):
 
 # tässä käydään läpi onko kyseessä hyökkäys vai liikuminen ja sen jälkeen kutsutaan oikeaa funktiota
 func liikuHyokkaa(lahto, kohde):
-   # if alueet[str(lahto)].legalmoves.has(str(kohde)):
-       # print("alueet[str(lahto)].legalmoves")
     for legalmove in alueet[str(lahto)].legalmoves:
         selectedAlue = null
         updatetroops()
@@ -269,8 +264,6 @@ func liiku(lahto, kohde):
         if Global.pbTroopCount != 0:
             await get_tree().create_timer(0.1).timeout
         
-        #print("lahtöalueen troops: ",alueet[str(lahto)].troops," | kohdealueen troops: ",alueet[str(kohde)].troops)
-    #print("whose turn: ", Global.whoseTurn, "  turnmodulo: ", turnModulo, "  turncounter", Global.turnCounter)
     update_alueet()
     #päivitän ain vuoron muualla, vasta kun ukot spawnattu
     if Global.whoseTurn == Global.spreadTypeList[1]:
@@ -345,8 +338,6 @@ func removeLegalmoves():
             erase_cell(2, Vector2i(x,y))
 
 func update_alueet():
-    var playerwon = false
-    var playerlost = false
     var pbtroops = 0
     var jamtroops = 0
     
@@ -372,14 +363,11 @@ func update_alueet():
         jamtroops += alueet[str(alue)].troops
     Global.pbTroopCount = pbtroops
     Global.jamTroopCount = jamtroops
-    print(pbtroops,jamtroops)
     $UI.update_troop_count()
     if pbalueet == [] or pbtroops == 0:
-        playerlost = true
         get_tree().change_scene_to_file("res://end_screen_tappio.tscn")
     if jamalueet == [] or jamtroops == 0:
-        playerwon = true
-        get_tree().change_scene_to_file("res://end_screen.tscn")
+        get_tree().change_scene_to_file("voittoRuutu")
 
 func alueenValinta():
     var alue = alue_under_mouse()
