@@ -461,5 +461,6 @@ func updateTurn():
     updatetroops()   
     
     if Global.whoseTurn == "jam":
+        Global.whoseTurn = Global.spreadTypeList[0]
         await ainvuoro()
         

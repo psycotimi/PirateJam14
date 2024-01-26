@@ -102,5 +102,6 @@ volume_db = 5.0
 pitch_scale = 1.8
 
 [node name="taistelupilvi" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("16_sutcm")
 script = ExtResource("17_cyj5b")
