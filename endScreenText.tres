@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dwuwen5dvrncj"]
+
+[ext_resource type="FontFile" uid="uid://gbq5lp8rmpti" path="res://assets/fonts/Antonio-Bold.ttf" id="1_6ietj"]
+
+[resource]
+font = ExtResource("1_6ietj")
+font_size = 100
+font_color = Color(0.913725, 0.729412, 0.282353, 1)
+outline_size = 10
+outline_color = Color(0.639216, 0.458824, 0.101961, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)

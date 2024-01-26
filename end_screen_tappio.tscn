@@ -1,48 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ahkquoyud6g"]
+[gd_scene load_steps=6 format=3 uid="uid://c4ahkquoyud6g"]
 
 [ext_resource type="Script" path="res://end_screen_tappio.gd" id="1_ihyw4"]
 [ext_resource type="Texture2D" uid="uid://cbr0jdnsbwomx" path="res://assets/graphics/kenraalit/voittokenraalijam.png" id="2_3edua"]
+[ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_njaan"]
 [ext_resource type="Texture2D" uid="uid://cyt25agw2gijd" path="res://assets/graphics/kenraalit/jalatkenraalijam.png" id="3_u3uy6"]
+[ext_resource type="LabelSettings" uid="uid://dwuwen5dvrncj" path="res://endScreenText.tres" id="5_l3ph1"]
 
 [node name="endScreenTappio" type="CanvasLayer"]
 script = ExtResource("1_ihyw4")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.956863, 0.188235, 0.541176, 0.478431)
+
 [node name="Retry" type="Button" parent="."]
-offset_left = 740.0
-offset_top = 737.0
-offset_right = 916.0
-offset_bottom = 885.0
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.8
+anchor_right = 0.35
+anchor_bottom = 0.8
+offset_top = -148.0
+offset_right = 176.0
+grow_vertical = 0
+theme = ExtResource("2_njaan")
 text = "Retry"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 1029.0
-offset_top = 732.0
-offset_right = 1201.0
-offset_bottom = 886.0
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.8
+anchor_right = 0.65
+anchor_bottom = 0.8
+offset_left = -172.0
+offset_top = -154.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_njaan")
 text = "Quit
 "
 
-[node name="pbLost" type="TextureRect" parent="."]
-offset_left = 687.0
-offset_top = 101.0
-offset_right = 1135.0
-offset_bottom = 549.0
-texture = ExtResource("2_3edua")
-
-[node name="pbLost2" type="TextureRect" parent="pbLost"]
-layout_mode = 0
-offset_left = 153.0
-offset_top = 302.0
-offset_right = 345.0
-offset_bottom = 430.0
+[node name="pbLost2" type="TextureRect" parent="."]
+offset_left = 850.6
+offset_top = 410.0
+offset_right = 1042.6
+offset_bottom = 538.0
 texture = ExtResource("3_u3uy6")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 884.0
-offset_top = 585.0
-offset_right = 1108.0
-offset_bottom = 693.0
-text = "You lost :((("
+[node name="pbLost" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 0.12
+anchor_right = 0.48
+anchor_bottom = 0.12
+offset_left = -224.0
+offset_right = 224.0
+offset_bottom = 448.0
+grow_horizontal = 2
+texture = ExtResource("2_3edua")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.57
+anchor_right = 0.5
+anchor_bottom = 0.57
+offset_left = -161.0
+offset_top = -75.0
+offset_right = 161.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU LOST"
+label_settings = ExtResource("5_l3ph1")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
