@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://menut/Menu.gd" id="1_ne4na"]
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_42k54"]
 [ext_resource type="PackedScene" uid="uid://cm7t2ldke1rqx" path="res://menut/mainmenun_tausta.tscn" id="2_hk5kq"]
-[ext_resource type="Texture2D" uid="uid://bno473sftide3" path="res://assets/graphics/SBREADITlogo.png" id="4_blkuq"]
+[ext_resource type="Texture2D" uid="uid://cuturptyth3bk" path="res://assets/graphics/SBREADITlogo.png" id="4_blkuq"]
 [ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="6_kh10d"]
 
 [sub_resource type="Theme" id="Theme_8da6w"]
@@ -59,6 +59,12 @@ theme = ExtResource("2_42k54")
 text = "Options
 "
 
+[node name="Story" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_42k54")
+theme_override_font_sizes/font_size = 0
+text = "Story"
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_42k54")
@@ -76,4 +82,5 @@ bus = &"sound"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HowToPlay" to="." method="_on_howtoplay_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
