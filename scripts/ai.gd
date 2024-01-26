@@ -65,7 +65,7 @@ func selectmove(alueet, pelaajanalueet, aialueet):
     baadmoves.shuffle()
     
     if Global.pbTroopCount != 0:
-        await get_tree().create_timer(0.5).timeout
+        await get_tree().create_timer(1.0).timeout
     if goodmoves == []:
         if betterthanbadmoves == []:
             if baadmoves == []:
