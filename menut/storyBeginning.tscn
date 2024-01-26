@@ -16,18 +16,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = 114.0
-offset_top = 64.0
-offset_right = 1997.0
-offset_bottom = 1012.0
+offset_left = 104.0
+offset_top = 121.0
+offset_right = 1846.0
+offset_bottom = 1030.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.341176, 0.333333, 0.0509804, 1)
-theme_override_constants/outline_size = 1
-theme_override_constants/shadow_outline_size = 2
+theme_override_colors/font_outline_color = Color(0.341176, 0.317647, 0.027451, 1)
 theme_override_fonts/font = ExtResource("1_154n5")
 theme_override_font_sizes/font_size = 30
 text = "Peter, with his shoulders squared, approached Fraise with a confident stride. 
-— “Fraise, I’m nuts about you!” He said confidently. 
+— “Fraise, life is butter with love and I’m nuts about you!” He said confidently. 
 
 A radiant red rose to Fraise’s cheeks but she wasn’t smoothed over that easily. 
 — “That’s all right and well, but I’m not planning on sticking around. Besides, I doubt your true feelings. You spread compliments like you want to 
@@ -46,3 +44,14 @@ Fraise's voice was filled with resolution.
 
 And so from Cupboard to Counter, from loneliness to love, Peter set out to prove his worth in the quest of his life."
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+custom_minimum_size = Vector2(1920, 0)
+offset_right = 1920.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.729412, 0.580392, 0.160784, 1)
+theme_override_fonts/font = ExtResource("1_154n5")
+theme_override_font_sizes/font_size = 70
+text = "Sbread It! — A quest for sweet love"
+horizontal_alignment = 1
