@@ -93,18 +93,20 @@ script = ExtResource("8_3psaj")
 
 [node name="attacksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_grodn")
+bus = &"sound"
 
 [node name="liikesound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_0t2d8")
 pitch_scale = 3.0
+bus = &"sound"
 
 [node name="spawningsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_xuwyg")
 volume_db = 5.0
 pitch_scale = 1.8
+bus = &"sound"
 
 [node name="taistelupilvi" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
 texture = ExtResource("16_sutcm")
 script = ExtResource("17_cyj5b")
 

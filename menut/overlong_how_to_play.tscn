@@ -163,5 +163,6 @@ autowrap_mode = 2
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_35msg")
+bus = &"sound"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -38,9 +38,10 @@ position = Vector2(727, 397)
 
 [node name="UI" parent="gamegrid" instance=ExtResource("4_bursq")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5kaea")
 autoplay = true
+bus = &"music"
 
 [node name="pbkenraali" type="Node2D" parent="."]
 position = Vector2(-150, 780)

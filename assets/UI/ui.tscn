@@ -167,6 +167,7 @@ grow_vertical = 2
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_s5bsp")
+bus = &"sound"
 
 [node name="1_Kohdistuskerros" type="Sprite2D" parent="."]
 visible = false

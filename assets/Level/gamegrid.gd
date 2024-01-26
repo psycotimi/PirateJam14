@@ -166,7 +166,7 @@ func _input(_event):
         # jos jo yksi ruutu valittu, valitaan kohdealue
         elif selectedAlue != null && valinta != null:
             kohdexy = valinta
-            liikuHyokkaa(selectedAlue, kohdexy)
+            await liikuHyokkaa(selectedAlue, kohdexy)
             return
         # valitaan alue
         elif alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1]:
@@ -273,7 +273,7 @@ func liiku(lahto, kohde):
     update_alueet()
     #päivitän ain vuoron muualla, vasta kun ukot spawnattu
     if Global.whoseTurn == Global.spreadTypeList[1]:
-        updateTurn()
+        await updateTurn()
      
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -299,8 +299,6 @@ func hyokkaa(lahto, kohde):
                     
     $taistelupilvi.position = pilvipositio
     $taistelupilvi.show()
-    if hyokkaaja == Global.spreadTypeList[2]:
-        Global.whoseTurn = Global.spreadTypeList[0]
     if battle.did_attacker_win(hyokkaajia, puolustajia):
         while alueet[str(kohde)].troops > 0:
             $attacksound.pitch_scale = randf_range(1.5,3)
@@ -333,7 +331,7 @@ func hyokkaa(lahto, kohde):
         #päivitän ain vuoron muualla, vasta kun ukot spawnattu
         if Global.whoseTurn == Global.spreadTypeList[1]:
             $taistelupilvi.hide()
-            updateTurn()
+            await updateTurn()
     $taistelupilvi.hide()
                  
 #poistaa legalmovet ja troopit näkyvistä
@@ -385,12 +383,11 @@ func ainvuoro():
     update_alueet()
     var siirto = await $AI.selectmove(alueet, pbalueet,jamalueet)
     if siirto != []:
-        liikuHyokkaa(str(siirto[0]),str(siirto[1]))
-        Global.whoseTurn = Global.spreadTypeList[0]
+        await liikuHyokkaa(str(siirto[0]),str(siirto[1]))
         await get_tree().create_timer(0.5).timeout
         await spawnaaukkoja()
     #ain vuoro loppuu vasta kun ukot spawnattu
-    updateTurn()
+    await updateTurn()
     updatetroops()
     highlightLegalMoves()
 
@@ -455,6 +452,5 @@ func updateTurn():
     updatetroops()   
     
     if Global.whoseTurn == "jam":
-        Global.whoseTurn = Global.spreadTypeList[0]
         await ainvuoro()
         
