@@ -1,7 +1,7 @@
 extends Sprite2D
 
 
-var shufflespeed = 2.5*PI
+var shufflespeed = 4*PI
 var phase: float
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,5 +15,5 @@ func _process(delta):
         set_script(null)
     else:
         phase += delta
-        rotation_degrees = -30*sin(shufflespeed*phase+80)
+        rotation_degrees = -20*sin(shufflespeed*phase)
     pass
