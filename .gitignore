@@ -5,3 +5,4 @@
 ./*.html
 ./*.pck
 ./*.wasm
+./export_presets.cfg
