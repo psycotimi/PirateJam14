@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3gk4vdq67tak"]
+[gd_scene load_steps=5 format=3 uid="uid://b3gk4vdq67tak"]
 
 [ext_resource type="FontFile" uid="uid://gbq5lp8rmpti" path="res://assets/fonts/Antonio-Bold.ttf" id="1_154n5"]
+[ext_resource type="Script" path="res://menut/storyBeginning.gd" id="1_thb4t"]
+[ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="3_hnu23"]
+[ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="4_ymo8f"]
 
 [node name="StoryBeginning" type="Node2D"]
+script = ExtResource("1_thb4t")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(0.576471, 0.439216, 0.333333, 1)
@@ -46,3 +50,24 @@ Fraise's voice was filled with resolution.
 
 And so from Cupboard to Counter, from loneliness to love, Peter set out to prove his worth in the quest of his life."
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 1633.0
+offset_top = 871.0
+offset_right = 1765.0
+offset_bottom = 986.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_hnu23")
+text = "Back
+"
+
+[node name="buttonsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ymo8f")
+bus = &"sound"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
