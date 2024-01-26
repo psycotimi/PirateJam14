@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4ahkquoyud6g"]
+[gd_scene load_steps=8 format=3 uid="uid://c4ahkquoyud6g"]
 
 [ext_resource type="Script" path="res://end_screen_tappio.gd" id="1_ihyw4"]
+[ext_resource type="Shader" path="res://end_screen_tappio.gdshader" id="2_0exvi"]
 [ext_resource type="Texture2D" uid="uid://cbr0jdnsbwomx" path="res://assets/graphics/kenraalit/voittokenraalijam.png" id="2_3edua"]
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_njaan"]
 [ext_resource type="Texture2D" uid="uid://cyt25agw2gijd" path="res://assets/graphics/kenraalit/jalatkenraalijam.png" id="3_u3uy6"]
 [ext_resource type="LabelSettings" uid="uid://dwuwen5dvrncj" path="res://endScreenText.tres" id="5_l3ph1"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_03h6w"]
+shader = ExtResource("2_0exvi")
+
 [node name="endScreenTappio" type="CanvasLayer"]
 script = ExtResource("1_ihyw4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_03h6w")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
