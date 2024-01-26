@@ -25,11 +25,14 @@ var turnModulo = 1
 const jamkenraali = preload("res://scripts/jamilmeet.gd")
 const pbkenraali = preload("res://scripts/pbilmeet.gd")
 const battleScripts = preload("res://scripts/Battle.gd")
+
 var battle
 var updated = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
     $taistelupilvi.hide()
+    jamilmeet = jamkenraali.new()
+    pbilmeet = pbkenraali.new()
     battle = battleScripts.new()
     for x in range(offsetX, gridSize+offsetX):
         for y in range(offsetY, gridSize+offsetY):
