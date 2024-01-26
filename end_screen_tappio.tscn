@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4ahkquoyud6g"]
+[gd_scene load_steps=11 format=3 uid="uid://c4ahkquoyud6g"]
 
 [ext_resource type="Script" path="res://end_screen_tappio.gd" id="1_ihyw4"]
 [ext_resource type="Shader" path="res://end_screen_tappio.gdshader" id="2_0exvi"]
@@ -8,6 +8,7 @@
 [ext_resource type="LabelSettings" uid="uid://dwuwen5dvrncj" path="res://endScreenText.tres" id="5_l3ph1"]
 [ext_resource type="Texture2D" uid="uid://b2s5gbvgbli8" path="res://assets/graphics/kenraalit/haviokenraalipb.png" id="7_kd7en"]
 [ext_resource type="Texture2D" uid="uid://di16ysrmymm6v" path="res://assets/graphics/kenraalit/jalatkenraalipb.png" id="8_gr84v"]
+[ext_resource type="FontFile" uid="uid://gbq5lp8rmpti" path="res://assets/fonts/Antonio-Bold.ttf" id="9_h2mbl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_03h6w"]
 shader = ExtResource("2_0exvi")
@@ -20,6 +21,10 @@ material = SubResource("ShaderMaterial_03h6w")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 5.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.956863, 0.188235, 0.541176, 0.784314)
@@ -93,6 +98,31 @@ texture = ExtResource("7_kd7en")
 show_behind_parent = true
 position = Vector2(-32, 112)
 texture = ExtResource("8_gr84v")
+
+[node name="tappioSitaatti" type="Label" parent="."]
+offset_left = 298.0
+offset_top = 444.0
+offset_right = 671.0
+offset_bottom = 504.0
+rotation = -0.214676
+theme_override_colors/font_shadow_color = Color(0.305882, 0.211765, 0, 1)
+theme_override_colors/font_outline_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_font_sizes/font_size = 0
+text = "Life is nut as sweet without you. 
+                  Goodbye, Fraise. I’ll savor you forever."
+
+[node name="tappioKertoja" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 125.0
+offset_right = 654.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(1, 0.772549, 0.356863, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.415686, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("9_h2mbl")
+theme_override_font_sizes/font_size = 24
+text = "As he realized Fraise’s love had slipped from his buttery fingers, 
+Peter let out a lonesome sigh."
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
