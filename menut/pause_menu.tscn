@@ -1,23 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://o3mjmew4gp7l"]
+[gd_scene load_steps=12 format=3 uid="uid://o3mjmew4gp7l"]
 
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="1_jgq60"]
 [ext_resource type="Script" path="res://menut/pause_menu.gd" id="1_wxv4d"]
-[ext_resource type="FontFile" uid="uid://gh01am2n77bp" path="res://assets/fonts/MOOD MKII Outline.ttf" id="2_uraca"]
+[ext_resource type="Texture2D" uid="uid://bno473sftide3" path="res://assets/graphics/SBREADITlogo.png" id="3_sriwc"]
 [ext_resource type="Texture2D" uid="uid://y2tmbn106gb8" path="res://assets/placeholder/mutet.png" id="4_3sjr5"]
-[ext_resource type="FontFile" uid="uid://clia7kiu3o7au" path="res://assets/fonts/MOOD MKII.ttf" id="4_kc2ay"]
 [ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="5_3o6y8"]
 [ext_resource type="Script" path="res://menut/Options.gd" id="5_o533t"]
 
 [sub_resource type="Theme" id="Theme_fgpe8"]
 default_font_size = 100
-
-[sub_resource type="Theme" id="Theme_5qhgw"]
-default_font = ExtResource("2_uraca")
-default_font_size = 200
-
-[sub_resource type="LabelSettings" id="LabelSettings_5ulnj"]
-font = ExtResource("4_kc2ay")
-font_size = 100
 
 [sub_resource type="Theme" id="Theme_clv3f"]
 default_font_size = 100
@@ -88,29 +79,9 @@ theme = ExtResource("1_jgq60")
 text = "Quit
 "
 
-[node name="Otsikko" type="Label" parent="Pause"]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 100.0
-offset_right = 1600.0
-offset_bottom = 380.0
-theme = SubResource("Theme_5qhgw")
-theme_type_variation = &"HeaderLarge"
-text = "Sbread It"
-label_settings = SubResource("LabelSettings_5ulnj")
-
-[node name="ColorRect2" type="ColorRect" parent="Pause/Otsikko"]
-modulate = Color(0.882353, 0, 0.180392, 1)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -50.0
-offset_right = 50.0
-offset_bottom = -30.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Otsikko" type="Sprite2D" parent="Pause"]
+position = Vector2(960, 200)
+texture = ExtResource("3_sriwc")
 
 [node name="Options" type="Control" parent="."]
 anchors_preset = 0
