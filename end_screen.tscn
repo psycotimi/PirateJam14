@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqbri8lwfcwx8"]
+[gd_scene load_steps=8 format=3 uid="uid://bqbri8lwfcwx8"]
 
 [ext_resource type="Script" path="res://endScreen.gd" id="1_v4agj"]
 [ext_resource type="Texture2D" uid="uid://wm8dis5hdsns" path="res://assets/graphics/kenraalit/voittokenraalipb.png" id="2_3f1qs"]
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="2_wdgwm"]
 [ext_resource type="Texture2D" uid="uid://di16ysrmymm6v" path="res://assets/graphics/kenraalit/jalatkenraalipb.png" id="3_vva1y"]
 [ext_resource type="LabelSettings" uid="uid://dwuwen5dvrncj" path="res://endScreenText.tres" id="5_neifc"]
+[ext_resource type="Texture2D" uid="uid://gj766fe66ofp" path="res://assets/graphics/kenraalit/haviokenraalijam.png" id="6_0hq23"]
+[ext_resource type="Texture2D" uid="uid://cyt25agw2gijd" path="res://assets/graphics/kenraalit/jalatkenraalijam.png" id="7_ispx3"]
 
 [node name="endScreen" type="CanvasLayer"]
 script = ExtResource("1_v4agj")
@@ -81,6 +83,15 @@ horizontal_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="jamlost" type="Sprite2D" parent="."]
+position = Vector2(1500, 600)
+texture = ExtResource("6_0hq23")
+
+[node name="jamjalat" type="Sprite2D" parent="jamlost"]
+show_behind_parent = true
+position = Vector2(32, 112)
+texture = ExtResource("7_ispx3")
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
