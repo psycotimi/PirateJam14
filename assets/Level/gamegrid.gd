@@ -151,10 +151,7 @@ func _input(_event):
     
     
     if Input.is_action_just_pressed("select_tile"):
-        
-        # poistaa legalmovet näkyvistä, ja sotilaat
-        # asettaa sotilaat asemiin ja tarkistaa lailliset siirrot
-        # alueenValinta palauttaa kaksi aluetta, voi muokata jotenkin jos sekavaa
+        highlightLegalMoves()
         var valinta = alueenValinta()
         # estää kaatumisen jos klikkaa ohi leivästä
         if !valinta:
@@ -224,7 +221,6 @@ func sijoitaTroopitAlueille():
             
             #siirsin omaan funktioon, enemmän iterointia mut selkeempi
 func highlightLegalMoves():
-    selectedAlue = null
     for alue in pbalueet:
         if alueet[str(alue)].troops <= 0:
             continue
@@ -248,13 +244,13 @@ func liikuHyokkaa(lahto, kohde):
         if str(legalmove) == kohde:
             # jos alue omaa hilloa tai neutraali, liikkuu, jos mahtuu
             if (alueet[str(lahto)].spread == alueet[str(kohde)].spread or alueet[str(kohde)].spread == Global.spreadTypeList[0]) && alueet[str(kohde)].troops < Global.troopCountMax:
-                liiku(lahto, kohde)
+                await liiku(lahto, kohde)
             # jos vihun alue ja alueella joukkoja, hyökkää
             elif alueet[str(lahto)].spread != alueet[str(kohde)].spread && alueet[str(kohde)].troops > 0:
-                hyokkaa(lahto,kohde)
+                await hyokkaa(lahto,kohde)
             # jos alue vihun alue ja alue tyhjä, liikuu
             else:
-                liiku(lahto,kohde)
+                await liiku(lahto,kohde)
 
 # liikkuminen
 func liiku(lahto, kohde):
@@ -273,7 +269,9 @@ func liiku(lahto, kohde):
     update_alueet()
     #päivitän ain vuoron muualla, vasta kun ukot spawnattu
     if Global.whoseTurn == Global.spreadTypeList[1]:
+        highlightLegalMoves()
         await updateTurn()
+    highlightLegalMoves()   
      
 # hyökkäys
 func hyokkaa(lahto, kohde):
@@ -314,7 +312,8 @@ func hyokkaa(lahto, kohde):
             if randomlosses < 0.33 && alueet[str(lahto)].troops > 1:
                 alueet[str(lahto)].troops -= 1
         $taistelupilvi.hide()
-        liiku(lahto,kohde)
+        await liiku(lahto,kohde)
+        highlightLegalMoves()
     else:
         while alueet[str(lahto)].troops > 0:
             $attacksound.pitch_scale = randf_range(1.5,3)
@@ -331,7 +330,9 @@ func hyokkaa(lahto, kohde):
         #päivitän ain vuoron muualla, vasta kun ukot spawnattu
         if Global.whoseTurn == Global.spreadTypeList[1]:
             $taistelupilvi.hide()
+            highlightLegalMoves()
             await updateTurn()
+    highlightLegalMoves()
     $taistelupilvi.hide()
                  
 #poistaa legalmovet ja troopit näkyvistä
@@ -439,10 +440,12 @@ func spawnaaukkoja():
             $spawningsound.play()
             updatetroops()
             await get_tree().create_timer(0.5).timeout
+            highlightLegalMoves()
     highlightLegalMoves()
             
     
 func updateTurn():
+    selectedAlue = null
     Global.turnCounter += 1
     turnModulo = Global.turnCounter % 2 + 1
     Global.whoseTurn = Global.spreadTypeList[turnModulo]    
@@ -450,6 +453,7 @@ func updateTurn():
     $UI.update_turn_arrow()
     $UI.update_troop_count()
     updatetroops()   
+    highlightLegalMoves()
     
     if Global.whoseTurn == "jam":
         await ainvuoro()
