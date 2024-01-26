@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    if global_position.x < 1470:
+    if global_position.x < 1480:
         set_script("res://scripts/jamilmeet.gd")
     else:
         pos.x = delta*movementspeed

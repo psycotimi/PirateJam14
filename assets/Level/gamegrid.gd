@@ -26,11 +26,17 @@ const jamkenraali = preload("res://scripts/jamilmeet.gd")
 const pbkenraali = preload("res://scripts/pbilmeet.gd")
 const battleScripts = preload("res://scripts/Battle.gd")
 const voittoRuutu = preload("res://end_screen.tscn")
+const havioRuutu = preload("res://end_screen_tappio.tscn")
+
+var jamilmeet
+var pbilmeet
 var battle
 var updated = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
     $taistelupilvi.hide()
+    $endScreen.hide()
+    $endScreenTappio.hide()
     jamilmeet = jamkenraali.new()
     pbilmeet = pbkenraali.new()
     battle = battleScripts.new()
@@ -99,7 +105,7 @@ func _ready():
         alkupositio()
         alkupositio2()
     sijoitaTroopitAlueille()
-    update_alueet()
+    update_alueet()  
     highlightLegalMoves()
     update_grafiikkatilet()
     
@@ -365,9 +371,9 @@ func update_alueet():
     Global.jamTroopCount = jamtroops
     $UI.update_troop_count()
     if pbalueet == [] or pbtroops == 0:
-        get_tree().change_scene_to_file("res://end_screen_tappio.tscn")
+        $endScreenTappio.show()
     if jamalueet == [] or jamtroops == 0:
-        get_tree().change_scene_to_file("voittoRuutu")
+        $endScreen.show()
 
 func alueenValinta():
     var alue = alue_under_mouse()

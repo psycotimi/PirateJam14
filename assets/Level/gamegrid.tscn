@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ctuc5ws8v3q5b"]
+[gd_scene load_steps=29 format=3 uid="uid://ctuc5ws8v3q5b"]
 
 [ext_resource type="Texture2D" uid="uid://b061d5xepxe35" path="res://assets/placeholder/nakymaton.png" id="1_28tqg"]
 [ext_resource type="Script" path="res://assets/Level/gamegrid.gd" id="1_jp1xd"]
@@ -17,6 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://c15b2w7dt01lk" path="res://assets/sounds/blum.wav" id="11_xuwyg"]
 [ext_resource type="Texture2D" uid="uid://bpvudxektgdna" path="res://assets/graphics/taistelu.png" id="16_sutcm"]
 [ext_resource type="Script" path="res://scripts/taistelupilvi.gd" id="17_cyj5b"]
+[ext_resource type="PackedScene" uid="uid://bqbri8lwfcwx8" path="res://end_screen.tscn" id="18_0q83f"]
+[ext_resource type="PackedScene" uid="uid://c4ahkquoyud6g" path="res://end_screen_tappio.tscn" id="19_mrubr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qok67"]
 texture = ExtResource("1_28tqg")
@@ -105,3 +107,11 @@ pitch_scale = 1.8
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("16_sutcm")
 script = ExtResource("17_cyj5b")
+
+[node name="endScreen" parent="." instance=ExtResource("18_0q83f")]
+layer = 7
+visible = false
+
+[node name="endScreenTappio" parent="." instance=ExtResource("19_mrubr")]
+layer = 7
+visible = false
