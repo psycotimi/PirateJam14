@@ -157,7 +157,7 @@ offset_top = 484.0
 offset_right = 780.0
 offset_bottom = 651.0
 theme = ExtResource("3_w1tnj")
-text = "Trying to move to a square controlled by Fraise, you attempt to capture it. Neutral squares are captured without battle. However, if the square houses Soldiers, a battle is fought. During the battle, each soldier is worth a throw of 1d6. The player with the higher combined score wins. If the battle results in a tie, the defendant wins, and the attacker loses all the attacking Soldiers. When a battle is won, the attacker has a 50% chance of suffering one casualty and a 33% chance of two casualties."
+text = "Trying to move to a square controlled by Fraise, you attempt to capture it. Neutral squares are captured without battle. However, if the square houses Soldiers, a battle is fought. During the battle, each soldier is worth one six-sided die. The player with the higher combined score wins. If the battle results in a tie, the defendant wins, and the attacker loses all the attacking Soldiers. If the battle is won, the attacker might suffer casualties. The chance is 50% for one and 33% for two."
 horizontal_alignment = 3
 autowrap_mode = 2
 
