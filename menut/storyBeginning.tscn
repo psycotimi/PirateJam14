@@ -20,35 +20,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = 942.0
-offset_top = 73.0
-offset_right = 2228.0
-offset_bottom = 1030.0
+offset_left = 824.0
+offset_top = 120.0
+offset_right = 1885.0
+offset_bottom = 977.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.341176, 0.317647, 0.027451, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 11
 theme_override_fonts/font = ExtResource("1_154n5")
 theme_override_font_sizes/font_size = 22
-text = "Peter, with his shoulders squared, approached Fraise with a confident stride. 
-— “Fraise, life is butter with love and I’m nuts about you!” He said confidently. 
+text = "— “What can I say, moves this smooth require a little bit of oil”, Peter replied and attempted to slide across the floor. He made it three steps before tripping on his own feet and tumbling over in the most ungraceful manner. Mortified, Peter reminded himself of his mantra. He managed to look utterly unphazed when smirking widely, he settled on his side in a paint-me-like-one-of-your-French-girls manner.
 
-A radiant red rose to Fraise’s cheeks but she wasn’t softened that easily. 
-— “That’s all right and well, but I’m not planning on sticking around. Besides, I doubt your true feelings.
-You spread compliments like you want to smooth me over.”
+— “I think you might be spreading yourself quite thin calling those moves smooth, Peter Nuttingham”, Fraise quipped, her hazel eyes lit with amusement.
 
-— “Well, Fraise, you've got a way of sticking to my heart. I'm just trying to be the spread you deserve”.
+— “Berry your doubts my love because I'm simply the best, clearly, a spread above the rest. If you keep laughing at my moves, I promise, I'm going to prove to you I’m too deft to lose my spreadability!\" Peter exclaimed jauntily.
 
-— “I think you might be spreading yourself too thin there, Peter Nuttingham”, Fraise quipped.
+— “I think you have deft confused with daft. But I'm still definitely cashewing in that promise! Otherwise, your taunts are fruitless 
+and you will be left licking your sticky fingers.\" Despite her words, Fraise grinned. It had been a while since she had had this much fun with anyone. Still, she was cautious by nature and could never jump into anything with alacrity. Things always need to set before decisions can be made. Nevertheless, the lid to her heart was no longer sealed up tightly.
 
-But, Peter was confident he was going to come out on top. He wouldn't let Fraise's uncertainty deter him.
-— “Sweet cheeks, if you keep doubting my love, I’ll lose my spreadability. 
-And besides, you can berry your doubts because I'm a spread above the rest.\" 
-
-— “I’ll cash-you out on those promises! Otherwise, you're on a fruitless quest, 
-and you will be left licking your sticky fingers.\" Fraise's voice was filled with resolution.
-
-And so from Cupboard to Counter, from loneliness to love, 
-Peter set out to prove his worth in the quest of his life."
-vertical_alignment = 1
+And so, from Cupboard to Counter, from loneliness to love, 
+Peter set out on a quest of a lifetime to prove he was the ripe spread for her. "
+vertical_alignment = 3
+autowrap_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 1633.0
@@ -81,34 +75,54 @@ text = "Sbread It! — A quest for sweet love"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 44.0
-offset_top = 242.0
-offset_right = 964.0
-offset_bottom = 479.0
+offset_left = 40.0
+offset_top = 120.0
+offset_right = 780.0
+offset_bottom = 286.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.341176, 0.317647, 0.027451, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 11
 theme_override_fonts/font = ExtResource("1_154n5")
-theme_override_font_sizes/font_size = 28
-text = "For many years, the peanut butter jar Peter Nuttingham lived in Cupboard,
-next to his neighbor, Fraise Compote. 
-Fraise was as lovely and as sweet as a jar of strawberry jelly could be, 
-and it cracked the hard shell around Peter’s heart. But as besotted as Peter was, 
-he was also shy and didn’t know how to approach Fraise. "
+theme_override_font_sizes/font_size = 22
+text = "For many years, the peanut butter jar Peter Nuttingham lived in Cupboard, next to his neighbor, a jar of strawberry jelly, Fraise Compote. Fraise was as lovely and sweet as anyone could possibly be, and it cracked the hard shell around Peter’s heart. But as besotted as Peter was, he was also shy and didn’t know how to approach Fraise. "
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 42.0
-offset_top = 537.0
-offset_right = 884.0
-offset_bottom = 816.0
+offset_left = 40.0
+offset_top = 301.0
+offset_right = 780.0
+offset_bottom = 511.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.341176, 0.317647, 0.027451, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 11
 theme_override_fonts/font = ExtResource("1_154n5")
-theme_override_font_sizes/font_size = 28
-text = "One day, Peter and Fraise were whisked away on a joined journey to Counter. 
-This, Peter thought, was the best opportunity he would ever get. 
-He contemplated on the best course of action. 
-It was a tough nut to crack but, finally, he landed on facing Fraise head on 
-and winning her over with his charm, chivalry, and witty quips. 
-The plan was nuts but so was he."
+theme_override_font_sizes/font_size = 22
+text = "              One day, Peter and Fraise were whisked away on a joined journey to Counter. This, Peter thought, was the best opportunity he would ever get. He contemplated on the best course of action. It was a tough nut to crack but, finally, he landed on facing Fraise head on and winning her over with his charm, chivalry, and witty quips. He would have to act much more confidently than he felt. The plan was nuts but so was he."
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 553.0
+offset_right = 780.0
+offset_bottom = 1027.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.341176, 0.317647, 0.027451, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 11
+theme_override_fonts/font = ExtResource("1_154n5")
+theme_override_font_sizes/font_size = 22
+text = "Peter had once heard someone say \"smile, and they'll think it's deliberate\". He turned it into a mantra and repeated it in his mind when he approached Fraise with confident strides and squared shoulders.
+— “Fraise, you are the sweetest person I've ever met. You make even Sugar seem dull and tasteless. You are beautiful and you move with a mesi-merizingly supple flow. Life is butter with love and I’m nuts about you!” He declared raptly. 
+
+A radiant red rose to Fraise’s already ruddy cheeks. But Fraise wasn’t the smushy sort and rebuked Peter for his excessive flattery. 
+— “Careful, unctious compliments are like licking a spoon and putting it back in the drawer. It may look clean but the oil remains.”"
+vertical_alignment = 3
+autowrap_mode = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

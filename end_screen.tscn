@@ -26,8 +26,10 @@ anchor_left = 0.35
 anchor_top = 0.8
 anchor_right = 0.35
 anchor_bottom = 0.8
-offset_top = -148.0
-offset_right = 176.0
+offset_left = -13.0
+offset_top = -56.0
+offset_right = 163.0
+offset_bottom = 92.0
 grow_vertical = 0
 theme = ExtResource("2_wdgwm")
 text = "Retry"
@@ -38,8 +40,10 @@ anchor_left = 0.65
 anchor_top = 0.8
 anchor_right = 0.65
 anchor_bottom = 0.8
-offset_left = -172.0
-offset_top = -154.0
+offset_left = -185.0
+offset_top = -62.0
+offset_right = -13.0
+offset_bottom = 92.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("2_wdgwm")
@@ -47,10 +51,10 @@ text = "Quit
 "
 
 [node name="pbWon2" type="TextureRect" parent="."]
-offset_left = 861.4
-offset_top = 394.0
-offset_right = 1053.4
-offset_bottom = 522.0
+offset_left = 848.4
+offset_top = 486.0
+offset_right = 1040.4
+offset_bottom = 614.0
 texture = ExtResource("3_vva1y")
 
 [node name="pbWon" type="TextureRect" parent="."]
@@ -59,9 +63,10 @@ anchor_left = 0.52
 anchor_top = 0.11
 anchor_right = 0.52
 anchor_bottom = 0.11
-offset_left = -224.0
-offset_right = 224.0
-offset_bottom = 448.0
+offset_left = -237.0
+offset_top = 92.0
+offset_right = 211.0
+offset_bottom = 540.0
 grow_horizontal = 2
 texture = ExtResource("2_3f1qs")
 
@@ -71,10 +76,10 @@ anchor_left = 0.5
 anchor_top = 0.57
 anchor_right = 0.5
 anchor_bottom = 0.57
-offset_left = -147.0
-offset_top = -75.0
-offset_right = 147.0
-offset_bottom = 75.0
+offset_left = -160.0
+offset_top = 17.0
+offset_right = 134.0
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "VICTORY"
@@ -82,11 +87,13 @@ label_settings = ExtResource("5_neifc")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -13.0
+offset_top = 92.0
+offset_right = 27.0
+offset_bottom = 132.0
 
 [node name="jamlost" type="Sprite2D" parent="."]
-position = Vector2(1500, 600)
+position = Vector2(1487, 692)
 texture = ExtResource("6_0hq23")
 
 [node name="jamjalat" type="Sprite2D" parent="jamlost"]
@@ -95,79 +102,92 @@ position = Vector2(32, 112)
 texture = ExtResource("7_ispx3")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 692.0
-offset_top = 105.0
-offset_right = 1305.0
-offset_bottom = 145.0
-theme_override_colors/font_color = Color(1, 0.772549, 0.356863, 1)
+offset_left = 72.0
+offset_top = 291.0
+offset_right = 662.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(0.913725, 0.729412, 0.282353, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.505882, 0.415686, 0.0980392, 1)
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 6
+theme_override_colors/font_outline_color = Color(0.803922, 0.580392, 0.145098, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 9
+theme_override_constants/line_spacing = 8
 theme_override_fonts/font = ExtResource("8_rbxh1")
-theme_override_font_sizes/font_size = 26
-text = "He had conquered his fears and he felt brave like a knight. "
+theme_override_font_sizes/font_size = 32
+text = "He savored his victory. Having conquered his fears, he felt brave — like a knight."
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 491.0
-offset_top = 287.0
+offset_left = 352.0
+offset_top = 472.0
 offset_right = 826.0
-offset_bottom = 389.0
-theme_override_colors/font_color = Color(1, 0.772549, 0.356863, 1)
+offset_bottom = 560.0
+theme_override_colors/font_color = Color(0.913725, 0.729412, 0.282353, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.505882, 0.415686, 0.0980392, 1)
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 6
-theme_override_fonts/font = ExtResource("8_rbxh1")
-theme_override_font_sizes/font_size = 21
-text = "“Sir Crispy”, he thought to himself, 
-a smile sticking to his face 
-like peanut butter to jelly."
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 1358.0
-offset_top = 332.0
-offset_right = 1880.0
-offset_bottom = 407.0
-theme_override_colors/font_color = Color(1, 0.772549, 0.356863, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.505882, 0.415686, 0.0980392, 1)
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 6
-theme_override_fonts/font = ExtResource("8_rbxh1")
-theme_override_font_sizes/font_size = 24
-text = "Was a man this keen on winning really a good match,
-or would she have preferred a softer, lighter companion?"
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 1290.0
-offset_top = 193.0
-offset_right = 1788.0
-offset_bottom = 268.0
-theme_override_colors/font_color = Color(1, 0.772549, 0.356863, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.505882, 0.415686, 0.0980392, 1)
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 6
-theme_override_fonts/font = ExtResource("8_rbxh1")
-theme_override_font_sizes/font_size = 24
-text = "But while Peter savored the sweet taste of victory,
-                   Fraise couldn’t help but feel a little hullow. "
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 41.0
-offset_top = 32.0
-offset_right = 825.0
-offset_bottom = 115.0
-theme_override_colors/font_color = Color(1, 0.772549, 0.356863, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.505882, 0.415686, 0.0980392, 1)
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 6
+theme_override_colors/font_outline_color = Color(0.803922, 0.580392, 0.145098, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 9
+theme_override_constants/line_spacing = 8
 theme_override_fonts/font = ExtResource("8_rbxh1")
 theme_override_font_sizes/font_size = 26
-text = " With wit and chivalry, 
-Peter Nuttingham had won the hand of Fraise Compote. "
+text = "“Sir Crispy”, he thought to himself, a smile sticking to his face like peanut butter to jelly."
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 1483.0
+offset_top = 313.0
+offset_right = 1867.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(0.913725, 0.729412, 0.282353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.803922, 0.580392, 0.145098, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 9
+theme_override_constants/line_spacing = 8
+theme_override_fonts/font = ExtResource("8_rbxh1")
+theme_override_font_sizes/font_size = 26
+text = "Now, Fraise was asking herself: could a man this focused on winning really be a good match for her, or would she have preferred a softer companion with an affectionate and light-hearted nature?"
+horizontal_alignment = 2
+vertical_alignment = 3
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 49.0
+offset_top = 633.0
+offset_right = 526.0
+offset_bottom = 1027.0
+theme_override_colors/font_color = Color(0.913725, 0.729412, 0.282353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.803922, 0.580392, 0.145098, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 9
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("8_rbxh1")
+theme_override_font_sizes/font_size = 29
+text = "Fraise Compote had braved to open the lid to her heart but while Peter felt invincible, she now had a fear hullowing its way into her core. The same rambunctiousness Fraise had originally loved in Peter, now seemed intimidating. Ironically, Peter had mistakenly thought he had to hide his gentle nature in order for her to love him."
+vertical_alignment = 3
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 236.0
+offset_top = 63.0
+offset_right = 1417.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.913725, 0.729412, 0.282353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.803922, 0.580392, 0.145098, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 9
+theme_override_constants/line_spacing = 8
+theme_override_fonts/font = ExtResource("8_rbxh1")
+theme_override_font_sizes/font_size = 40
+text = " With chivalry and wit, Peter Nuttingham had won the hand of Fraise Compote."
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 3
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
