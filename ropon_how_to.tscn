@@ -91,15 +91,27 @@ theme_override_font_sizes/font_size = 30
 text = "Sometimes, even the winner loses some units"
 
 [node name="Back" type="Button" parent="."]
-offset_left = 213.0
-offset_top = 839.0
-offset_right = 345.0
-offset_bottom = 954.0
+custom_minimum_size = Vector2(150, 0)
+offset_left = 250.0
+offset_top = 880.0
+offset_right = 400.0
+offset_bottom = 995.0
 theme = ExtResource("5_jtvpi")
 text = "Back"
 
 [node name="buttonsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_vsviw")
 
+[node name="Play" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1650.0
+offset_top = 880.0
+offset_right = 1800.0
+offset_bottom = 995.0
+theme = ExtResource("5_jtvpi")
+theme_override_font_sizes/font_size = 0
+text = "Play"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
