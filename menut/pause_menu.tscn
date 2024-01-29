@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="1_jgq60"]
 [ext_resource type="Script" path="res://menut/pause_menu.gd" id="1_wxv4d"]
-[ext_resource type="Texture2D" uid="uid://c70pt1ldsikh6" path="res://assets/graphics/SBREADITlogo.png" id="3_sriwc"]
+[ext_resource type="Texture2D" uid="uid://cuturptyth3bk" path="res://assets/graphics/SBREADITlogo.png" id="3_sriwc"]
 [ext_resource type="Texture2D" uid="uid://y2tmbn106gb8" path="res://assets/placeholder/mutet.png" id="4_3sjr5"]
 [ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="5_3o6y8"]
 [ext_resource type="Script" path="res://menut/Options.gd" id="5_o533t"]

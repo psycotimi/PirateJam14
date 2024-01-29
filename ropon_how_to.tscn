@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=3 uid="uid://4ffxkftyon0j"]
+
+[ext_resource type="Script" path="res://ropon_how_to.gd" id="1_c6pfe"]
+[ext_resource type="Texture2D" uid="uid://x55b8qfohct1" path="res://assets/placeholder/roponhowtomove.png" id="1_vjcw5"]
+[ext_resource type="Theme" uid="uid://bj10chrrx6ft0" path="res://assets/teemat/howToPlayTextBody.tres" id="2_bp1aq"]
+[ext_resource type="Texture2D" uid="uid://d8wyr0m1mlbt" path="res://assets/placeholder/roponhowtomove2.png" id="3_sygpw"]
+[ext_resource type="Texture2D" uid="uid://byx5l238c0avq" path="res://assets/placeholder/roponhowtomove3.png" id="4_i08w0"]
+[ext_resource type="Theme" uid="uid://ctvo3yacafgri" path="res://assets/teemat/menuTeema.tres" id="5_jtvpi"]
+[ext_resource type="Texture2D" uid="uid://bbti57hf4bsbw" path="res://assets/placeholder/roponhowtocombat1.png" id="6_kb1kf"]
+[ext_resource type="Texture2D" uid="uid://o3iov1rkmovc" path="res://assets/placeholder/roponkomiatnopat1.png" id="7_y8ycu"]
+[ext_resource type="Texture2D" uid="uid://daj7e4viho4tg" path="res://assets/placeholder/roponkomiatnopat2.png" id="8_3q4am"]
+[ext_resource type="Texture2D" uid="uid://2hqkkst66a5w" path="res://assets/placeholder/roponhowtocombat2.png" id="9_ttrrc"]
+[ext_resource type="AudioStream" uid="uid://ffnax0o6akvs" path="res://assets/sounds/click.wav" id="11_vsviw"]
+
+[node name="roponHowTo" type="Node2D"]
+script = ExtResource("1_c6pfe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.576471, 0.439216, 0.333333, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="howtomove" type="Sprite2D" parent="."]
+position = Vector2(700, 360)
+texture = ExtResource("1_vjcw5")
+
+[node name="clicktomove" type="Label" parent="howtomove"]
+offset_top = 128.0
+offset_right = 536.0
+offset_bottom = 204.0
+theme = ExtResource("2_bp1aq")
+theme_override_font_sizes/font_size = 30
+text = "Click to select units, click again to move them."
+
+[node name="howtomove2" type="Sprite2D" parent="howtomove"]
+position = Vector2(256, 0)
+texture = ExtResource("3_sygpw")
+
+[node name="howtomove3" type="Sprite2D" parent="howtomove"]
+position = Vector2(512, 0)
+texture = ExtResource("4_i08w0")
+
+[node name="otsikko" type="Label" parent="."]
+offset_top = 100.0
+offset_right = 1920.0
+offset_bottom = 240.0
+theme = ExtResource("5_jtvpi")
+theme_override_font_sizes/font_size = 50
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="howtocombat" type="Sprite2D" parent="."]
+position = Vector2(700, 720)
+texture = ExtResource("6_kb1kf")
+
+[node name="nopat" type="Sprite2D" parent="howtocombat"]
+position = Vector2(0, -64)
+scale = Vector2(3, 3)
+texture = ExtResource("7_y8ycu")
+
+[node name="nopat2" type="Sprite2D" parent="howtocombat"]
+position = Vector2(80, -64)
+scale = Vector2(3, 3)
+texture = ExtResource("8_3q4am")
+
+[node name="howtocombat" type="Label" parent="howtocombat"]
+offset_left = -192.0
+offset_top = 128.0
+offset_right = 198.0
+offset_bottom = 173.0
+theme = ExtResource("2_bp1aq")
+theme_override_font_sizes/font_size = 30
+text = "Combat is resolved by roll of dice."
+
+[node name="howtocombat2" type="Sprite2D" parent="howtocombat"]
+position = Vector2(512, 0)
+texture = ExtResource("9_ttrrc")
+
+[node name="Label" type="Label" parent="howtocombat/howtocombat2"]
+offset_left = -192.0
+offset_top = 128.0
+offset_right = 172.0
+offset_bottom = 151.0
+theme = ExtResource("2_bp1aq")
+theme_override_font_sizes/font_size = 30
+text = "Sometimes, even the winner loses some units"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 213.0
+offset_top = 839.0
+offset_right = 345.0
+offset_bottom = 954.0
+theme = ExtResource("5_jtvpi")
+text = "Back"
+
+[node name="buttonsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vsviw")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
