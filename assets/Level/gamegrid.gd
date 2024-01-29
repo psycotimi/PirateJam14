@@ -148,9 +148,13 @@ func alue_under_mouse():
 
 # Kun hiirellä painetaan ruutua, valitaan kyseinen ruutu
 func _input(_event):
+    if Input.is_action_just_pressed("deselect_alue"):
+        selectedAlue = null    
+        updatetroops()
+        highlightLegalMoves()
     
     
-    if Input.is_action_just_pressed("select_tile"):
+    elif Input.is_action_just_pressed("select_alue"):
         highlightLegalMoves()
         var valinta = alueenValinta()
         # estää kaatumisen jos klikkaa ohi leivästä
@@ -221,6 +225,7 @@ func sijoitaTroopitAlueille():
             
             #siirsin omaan funktioon, enemmän iterointia mut selkeempi
 func highlightLegalMoves():
+    await get_tree().create_timer(0.1).timeout
     for alue in pbalueet:
         if alueet[str(alue)].troops <= 0:
             continue
