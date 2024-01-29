@@ -155,7 +155,6 @@ func _input(_event):
     
     
     elif Input.is_action_just_pressed("select_alue"):
-        highlightLegalMoves()
         var valinta = alueenValinta()
         # estää kaatumisen jos klikkaa ohi leivästä
         if !valinta:
@@ -168,6 +167,7 @@ func _input(_event):
         elif selectedAlue != null && valinta != null:
             kohdexy = valinta
             await liikuHyokkaa(selectedAlue, kohdexy)
+            highlightLegalMoves()
             return
         # valitaan alue
         elif alueet[(valinta)].spread == Global.spreadTypeList[1] && alueet[(valinta)].troops > 0 && Global.whoseTurn == Global.spreadTypeList[1]:
@@ -175,6 +175,8 @@ func _input(_event):
             update_alueet()
             updatetroops()
             valitseRuutuJostaHyokataan(valinta)
+        else:
+            highlightLegalMoves()
             
 # Arvotaan aloitusruudut peanut butterille ja laitetaan joka ruutuun myös yksi troop
 func alkupositio(): #muuta tää kutsumaan aluetta, koordinaatit 0:0 - 7:7
@@ -225,7 +227,7 @@ func sijoitaTroopitAlueille():
             
             #siirsin omaan funktioon, enemmän iterointia mut selkeempi
 func highlightLegalMoves():
-    await get_tree().create_timer(0.1).timeout
+    await get_tree().create_timer(0.01).timeout
     for alue in pbalueet:
         if alueet[str(alue)].troops <= 0:
             continue
