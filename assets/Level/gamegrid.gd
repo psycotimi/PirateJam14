@@ -227,7 +227,7 @@ func sijoitaTroopitAlueille():
             
             #siirsin omaan funktioon, enemmän iterointia mut selkeempi
 func highlightLegalMoves():
-    await get_tree().create_timer(0.01).timeout
+    await get_tree().create_timer(0.001).timeout
     for alue in pbalueet:
         if alueet[str(alue)].troops <= 0:
             continue

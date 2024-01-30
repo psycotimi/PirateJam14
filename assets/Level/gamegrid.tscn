@@ -117,3 +117,9 @@ visible = false
 [node name="endScreenTappio" parent="." instance=ExtResource("19_mrubr")]
 layer = 7
 visible = false
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(704, 416)
+scale = Vector2(16, 16)
+texture_normal = ExtResource("1_28tqg")
+action = "select_alue"
