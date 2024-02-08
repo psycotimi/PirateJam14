@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cm7t2ldke1rqx"]
 
 [ext_resource type="Script" path="res://menut/mainmenun_tausta.gd" id="1_orfgi"]
-[ext_resource type="Texture2D" uid="uid://ci7d1vbor75d1" path="res://assets/placeholder/hillosotilas.png" id="2_o7q5i"]
+[ext_resource type="Texture2D" uid="uid://6yv3agqhhy6p" path="res://assets/graphics/sotilaat/tyhjasotilashyppaa.png" id="2_5uiwx"]
 [ext_resource type="Script" path="res://menut/taustaleipä.gd" id="3_yf38g"]
 
 [node name="mainmenun tausta" type="Node2D"]
@@ -10,2855 +10,2855 @@ script = ExtResource("1_orfgi")
 [node name="taustaleipä" type="Sprite2D" parent="."]
 position = Vector2(64, 256)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä2" type="Sprite2D" parent="."]
 position = Vector2(64, 64)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä3" type="Sprite2D" parent="."]
 position = Vector2(256, 256)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä4" type="Sprite2D" parent="."]
 position = Vector2(256, 64)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä5" type="Sprite2D" parent="."]
 position = Vector2(442, 260)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä6" type="Sprite2D" parent="."]
 position = Vector2(442, 68)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä7" type="Sprite2D" parent="."]
 position = Vector2(634, 260)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä8" type="Sprite2D" parent="."]
 position = Vector2(634, 68)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä9" type="Sprite2D" parent="."]
 position = Vector2(825, 260)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä10" type="Sprite2D" parent="."]
 position = Vector2(825, 68)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä11" type="Sprite2D" parent="."]
 position = Vector2(1017, 260)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä12" type="Sprite2D" parent="."]
 position = Vector2(1017, 68)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä13" type="Sprite2D" parent="."]
 position = Vector2(1219, 263)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä14" type="Sprite2D" parent="."]
 position = Vector2(1219, 71)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä15" type="Sprite2D" parent="."]
 position = Vector2(1411, 263)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä16" type="Sprite2D" parent="."]
 position = Vector2(1411, 71)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä17" type="Sprite2D" parent="."]
 position = Vector2(1625, 258)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä18" type="Sprite2D" parent="."]
 position = Vector2(1625, 66)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä19" type="Sprite2D" parent="."]
 position = Vector2(1817, 258)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä20" type="Sprite2D" parent="."]
 position = Vector2(1817, 66)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä21" type="Sprite2D" parent="."]
 position = Vector2(69, 612)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä22" type="Sprite2D" parent="."]
 position = Vector2(69, 420)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä23" type="Sprite2D" parent="."]
 position = Vector2(261, 612)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä24" type="Sprite2D" parent="."]
 position = Vector2(261, 420)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä25" type="Sprite2D" parent="."]
 position = Vector2(447, 616)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä26" type="Sprite2D" parent="."]
 position = Vector2(447, 424)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä27" type="Sprite2D" parent="."]
 position = Vector2(639, 616)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä28" type="Sprite2D" parent="."]
 position = Vector2(639, 424)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä29" type="Sprite2D" parent="."]
 position = Vector2(830, 616)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä30" type="Sprite2D" parent="."]
 position = Vector2(830, 424)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä31" type="Sprite2D" parent="."]
 position = Vector2(1022, 616)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä32" type="Sprite2D" parent="."]
 position = Vector2(1022, 424)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä33" type="Sprite2D" parent="."]
 position = Vector2(1224, 619)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä34" type="Sprite2D" parent="."]
 position = Vector2(1224, 427)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä35" type="Sprite2D" parent="."]
 position = Vector2(1416, 619)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä36" type="Sprite2D" parent="."]
 position = Vector2(1416, 427)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä37" type="Sprite2D" parent="."]
 position = Vector2(1630, 614)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä38" type="Sprite2D" parent="."]
 position = Vector2(1630, 422)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä39" type="Sprite2D" parent="."]
 position = Vector2(1822, 614)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä40" type="Sprite2D" parent="."]
 position = Vector2(1822, 422)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä41" type="Sprite2D" parent="."]
 position = Vector2(70, 983)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä42" type="Sprite2D" parent="."]
 position = Vector2(70, 791)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä43" type="Sprite2D" parent="."]
 position = Vector2(262, 983)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä44" type="Sprite2D" parent="."]
 position = Vector2(262, 791)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä45" type="Sprite2D" parent="."]
 position = Vector2(448, 987)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä46" type="Sprite2D" parent="."]
 position = Vector2(448, 795)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä47" type="Sprite2D" parent="."]
 position = Vector2(640, 987)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä48" type="Sprite2D" parent="."]
 position = Vector2(640, 795)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä49" type="Sprite2D" parent="."]
 position = Vector2(831, 987)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä50" type="Sprite2D" parent="."]
 position = Vector2(831, 795)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä51" type="Sprite2D" parent="."]
 position = Vector2(1023, 987)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä52" type="Sprite2D" parent="."]
 position = Vector2(1023, 795)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä53" type="Sprite2D" parent="."]
 position = Vector2(1225, 990)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä54" type="Sprite2D" parent="."]
 position = Vector2(1225, 798)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä55" type="Sprite2D" parent="."]
 position = Vector2(1417, 990)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä56" type="Sprite2D" parent="."]
 position = Vector2(1417, 798)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä57" type="Sprite2D" parent="."]
 position = Vector2(1631, 985)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä58" type="Sprite2D" parent="."]
 position = Vector2(1631, 793)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä59" type="Sprite2D" parent="."]
 position = Vector2(1823, 985)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä60" type="Sprite2D" parent="."]
 position = Vector2(1823, 793)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä61" type="Sprite2D" parent="."]
 position = Vector2(76, 1348)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä62" type="Sprite2D" parent="."]
 position = Vector2(76, 1156)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä63" type="Sprite2D" parent="."]
 position = Vector2(268, 1348)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä64" type="Sprite2D" parent="."]
 position = Vector2(268, 1156)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä65" type="Sprite2D" parent="."]
 position = Vector2(454, 1352)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä66" type="Sprite2D" parent="."]
 position = Vector2(454, 1160)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä67" type="Sprite2D" parent="."]
 position = Vector2(646, 1352)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä68" type="Sprite2D" parent="."]
 position = Vector2(646, 1160)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä69" type="Sprite2D" parent="."]
 position = Vector2(837, 1352)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä70" type="Sprite2D" parent="."]
 position = Vector2(837, 1160)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä71" type="Sprite2D" parent="."]
 position = Vector2(1029, 1352)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä72" type="Sprite2D" parent="."]
 position = Vector2(1029, 1160)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä73" type="Sprite2D" parent="."]
 position = Vector2(1231, 1355)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä74" type="Sprite2D" parent="."]
 position = Vector2(1231, 1163)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä75" type="Sprite2D" parent="."]
 position = Vector2(1423, 1355)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä76" type="Sprite2D" parent="."]
 position = Vector2(1423, 1163)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä77" type="Sprite2D" parent="."]
 position = Vector2(1637, 1350)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä78" type="Sprite2D" parent="."]
 position = Vector2(1637, 1158)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä79" type="Sprite2D" parent="."]
 position = Vector2(1829, 1350)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä80" type="Sprite2D" parent="."]
 position = Vector2(1829, 1158)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä81" type="Sprite2D" parent="."]
 position = Vector2(81, 1704)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä82" type="Sprite2D" parent="."]
 position = Vector2(81, 1512)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä83" type="Sprite2D" parent="."]
 position = Vector2(273, 1704)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä84" type="Sprite2D" parent="."]
 position = Vector2(273, 1512)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä85" type="Sprite2D" parent="."]
 position = Vector2(459, 1708)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä86" type="Sprite2D" parent="."]
 position = Vector2(459, 1516)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä87" type="Sprite2D" parent="."]
 position = Vector2(651, 1708)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä88" type="Sprite2D" parent="."]
 position = Vector2(651, 1516)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä89" type="Sprite2D" parent="."]
 position = Vector2(842, 1708)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä90" type="Sprite2D" parent="."]
 position = Vector2(842, 1516)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä91" type="Sprite2D" parent="."]
 position = Vector2(1034, 1708)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä92" type="Sprite2D" parent="."]
 position = Vector2(1034, 1516)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä93" type="Sprite2D" parent="."]
 position = Vector2(1236, 1711)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä94" type="Sprite2D" parent="."]
 position = Vector2(1236, 1519)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä95" type="Sprite2D" parent="."]
 position = Vector2(1428, 1711)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä96" type="Sprite2D" parent="."]
 position = Vector2(1428, 1519)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä97" type="Sprite2D" parent="."]
 position = Vector2(1642, 1706)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä98" type="Sprite2D" parent="."]
 position = Vector2(1642, 1514)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä99" type="Sprite2D" parent="."]
 position = Vector2(1834, 1706)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä100" type="Sprite2D" parent="."]
 position = Vector2(1834, 1514)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä101" type="Sprite2D" parent="."]
 position = Vector2(82, 2075)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä102" type="Sprite2D" parent="."]
 position = Vector2(82, 1883)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä103" type="Sprite2D" parent="."]
 position = Vector2(274, 2075)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä104" type="Sprite2D" parent="."]
 position = Vector2(274, 1883)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä105" type="Sprite2D" parent="."]
 position = Vector2(460, 2079)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä106" type="Sprite2D" parent="."]
 position = Vector2(460, 1887)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä107" type="Sprite2D" parent="."]
 position = Vector2(652, 2079)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä108" type="Sprite2D" parent="."]
 position = Vector2(652, 1887)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä109" type="Sprite2D" parent="."]
 position = Vector2(843, 2079)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä110" type="Sprite2D" parent="."]
 position = Vector2(843, 1887)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä111" type="Sprite2D" parent="."]
 position = Vector2(1035, 2079)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä112" type="Sprite2D" parent="."]
 position = Vector2(1035, 1887)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä113" type="Sprite2D" parent="."]
 position = Vector2(1237, 2082)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä114" type="Sprite2D" parent="."]
 position = Vector2(1237, 1890)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä115" type="Sprite2D" parent="."]
 position = Vector2(1429, 2082)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä116" type="Sprite2D" parent="."]
 position = Vector2(1429, 1890)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä117" type="Sprite2D" parent="."]
 position = Vector2(1643, 2077)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä118" type="Sprite2D" parent="."]
 position = Vector2(1643, 1885)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä119" type="Sprite2D" parent="."]
 position = Vector2(1835, 2077)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä120" type="Sprite2D" parent="."]
 position = Vector2(1835, 1885)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä121" type="Sprite2D" parent="."]
 position = Vector2(1996, 268)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä122" type="Sprite2D" parent="."]
 position = Vector2(1996, 76)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä123" type="Sprite2D" parent="."]
 position = Vector2(2188, 268)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä124" type="Sprite2D" parent="."]
 position = Vector2(2188, 76)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä125" type="Sprite2D" parent="."]
 position = Vector2(2374, 272)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä126" type="Sprite2D" parent="."]
 position = Vector2(2374, 80)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä127" type="Sprite2D" parent="."]
 position = Vector2(2566, 272)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä128" type="Sprite2D" parent="."]
 position = Vector2(2566, 80)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä129" type="Sprite2D" parent="."]
 position = Vector2(2757, 272)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä130" type="Sprite2D" parent="."]
 position = Vector2(2757, 80)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä131" type="Sprite2D" parent="."]
 position = Vector2(2949, 272)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä132" type="Sprite2D" parent="."]
 position = Vector2(2949, 80)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä133" type="Sprite2D" parent="."]
 position = Vector2(3151, 275)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä134" type="Sprite2D" parent="."]
 position = Vector2(3151, 83)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä135" type="Sprite2D" parent="."]
 position = Vector2(3343, 275)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä136" type="Sprite2D" parent="."]
 position = Vector2(3343, 83)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä137" type="Sprite2D" parent="."]
 position = Vector2(3557, 270)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä138" type="Sprite2D" parent="."]
 position = Vector2(3557, 78)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä139" type="Sprite2D" parent="."]
 position = Vector2(3749, 270)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä140" type="Sprite2D" parent="."]
 position = Vector2(3749, 78)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä141" type="Sprite2D" parent="."]
 position = Vector2(2001, 624)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä142" type="Sprite2D" parent="."]
 position = Vector2(2001, 432)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä143" type="Sprite2D" parent="."]
 position = Vector2(2193, 624)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä144" type="Sprite2D" parent="."]
 position = Vector2(2193, 432)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä145" type="Sprite2D" parent="."]
 position = Vector2(2379, 628)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä146" type="Sprite2D" parent="."]
 position = Vector2(2379, 436)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä147" type="Sprite2D" parent="."]
 position = Vector2(2571, 628)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä148" type="Sprite2D" parent="."]
 position = Vector2(2571, 436)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä149" type="Sprite2D" parent="."]
 position = Vector2(2762, 628)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä150" type="Sprite2D" parent="."]
 position = Vector2(2762, 436)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä151" type="Sprite2D" parent="."]
 position = Vector2(2954, 628)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä152" type="Sprite2D" parent="."]
 position = Vector2(2954, 436)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä153" type="Sprite2D" parent="."]
 position = Vector2(3156, 631)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä154" type="Sprite2D" parent="."]
 position = Vector2(3156, 439)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä155" type="Sprite2D" parent="."]
 position = Vector2(3348, 631)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä156" type="Sprite2D" parent="."]
 position = Vector2(3348, 439)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä157" type="Sprite2D" parent="."]
 position = Vector2(3562, 626)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä158" type="Sprite2D" parent="."]
 position = Vector2(3562, 434)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä159" type="Sprite2D" parent="."]
 position = Vector2(3754, 626)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä160" type="Sprite2D" parent="."]
 position = Vector2(3754, 434)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä161" type="Sprite2D" parent="."]
 position = Vector2(2002, 995)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä162" type="Sprite2D" parent="."]
 position = Vector2(2002, 803)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä163" type="Sprite2D" parent="."]
 position = Vector2(2194, 995)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä164" type="Sprite2D" parent="."]
 position = Vector2(2194, 803)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä165" type="Sprite2D" parent="."]
 position = Vector2(2380, 999)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä166" type="Sprite2D" parent="."]
 position = Vector2(2380, 807)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä167" type="Sprite2D" parent="."]
 position = Vector2(2572, 999)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä168" type="Sprite2D" parent="."]
 position = Vector2(2572, 807)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä169" type="Sprite2D" parent="."]
 position = Vector2(2763, 999)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä170" type="Sprite2D" parent="."]
 position = Vector2(2763, 807)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä171" type="Sprite2D" parent="."]
 position = Vector2(2955, 999)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä172" type="Sprite2D" parent="."]
 position = Vector2(2955, 807)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä173" type="Sprite2D" parent="."]
 position = Vector2(3157, 1002)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä174" type="Sprite2D" parent="."]
 position = Vector2(3157, 810)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä175" type="Sprite2D" parent="."]
 position = Vector2(3349, 1002)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä176" type="Sprite2D" parent="."]
 position = Vector2(3349, 810)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä177" type="Sprite2D" parent="."]
 position = Vector2(3563, 997)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä178" type="Sprite2D" parent="."]
 position = Vector2(3563, 805)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä179" type="Sprite2D" parent="."]
 position = Vector2(3755, 997)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä180" type="Sprite2D" parent="."]
 position = Vector2(3755, 805)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä181" type="Sprite2D" parent="."]
 position = Vector2(2008, 1360)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä182" type="Sprite2D" parent="."]
 position = Vector2(2008, 1168)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä183" type="Sprite2D" parent="."]
 position = Vector2(2200, 1360)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä184" type="Sprite2D" parent="."]
 position = Vector2(2200, 1168)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä185" type="Sprite2D" parent="."]
 position = Vector2(2386, 1364)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä186" type="Sprite2D" parent="."]
 position = Vector2(2386, 1172)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä187" type="Sprite2D" parent="."]
 position = Vector2(2578, 1364)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä188" type="Sprite2D" parent="."]
 position = Vector2(2578, 1172)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä189" type="Sprite2D" parent="."]
 position = Vector2(2769, 1364)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä190" type="Sprite2D" parent="."]
 position = Vector2(2769, 1172)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä191" type="Sprite2D" parent="."]
 position = Vector2(2961, 1364)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä192" type="Sprite2D" parent="."]
 position = Vector2(2961, 1172)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä193" type="Sprite2D" parent="."]
 position = Vector2(3163, 1367)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä194" type="Sprite2D" parent="."]
 position = Vector2(3163, 1175)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä195" type="Sprite2D" parent="."]
 position = Vector2(3355, 1367)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä196" type="Sprite2D" parent="."]
 position = Vector2(3355, 1175)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä197" type="Sprite2D" parent="."]
 position = Vector2(3569, 1362)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä198" type="Sprite2D" parent="."]
 position = Vector2(3569, 1170)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä199" type="Sprite2D" parent="."]
 position = Vector2(3761, 1362)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä200" type="Sprite2D" parent="."]
 position = Vector2(3761, 1170)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä201" type="Sprite2D" parent="."]
 position = Vector2(2013, 1716)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä202" type="Sprite2D" parent="."]
 position = Vector2(2013, 1524)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä203" type="Sprite2D" parent="."]
 position = Vector2(2205, 1716)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä204" type="Sprite2D" parent="."]
 position = Vector2(2205, 1524)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä205" type="Sprite2D" parent="."]
 position = Vector2(2391, 1720)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä206" type="Sprite2D" parent="."]
 position = Vector2(2391, 1528)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä207" type="Sprite2D" parent="."]
 position = Vector2(2583, 1720)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä208" type="Sprite2D" parent="."]
 position = Vector2(2583, 1528)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä209" type="Sprite2D" parent="."]
 position = Vector2(2774, 1720)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä210" type="Sprite2D" parent="."]
 position = Vector2(2774, 1528)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä211" type="Sprite2D" parent="."]
 position = Vector2(2966, 1720)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä212" type="Sprite2D" parent="."]
 position = Vector2(2966, 1528)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä213" type="Sprite2D" parent="."]
 position = Vector2(3168, 1723)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä214" type="Sprite2D" parent="."]
 position = Vector2(3168, 1531)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä215" type="Sprite2D" parent="."]
 position = Vector2(3360, 1723)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä216" type="Sprite2D" parent="."]
 position = Vector2(3360, 1531)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä217" type="Sprite2D" parent="."]
 position = Vector2(3574, 1718)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä218" type="Sprite2D" parent="."]
 position = Vector2(3574, 1526)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä219" type="Sprite2D" parent="."]
 position = Vector2(3766, 1718)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä220" type="Sprite2D" parent="."]
 position = Vector2(3766, 1526)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä221" type="Sprite2D" parent="."]
 position = Vector2(2014, 2087)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä222" type="Sprite2D" parent="."]
 position = Vector2(2014, 1895)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä223" type="Sprite2D" parent="."]
 position = Vector2(2206, 2087)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä224" type="Sprite2D" parent="."]
 position = Vector2(2206, 1895)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä225" type="Sprite2D" parent="."]
 position = Vector2(2392, 2091)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä226" type="Sprite2D" parent="."]
 position = Vector2(2392, 1899)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä227" type="Sprite2D" parent="."]
 position = Vector2(2584, 2091)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä228" type="Sprite2D" parent="."]
 position = Vector2(2584, 1899)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä229" type="Sprite2D" parent="."]
 position = Vector2(2775, 2091)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä230" type="Sprite2D" parent="."]
 position = Vector2(2775, 1899)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä231" type="Sprite2D" parent="."]
 position = Vector2(2967, 2091)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä232" type="Sprite2D" parent="."]
 position = Vector2(2967, 1899)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä233" type="Sprite2D" parent="."]
 position = Vector2(3169, 2094)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä234" type="Sprite2D" parent="."]
 position = Vector2(3169, 1902)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä235" type="Sprite2D" parent="."]
 position = Vector2(3361, 2094)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä236" type="Sprite2D" parent="."]
 position = Vector2(3361, 1902)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä237" type="Sprite2D" parent="."]
 position = Vector2(3575, 2089)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä238" type="Sprite2D" parent="."]
 position = Vector2(3575, 1897)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä239" type="Sprite2D" parent="."]
 position = Vector2(3767, 2089)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä240" type="Sprite2D" parent="."]
 position = Vector2(3767, 1897)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä241" type="Sprite2D" parent="."]
 position = Vector2(70, -660)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä242" type="Sprite2D" parent="."]
 position = Vector2(70, -852)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä243" type="Sprite2D" parent="."]
 position = Vector2(262, -660)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä244" type="Sprite2D" parent="."]
 position = Vector2(262, -852)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä245" type="Sprite2D" parent="."]
 position = Vector2(448, -656)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä246" type="Sprite2D" parent="."]
 position = Vector2(448, -848)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä247" type="Sprite2D" parent="."]
 position = Vector2(640, -656)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä248" type="Sprite2D" parent="."]
 position = Vector2(640, -848)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä249" type="Sprite2D" parent="."]
 position = Vector2(831, -656)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä250" type="Sprite2D" parent="."]
 position = Vector2(831, -848)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä251" type="Sprite2D" parent="."]
 position = Vector2(1023, -656)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä252" type="Sprite2D" parent="."]
 position = Vector2(1023, -848)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä253" type="Sprite2D" parent="."]
 position = Vector2(1225, -653)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä254" type="Sprite2D" parent="."]
 position = Vector2(1225, -845)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä255" type="Sprite2D" parent="."]
 position = Vector2(1417, -653)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä256" type="Sprite2D" parent="."]
 position = Vector2(1417, -845)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä257" type="Sprite2D" parent="."]
 position = Vector2(1631, -658)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä258" type="Sprite2D" parent="."]
 position = Vector2(1631, -850)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä259" type="Sprite2D" parent="."]
 position = Vector2(1823, -658)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä260" type="Sprite2D" parent="."]
 position = Vector2(1823, -850)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä261" type="Sprite2D" parent="."]
 position = Vector2(75, -304)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä262" type="Sprite2D" parent="."]
 position = Vector2(75, -496)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä263" type="Sprite2D" parent="."]
 position = Vector2(267, -304)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä264" type="Sprite2D" parent="."]
 position = Vector2(267, -496)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä265" type="Sprite2D" parent="."]
 position = Vector2(453, -300)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä266" type="Sprite2D" parent="."]
 position = Vector2(453, -492)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä267" type="Sprite2D" parent="."]
 position = Vector2(645, -300)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä268" type="Sprite2D" parent="."]
 position = Vector2(645, -492)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä269" type="Sprite2D" parent="."]
 position = Vector2(836, -300)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä270" type="Sprite2D" parent="."]
 position = Vector2(836, -492)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä271" type="Sprite2D" parent="."]
 position = Vector2(1028, -300)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä272" type="Sprite2D" parent="."]
 position = Vector2(1028, -492)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä273" type="Sprite2D" parent="."]
 position = Vector2(1230, -297)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä274" type="Sprite2D" parent="."]
 position = Vector2(1230, -489)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä275" type="Sprite2D" parent="."]
 position = Vector2(1422, -297)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä276" type="Sprite2D" parent="."]
 position = Vector2(1422, -489)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä277" type="Sprite2D" parent="."]
 position = Vector2(1636, -302)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä278" type="Sprite2D" parent="."]
 position = Vector2(1636, -494)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä279" type="Sprite2D" parent="."]
 position = Vector2(1828, -302)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä280" type="Sprite2D" parent="."]
 position = Vector2(1828, -494)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä281" type="Sprite2D" parent="."]
 position = Vector2(76, -125)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä282" type="Sprite2D" parent="."]
 position = Vector2(268, -125)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä283" type="Sprite2D" parent="."]
 position = Vector2(454, -121)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä284" type="Sprite2D" parent="."]
 position = Vector2(646, -121)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä285" type="Sprite2D" parent="."]
 position = Vector2(837, -121)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä286" type="Sprite2D" parent="."]
 position = Vector2(1029, -121)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä287" type="Sprite2D" parent="."]
 position = Vector2(1231, -118)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä288" type="Sprite2D" parent="."]
 position = Vector2(1423, -118)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä289" type="Sprite2D" parent="."]
 position = Vector2(1637, -123)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä290" type="Sprite2D" parent="."]
 position = Vector2(1829, -123)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä291" type="Sprite2D" parent="."]
 position = Vector2(2002, -648)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä292" type="Sprite2D" parent="."]
 position = Vector2(2002, -840)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä293" type="Sprite2D" parent="."]
 position = Vector2(2194, -648)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä294" type="Sprite2D" parent="."]
 position = Vector2(2194, -840)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä295" type="Sprite2D" parent="."]
 position = Vector2(2380, -644)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä296" type="Sprite2D" parent="."]
 position = Vector2(2380, -836)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä297" type="Sprite2D" parent="."]
 position = Vector2(2572, -644)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä298" type="Sprite2D" parent="."]
 position = Vector2(2572, -836)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä299" type="Sprite2D" parent="."]
 position = Vector2(2763, -644)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä300" type="Sprite2D" parent="."]
 position = Vector2(2763, -836)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä301" type="Sprite2D" parent="."]
 position = Vector2(2955, -644)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä302" type="Sprite2D" parent="."]
 position = Vector2(2955, -836)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä303" type="Sprite2D" parent="."]
 position = Vector2(3157, -641)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä304" type="Sprite2D" parent="."]
 position = Vector2(3157, -833)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä305" type="Sprite2D" parent="."]
 position = Vector2(3349, -641)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä306" type="Sprite2D" parent="."]
 position = Vector2(3349, -833)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä307" type="Sprite2D" parent="."]
 position = Vector2(3563, -646)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä308" type="Sprite2D" parent="."]
 position = Vector2(3563, -838)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä309" type="Sprite2D" parent="."]
 position = Vector2(3755, -646)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä310" type="Sprite2D" parent="."]
 position = Vector2(3755, -838)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä311" type="Sprite2D" parent="."]
 position = Vector2(2007, -292)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä312" type="Sprite2D" parent="."]
 position = Vector2(2007, -484)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä313" type="Sprite2D" parent="."]
 position = Vector2(2199, -292)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä314" type="Sprite2D" parent="."]
 position = Vector2(2199, -484)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä315" type="Sprite2D" parent="."]
 position = Vector2(2385, -288)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä316" type="Sprite2D" parent="."]
 position = Vector2(2385, -480)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä317" type="Sprite2D" parent="."]
 position = Vector2(2577, -288)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä318" type="Sprite2D" parent="."]
 position = Vector2(2577, -480)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä319" type="Sprite2D" parent="."]
 position = Vector2(2768, -288)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä320" type="Sprite2D" parent="."]
 position = Vector2(2768, -480)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä321" type="Sprite2D" parent="."]
 position = Vector2(2960, -288)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä322" type="Sprite2D" parent="."]
 position = Vector2(2960, -480)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä323" type="Sprite2D" parent="."]
 position = Vector2(3162, -285)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä324" type="Sprite2D" parent="."]
 position = Vector2(3162, -477)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä325" type="Sprite2D" parent="."]
 position = Vector2(3354, -285)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä326" type="Sprite2D" parent="."]
 position = Vector2(3354, -477)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä327" type="Sprite2D" parent="."]
 position = Vector2(3568, -290)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä328" type="Sprite2D" parent="."]
 position = Vector2(3568, -482)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä329" type="Sprite2D" parent="."]
 position = Vector2(3760, -290)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä330" type="Sprite2D" parent="."]
 position = Vector2(3760, -482)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä331" type="Sprite2D" parent="."]
 position = Vector2(2008, -113)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä332" type="Sprite2D" parent="."]
 position = Vector2(2200, -113)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä333" type="Sprite2D" parent="."]
 position = Vector2(2386, -109)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä334" type="Sprite2D" parent="."]
 position = Vector2(2578, -109)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä335" type="Sprite2D" parent="."]
 position = Vector2(2769, -109)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä336" type="Sprite2D" parent="."]
 position = Vector2(2961, -109)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä337" type="Sprite2D" parent="."]
 position = Vector2(3163, -106)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä338" type="Sprite2D" parent="."]
 position = Vector2(3355, -106)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä339" type="Sprite2D" parent="."]
 position = Vector2(3569, -111)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä340" type="Sprite2D" parent="."]
 position = Vector2(3761, -111)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä341" type="Sprite2D" parent="."]
 position = Vector2(-1467, 263)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä342" type="Sprite2D" parent="."]
 position = Vector2(-1467, 71)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä343" type="Sprite2D" parent="."]
 position = Vector2(-1275, 263)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä344" type="Sprite2D" parent="."]
 position = Vector2(-1275, 71)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä345" type="Sprite2D" parent="."]
 position = Vector2(-1084, 263)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä346" type="Sprite2D" parent="."]
 position = Vector2(-1084, 71)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä347" type="Sprite2D" parent="."]
 position = Vector2(-892, 263)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä348" type="Sprite2D" parent="."]
 position = Vector2(-892, 71)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä349" type="Sprite2D" parent="."]
 position = Vector2(-690, 266)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä350" type="Sprite2D" parent="."]
 position = Vector2(-690, 74)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä351" type="Sprite2D" parent="."]
 position = Vector2(-498, 266)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä352" type="Sprite2D" parent="."]
 position = Vector2(-498, 74)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä353" type="Sprite2D" parent="."]
 position = Vector2(-284, 261)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä354" type="Sprite2D" parent="."]
 position = Vector2(-284, 69)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä355" type="Sprite2D" parent="."]
 position = Vector2(-92, 261)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä356" type="Sprite2D" parent="."]
 position = Vector2(-92, 69)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä357" type="Sprite2D" parent="."]
 position = Vector2(-1462, 619)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä358" type="Sprite2D" parent="."]
 position = Vector2(-1462, 427)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä359" type="Sprite2D" parent="."]
 position = Vector2(-1270, 619)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä360" type="Sprite2D" parent="."]
 position = Vector2(-1270, 427)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä361" type="Sprite2D" parent="."]
 position = Vector2(-1079, 619)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä362" type="Sprite2D" parent="."]
 position = Vector2(-1079, 427)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä363" type="Sprite2D" parent="."]
 position = Vector2(-887, 619)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä364" type="Sprite2D" parent="."]
 position = Vector2(-887, 427)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä365" type="Sprite2D" parent="."]
 position = Vector2(-685, 622)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä366" type="Sprite2D" parent="."]
 position = Vector2(-685, 430)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä367" type="Sprite2D" parent="."]
 position = Vector2(-493, 622)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä368" type="Sprite2D" parent="."]
 position = Vector2(-493, 430)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä369" type="Sprite2D" parent="."]
 position = Vector2(-279, 617)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä370" type="Sprite2D" parent="."]
 position = Vector2(-279, 425)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä371" type="Sprite2D" parent="."]
 position = Vector2(-87, 617)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä372" type="Sprite2D" parent="."]
 position = Vector2(-87, 425)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä373" type="Sprite2D" parent="."]
 position = Vector2(-1461, 990)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä374" type="Sprite2D" parent="."]
 position = Vector2(-1461, 798)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä375" type="Sprite2D" parent="."]
 position = Vector2(-1269, 990)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä376" type="Sprite2D" parent="."]
 position = Vector2(-1269, 798)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä377" type="Sprite2D" parent="."]
 position = Vector2(-1078, 990)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä378" type="Sprite2D" parent="."]
 position = Vector2(-1078, 798)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä379" type="Sprite2D" parent="."]
 position = Vector2(-886, 990)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä380" type="Sprite2D" parent="."]
 position = Vector2(-886, 798)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä381" type="Sprite2D" parent="."]
 position = Vector2(-684, 993)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä382" type="Sprite2D" parent="."]
 position = Vector2(-684, 801)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä383" type="Sprite2D" parent="."]
 position = Vector2(-492, 993)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä384" type="Sprite2D" parent="."]
 position = Vector2(-492, 801)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä385" type="Sprite2D" parent="."]
 position = Vector2(-278, 988)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä386" type="Sprite2D" parent="."]
 position = Vector2(-278, 796)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä387" type="Sprite2D" parent="."]
 position = Vector2(-86, 988)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä388" type="Sprite2D" parent="."]
 position = Vector2(-86, 796)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä389" type="Sprite2D" parent="."]
 position = Vector2(-1455, 1355)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä390" type="Sprite2D" parent="."]
 position = Vector2(-1455, 1163)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä391" type="Sprite2D" parent="."]
 position = Vector2(-1263, 1355)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä392" type="Sprite2D" parent="."]
 position = Vector2(-1263, 1163)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä393" type="Sprite2D" parent="."]
 position = Vector2(-1072, 1355)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä394" type="Sprite2D" parent="."]
 position = Vector2(-1072, 1163)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä395" type="Sprite2D" parent="."]
 position = Vector2(-880, 1355)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä396" type="Sprite2D" parent="."]
 position = Vector2(-880, 1163)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä397" type="Sprite2D" parent="."]
 position = Vector2(-678, 1358)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä398" type="Sprite2D" parent="."]
 position = Vector2(-678, 1166)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä399" type="Sprite2D" parent="."]
 position = Vector2(-486, 1358)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä400" type="Sprite2D" parent="."]
 position = Vector2(-486, 1166)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä401" type="Sprite2D" parent="."]
 position = Vector2(-272, 1353)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä402" type="Sprite2D" parent="."]
 position = Vector2(-272, 1161)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä403" type="Sprite2D" parent="."]
 position = Vector2(-80, 1353)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä404" type="Sprite2D" parent="."]
 position = Vector2(-80, 1161)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä405" type="Sprite2D" parent="."]
 position = Vector2(-1450, 1711)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä406" type="Sprite2D" parent="."]
 position = Vector2(-1450, 1519)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä407" type="Sprite2D" parent="."]
 position = Vector2(-1258, 1711)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä408" type="Sprite2D" parent="."]
 position = Vector2(-1258, 1519)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä409" type="Sprite2D" parent="."]
 position = Vector2(-1067, 1711)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä410" type="Sprite2D" parent="."]
 position = Vector2(-1067, 1519)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä411" type="Sprite2D" parent="."]
 position = Vector2(-875, 1711)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä412" type="Sprite2D" parent="."]
 position = Vector2(-875, 1519)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä413" type="Sprite2D" parent="."]
 position = Vector2(-673, 1714)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä414" type="Sprite2D" parent="."]
 position = Vector2(-673, 1522)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä415" type="Sprite2D" parent="."]
 position = Vector2(-481, 1714)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä416" type="Sprite2D" parent="."]
 position = Vector2(-481, 1522)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä417" type="Sprite2D" parent="."]
 position = Vector2(-267, 1709)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä418" type="Sprite2D" parent="."]
 position = Vector2(-267, 1517)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä419" type="Sprite2D" parent="."]
 position = Vector2(-75, 1709)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä420" type="Sprite2D" parent="."]
 position = Vector2(-75, 1517)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä421" type="Sprite2D" parent="."]
 position = Vector2(-1449, 2082)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä422" type="Sprite2D" parent="."]
 position = Vector2(-1449, 1890)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä423" type="Sprite2D" parent="."]
 position = Vector2(-1257, 2082)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä424" type="Sprite2D" parent="."]
 position = Vector2(-1257, 1890)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä425" type="Sprite2D" parent="."]
 position = Vector2(-1066, 2082)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä426" type="Sprite2D" parent="."]
 position = Vector2(-1066, 1890)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä427" type="Sprite2D" parent="."]
 position = Vector2(-874, 2082)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä428" type="Sprite2D" parent="."]
 position = Vector2(-874, 1890)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä429" type="Sprite2D" parent="."]
 position = Vector2(-672, 2085)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä430" type="Sprite2D" parent="."]
 position = Vector2(-672, 1893)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä431" type="Sprite2D" parent="."]
 position = Vector2(-480, 2085)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä432" type="Sprite2D" parent="."]
 position = Vector2(-480, 1893)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä433" type="Sprite2D" parent="."]
 position = Vector2(-266, 2080)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä434" type="Sprite2D" parent="."]
 position = Vector2(-266, 1888)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä435" type="Sprite2D" parent="."]
 position = Vector2(-74, 2080)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä436" type="Sprite2D" parent="."]
 position = Vector2(-74, 1888)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä437" type="Sprite2D" parent="."]
 position = Vector2(-1461, -653)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä438" type="Sprite2D" parent="."]
 position = Vector2(-1461, -845)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä439" type="Sprite2D" parent="."]
 position = Vector2(-1269, -653)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä440" type="Sprite2D" parent="."]
 position = Vector2(-1269, -845)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä441" type="Sprite2D" parent="."]
 position = Vector2(-1078, -653)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä442" type="Sprite2D" parent="."]
 position = Vector2(-1078, -845)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä443" type="Sprite2D" parent="."]
 position = Vector2(-886, -653)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä444" type="Sprite2D" parent="."]
 position = Vector2(-886, -845)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä445" type="Sprite2D" parent="."]
 position = Vector2(-684, -650)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä446" type="Sprite2D" parent="."]
 position = Vector2(-684, -842)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä447" type="Sprite2D" parent="."]
 position = Vector2(-492, -650)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä448" type="Sprite2D" parent="."]
 position = Vector2(-492, -842)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä449" type="Sprite2D" parent="."]
 position = Vector2(-278, -655)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä450" type="Sprite2D" parent="."]
 position = Vector2(-278, -847)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä451" type="Sprite2D" parent="."]
 position = Vector2(-86, -655)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä452" type="Sprite2D" parent="."]
 position = Vector2(-86, -847)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä453" type="Sprite2D" parent="."]
 position = Vector2(-1456, -297)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä454" type="Sprite2D" parent="."]
 position = Vector2(-1456, -489)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä455" type="Sprite2D" parent="."]
 position = Vector2(-1264, -297)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä456" type="Sprite2D" parent="."]
 position = Vector2(-1264, -489)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä457" type="Sprite2D" parent="."]
 position = Vector2(-1073, -297)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä458" type="Sprite2D" parent="."]
 position = Vector2(-1073, -489)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä459" type="Sprite2D" parent="."]
 position = Vector2(-881, -297)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä460" type="Sprite2D" parent="."]
 position = Vector2(-881, -489)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä461" type="Sprite2D" parent="."]
 position = Vector2(-679, -294)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä462" type="Sprite2D" parent="."]
 position = Vector2(-679, -486)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä463" type="Sprite2D" parent="."]
 position = Vector2(-487, -294)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä464" type="Sprite2D" parent="."]
 position = Vector2(-487, -486)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä465" type="Sprite2D" parent="."]
 position = Vector2(-273, -299)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä466" type="Sprite2D" parent="."]
 position = Vector2(-273, -491)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä467" type="Sprite2D" parent="."]
 position = Vector2(-81, -299)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä468" type="Sprite2D" parent="."]
 position = Vector2(-81, -491)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä469" type="Sprite2D" parent="."]
 position = Vector2(-1455, -118)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä470" type="Sprite2D" parent="."]
 position = Vector2(-1263, -118)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä471" type="Sprite2D" parent="."]
 position = Vector2(-1072, -118)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä472" type="Sprite2D" parent="."]
 position = Vector2(-880, -118)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä473" type="Sprite2D" parent="."]
 position = Vector2(-678, -115)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä474" type="Sprite2D" parent="."]
 position = Vector2(-486, -115)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä475" type="Sprite2D" parent="."]
 position = Vector2(-272, -120)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
 
 [node name="taustaleipä476" type="Sprite2D" parent="."]
 position = Vector2(-80, -120)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o7q5i")
+texture = ExtResource("2_5uiwx")
 script = ExtResource("3_yf38g")
